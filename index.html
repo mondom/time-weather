@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoper & modal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://kit.fontawesome.com/f234464579.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="timer-popup">
+
+            <h2 class="popup-timer-header">Wprowadź nazwę wydarzenia:</h2>
+            <input type="text" id="timer-name" class="popup-input-event-name" maxlength="40"
+                value="Twoja nazwa wydarzenia długa na dwie linijki">
+            <h2 class="popup-timer-header">Wprowadź datę:</h2>
+
+            <div class="date-box">
+                <div class="label-box">
+                    <label for="popup-timer-day" class="popup-label">dzień</label>
+                    <label for="popup-timer-month" class="popup-label">miesiąc</label>
+                    <label for="popup-timer-year" class="popup-label">rok</label>
+                </div>
+
+                <div class="input-box"> <input type="number" id="popup-timer-day" value="1" min="1" max="31"
+                        class="popup-input-day">
+                    <input type="number" id="popup-timer-month" value="1" min="1" max="12" class="popup-input-month">
+                    <input type="number" id="popup-timer-year" value="2030" min="2023" max="9999"
+                        class="popup-input-year">
+                </div>
+
+            </div>
+
+            <button class="timer-save timer-btn">zapisz</button>
+
+        </div>
+
+
+        <div class="card-wrapper">
+
+            <div class="stopwatch card hide-card">
+
+                <div class="stopwatch-page">
+
+                    <div class="stopwatch-title-box title-box">
+                        <h2 class="title stopwatch-title">stopwatch</h2>
+                    </div>
+                    <div class="stopwatch-content card-box">
+                        <p class="stopwatch-clock clock">0:00</p>
+                        <p class="show-last-time"></p>
+                        <div class="stopwatch-btn-box ">
+                            <button class="stopwatch-start stopwatch-btn"><i class="fa-solid fa-play"></i></button>
+                            <button class="stopwatch-pause stopwatch-btn"><i class="fa-solid fa-pause"></i></button>
+                            <button class="stopwatch-stop stopwatch-btn"><i class="fa-solid fa-stop"></i></button>
+                            <button class="stopwatch-reset stopwatch-btn"><i class="fa-solid fa-xmark"></i></button>
+                            <button class="stopwatch-history stopwatch-btn">history</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stopwatch-history-page">
+                    <ul class="history-of-times">
+
+                    </ul>
+                    <button class="stopwatch-close-history ">close history</button>
+                </div>
+
+            </div>
+
+            <div class="timer card hide-card">
+                <div class="timer-title-box title-box">
+                    <h2 class="title timer-title">timer</h2>
+                </div>
+
+                <div class="timer-content card-box">
+
+                    <h3 class="event-name"></h3>
+
+                    <div class="timer-box">
+                        <div class="timer-days">
+                            <p class="countdown-days count-number"></p>
+                            <p class="days-title">dni</p>
+                        </div>
+
+                        <div class="timer-hours">
+                            <p class="countdown-hours count-number"></p>
+                            <p class="hours-title">godzin</p>
+                        </div>
+                        <div class="timer-minutes">
+                            <p class="countdown-minutes count-number"></p>
+                            <p class="minutes-title">minut</p>
+                        </div>
+                        <div class="timer-seconds">
+                            <p class="countdown-seconds count-number"></p>
+                            <p class="seconds-title">sekund</p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="timer-btn-box">
+
+                        <button class="timer-edit">edit</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="time-weather card">
+
+                <div class="time-weather-title-box title-box">
+                    <h2 class="title time-weather-title">time & weather</h2>
+                </div>
+                <div class="time-weather-content card-box">
+
+                    <div class="time-weather-popup">
+
+                        <h3 class="popup-time-weather-header">Wprowadź nazwę miasta</h3>
+                        <input type="text" id="time-weather-city" class="city-name" maxlength="40" value="Warszawa">
+
+                        <button class="time-weather-send-btn ">Wyślij</button>
+
+                    </div>
+
+                    <p class="city">Czas i pogoda w Warszawie</p>
+                    <p class="time clock"></p>
+                    <p class="time-weather-date"></p>
+
+                    <div class="weather-box">
+                        <div class="weather-headings">
+                            <p class="weather">Weather:</p>
+                            <p class="temperature">Temperature:</p>
+                        </div>
+
+                        <div class="weather-info">
+                            <p class="current-weather"></p>
+                            <p class="current-temperature"></p>
+                        </div>
+
+                    </div>
+                    <img src="./assets/icon/thunderstorm.png" alt="Obrazek przedstawiający pogodę" class="weather-icon">
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="button-box">
+            <button class="show-stopwatch-btn show-card-bth">stopwatch</button>
+            <button class="show-timer-btn show-card-bth">timer</button>
+            <button class="show-time-weather-btn show-card-bth">time & weather</button>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

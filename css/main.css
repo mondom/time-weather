@@ -1,0 +1,556 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Caveat", cursive;
+  color: #1c353e;
+  background-color: #f4f4f4;
+  height: 100vh;
+  overflow: hidden;
+}
+body .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #e2e2e2;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: inset 0 0 12px #a0a0a0;
+}
+body .wrapper .card-wrapper {
+  position: absolute;
+  width: 80%;
+  height: 60%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  border-radius: 20px;
+  box-shadow: 0 0 12px #a0a0a0;
+}
+body .wrapper .card-wrapper .card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px #a0a0a0;
+  overflow: hidden;
+  perspective: 800px;
+  z-index: 1;
+}
+body .wrapper .card-wrapper .card .stopwatch-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transition: 0.8s;
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 18px;
+  border-radius: 16px;
+  transform: rotateX(-180deg);
+  transition: 0.8s;
+  opacity: 0;
+  background-image: linear-gradient(340deg, #2a9d8f 20%, #dcf8ef 78%);
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
+  border-radius: 7px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 0 4px #a0a0a0;
+  background-color: #fafafa;
+  transition: background-color 0.3s;
+  padding: 8px 15px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-family: "Caveat", cursive;
+  transition: color 0.3s;
+  margin-top: 5px;
+  position: absolute;
+  bottom: 25px;
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history:hover {
+  background-color: #dcf8ef;
+  box-shadow: 0 0 4px #fafafa;
+}
+body .wrapper .card-wrapper .card .title-box {
+  width: 100%;
+  height: 95px;
+}
+body .wrapper .card-wrapper .card .title-box .title {
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 20px 0;
+  font-size: 25px;
+}
+body .wrapper .card-wrapper .card .stopwatch-title-box {
+  background-color: #2a9d8f;
+}
+body .wrapper .card-wrapper .card .timer-title-box {
+  background-color: #e9c46a;
+}
+body .wrapper .card-wrapper .card .time-weather-title-box {
+  background-color: #e76f51;
+}
+body .wrapper .card-wrapper .card .card-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
+  width: 90%;
+  height: 60%;
+  background-color: #fafafa;
+  z-index: 1;
+}
+body .wrapper .card-wrapper .card .card-box .clock {
+  font-size: 30px;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
+  margin-top: 30px;
+}
+body .wrapper .card-wrapper .card .card-box .timer-btn-box {
+  bottom: 15px;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box,
+body .wrapper .card-wrapper .card .card-box .timer-btn-box {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+  bottom: 10px;
+  flex-wrap: wrap;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn,
+body .wrapper .card-wrapper .card .card-box .timer-edit {
+  margin-top: 10px;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 0 4px #a0a0a0;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn .fa-solid,
+body .wrapper .card-wrapper .card .card-box .timer-edit .fa-solid {
+  font-size: 16px;
+  transition: color 0.3s;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn {
+  padding: 5px 11px;
+  box-shadow: 0 0 4px #2a9d8f;
+}
+body .wrapper .card-wrapper .card .card-box .timer-edit {
+  font-size: 16px;
+  font-family: "Caveat", cursive;
+  padding: 5px 40px;
+  box-shadow: 0 0 4px #e9c46a;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-history {
+  width: 70%;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-family: "Caveat", cursive;
+  transition: color 0.3s;
+  margin-top: 5px;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn:hover {
+  background-color: #2a9d8f;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn:hover .fa-solid {
+  color: white;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-history:hover {
+  color: white;
+}
+body .wrapper .card-wrapper .card .card-box .timer-edit:hover {
+  background-color: #e9c46a;
+}
+body .wrapper .card-wrapper .card .timer-content .event-name {
+  margin-top: 8px;
+  font-weight: lighter;
+  text-align: center;
+}
+body .wrapper .card-wrapper .card .timer-content .timer-box {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body .wrapper .card-wrapper .card .timer-content .timer-box .count-number {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+body .wrapper .card-wrapper .title-box:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: #fafafa;
+  right: -25%;
+  top: 75px;
+  z-index: 0;
+}
+body .wrapper .card-wrapper .title-box:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  left: -25%;
+  top: -184.2px;
+  -webkit-clip-path: ellipse(100% 30% at -18% 100%);
+          clip-path: ellipse(100% 30% at -18% 100%);
+  z-index: 0;
+}
+body .wrapper .card-wrapper .stopwatch-title-box:after {
+  background-color: #2a9d8f;
+}
+body .wrapper .card-wrapper .timer-title-box:after {
+  background-color: #e9c46a;
+}
+body .wrapper .card-wrapper .time-weather-title-box:after {
+  background-color: #e76f51;
+  background-color: #e76f51;
+  background-color: #e76f51;
+}
+body .wrapper .card-wrapper .hide-card {
+  display: none;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .time-weather-popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  left: 0;
+  bottom: 0;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fafafa;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .time-weather-popup .city-name {
+  padding: 5px;
+  font-family: "Caveat", cursive;
+  border: none;
+  border-bottom: 2px solid #e76f51;
+  background-color: #fafafa;
+  width: 60%;
+  text-align: center;
+  font-size: 16px;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .time-weather-popup .city-name:focus {
+  outline: none;
+  border: 2px solid #e76f51;
+  border-radius: 3px;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .time-weather-popup .time-weather-send-btn {
+  padding: 5px 12px;
+  font-family: "Caveat", cursive;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 6px #e76f51;
+  background-color: #fafafa;
+  cursor: pointer;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .time-weather-popup .time-weather-send-btn:hover {
+  background-color: #e76f51;
+  color: white;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .city,
+body .wrapper .card-wrapper .time-weather .time-weather-content .weather {
+  font-size: 16px;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .city {
+  margin-top: 7px;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .weather-box {
+  display: flex;
+  margin-top: 5px;
+  width: 80%;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .weather-box .weather-headings,
+body .wrapper .card-wrapper .time-weather .time-weather-content .weather-box .weather-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .weather-icon {
+  margin-top: 5px;
+  width: 35px;
+}
+body .wrapper .card-wrapper .time-weather .time-weather-content .show-time-weather-popup {
+  display: flex;
+}
+body .wrapper .timer-popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  color: rgb(249, 246, 246);
+}
+body .wrapper .timer-popup .popup-timer-header {
+  margin: 20px;
+}
+body .wrapper .timer-popup .popup-input-event-name {
+  width: 70%;
+  text-align: center;
+  border: none;
+}
+body .wrapper .timer-popup input {
+  padding: 5px;
+  border-radius: 5px;
+  font-family: "Caveat", cursive;
+}
+body .wrapper .timer-popup input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+body .wrapper .timer-popup .date-box {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body .wrapper .timer-popup .date-box .label-box,
+body .wrapper .timer-popup .date-box .input-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+body .wrapper .timer-popup .date-box .label-box input,
+body .wrapper .timer-popup .date-box .input-box input {
+  width: 20%;
+  text-align: center;
+  border: none;
+}
+body .wrapper .timer-popup .timer-save {
+  margin-top: 40px;
+  font-size: 20px;
+  font-family: "Caveat", cursive;
+  padding: 5px 12px;
+  box-shadow: 0 0 4px #e9c46a;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+body .wrapper .timer-popup .timer-save:hover {
+  background-color: #e9c46a;
+}
+body .wrapper .show-timer-popup {
+  display: flex;
+}
+
+.button-box {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #fafafa;
+  padding: 7px;
+  box-shadow: 0 0 12px #a0a0a0;
+  border-radius: 20px;
+}
+.button-box .show-card-bth {
+  font-size: 16px;
+  margin: 5px;
+  font-family: "Caveat", cursive;
+  padding: 7px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  width: 90px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button-box .show-stopwatch-btn {
+  box-shadow: 0 0 5px #2a9d8f;
+}
+.button-box .show-timer-btn {
+  box-shadow: 0 0 5px #e9c46a;
+}
+.button-box .show-time-weather-btn {
+  box-shadow: 0 0 6px #e76f51;
+}
+.button-box .show-stopwatch-btn:hover {
+  background-color: #2a9d8f;
+  color: white;
+}
+.button-box .show-timer-btn:hover {
+  background-color: #e9c46a;
+}
+.button-box .show-time-weather-btn:hover {
+  background-color: #e76f51;
+  color: white;
+}
+
+@media (min-width: 375px) {
+  body .wrapper .card-wrapper {
+    height: 65%;
+  }
+  body .wrapper .card-wrapper .card {
+    width: 250px;
+    height: 360px;
+  }
+  body .wrapper .card-wrapper .card .timer-content .timer-box {
+    margin-top: 25px;
+  }
+  body .wrapper .card-wrapper .card .timer-content .timer-btn-box {
+    margin-bottom: -15px;
+  }
+  body .wrapper .card-wrapper .time-weather .time-weather-content .city {
+    margin-top: 10px;
+  }
+  body .wrapper .card-wrapper .time-weather .time-weather-content .weather-box {
+    margin-top: 10px;
+  }
+  body .wrapper .card-wrapper .time-weather .time-weather-content .weather-icon {
+    margin-top: 30px;
+    width: 65px;
+  }
+}
+@media (min-width: 414px) {
+  body .wrapper .timer-popup .popup-input-event-name {
+    font-size: 16px;
+  }
+  body .wrapper .timer-popup .date-box .input-box input {
+    font-size: 16px;
+  }
+  body .wrapper .card-wrapper .card {
+    width: 260px;
+    height: 390px;
+  }
+  body .wrapper .card-wrapper .time-weather .time-weather-content {
+    margin-top: 30px;
+  }
+  body .wrapper .card-wrapper .time-weather .time-weather-content .weather-icon {
+    margin-top: 32px;
+    width: 70px;
+  }
+  body .button-box {
+    bottom: 50px;
+    width: 78%;
+  }
+  body .button-box .show-card-bth {
+    width: 120px;
+    padding: 10px;
+    margin: 7px;
+  }
+}
+@media (min-width: 768px) {
+  body .wrapper {
+    max-width: 700px;
+    height: 90vh;
+  }
+  body .wrapper .timer-popup .popup-input-event-name {
+    font-size: 20px;
+  }
+  body .wrapper .timer-popup .date-box .input-box input {
+    font-size: 20px;
+  }
+  body .wrapper .card-wrapper {
+    width: 80%;
+    margin-top: 50px;
+  }
+  body .wrapper .card-wrapper .card {
+    min-width: 260px;
+    height: 380px;
+  }
+  body .wrapper .card-wrapper .card .timer-content .timer-box {
+    margin-top: 35px;
+  }
+  body .wrapper .card-wrapper .card .title-box {
+    height: 100px;
+  }
+  body .wrapper .card-wrapper .card .title-box .title {
+    font-size: 27px;
+  }
+  body .wrapper .card-wrapper .card .card-box {
+    height: 70%;
+  }
+  body .wrapper .card-wrapper .card .card-box .clock {
+    font-size: 35px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
+    margin-bottom: 25px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
+    padding: 5px 15px;
+  }
+  body .wrapper .card-wrapper .card .card-box .timer-btn-box {
+    margin-bottom: 5px;
+  }
+  body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-btn {
+    font-size: 16px;
+    padding: 7px 20px;
+  }
+  body .wrapper .card-wrapper .time-weather .time-weather-content .city,
+  body .wrapper .card-wrapper .time-weather .time-weather-content .time-weather-date {
+    font-size: 22px;
+  }
+  body .wrapper .card-wrapper .time-weather .time-weather-content .weather-icon {
+    margin-top: 20px;
+    width: 85px;
+  }
+  body .wrapper .card-wrapper .time-weather .time-weather-content .weather-box .weather-headings p,
+  body .wrapper .card-wrapper .time-weather .time-weather-content .weather-box .weather-info p {
+    line-height: 25px;
+  }
+  body .button-box {
+    bottom: 30px;
+    padding: 20px;
+  }
+  body .button-box .show-card-bth {
+    font-size: 20px;
+    margin: 10px;
+    padding: 5px;
+    width: 130px;
+  }
+}/*# sourceMappingURL=main.css.map */
