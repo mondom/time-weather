@@ -25,7 +25,7 @@
                 value="Twoja nazwa wydarzenia długa na dwie linijki">
             <h2 class="popup-timer-header">Wprowadź datę:</h2>
 
-            <div class="date-box">
+            <div class="popup-date-box">
                 <div class="label-box">
                     <label for="popup-timer-day" class="popup-label">dzień</label>
                     <label for="popup-timer-month" class="popup-label">miesiąc</label>
@@ -48,6 +48,7 @@
 
         <div class="card-wrapper">
 
+       
             <div class="stopwatch card hide-card">
 
                 <div class="stopwatch-page">
@@ -115,25 +116,24 @@
                 </div>
             </div>
 
-            <div class="time-weather card">
+            <div class="weather card hide-card">
 
-                <div class="time-weather-title-box title-box">
-                    <h2 class="title time-weather-title">time & weather</h2>
+                <div class="weather-title-box title-box">
+                    <h2 class="title weather-title">weather</h2>
                 </div>
-                <div class="time-weather-content card-box">
+                <div class="weather-content card-box">
 
-                    <div class="time-weather-popup">
+                    <div class="weather-popup">
 
-                        <h3 class="popup-time-weather-header">Wprowadź nazwę miasta</h3>
-                        <input type="text" id="time-weather-city" class="city-name" maxlength="40" value="Warszawa">
+                        <h3 class="popup-weather-header">Wprowadź nazwę miasta</h3>
+                        <input type="text" id="weather-city" class="input-city-name" maxlength="40" value="Warszawa">
 
-                        <button class="time-weather-send-btn ">Wyślij</button>
+                        <button class="weather-send-btn ">Wyślij</button>
 
                     </div>
 
-                    <p class="city">Czas i pogoda w Warszawie</p>
-                    <p class="time clock"></p>
-                    <p class="time-weather-date"></p>
+                    <p class="city">Pogoda w <span class="name-of-city">Warszawie</span></p>
+                  
 
                     <div class="weather-box">
                         <div class="weather-headings">
@@ -159,7 +159,14 @@
         <div class="button-box">
             <button class="show-stopwatch-btn show-card-bth">stopwatch</button>
             <button class="show-timer-btn show-card-bth">timer</button>
-            <button class="show-time-weather-btn show-card-bth">time & weather</button>
+            <button class="show-weather-btn show-card-bth">weather</button>
+        </div>
+
+        <div class="time-date-box">
+            <p class="clock-name">Czas:</p>
+            <p class="time clock"></p>
+            <p class="date-name">Data:</p>
+            <p class="date"></p>
         </div>
 
     </div>

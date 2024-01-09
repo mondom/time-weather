@@ -39,6 +39,11 @@ body {
 			border-radius: 20px;
 			box-shadow: 0 0 12px $shadow-color;
 
+			// .time-box {
+			// 	text-align: center;
+			// 	font-size: 20px;
+			// }
+
 			.card {
 				position: relative;
 				display: flex;
@@ -117,8 +122,8 @@ body {
 					background-color: $timer-color;
 				}
 
-				.time-weather-title-box {
-					background-color: $time-weather-color;
+				.weather-title-box {
+					background-color: $weather-color;
 				}
 				.card-box {
 					position: relative;
@@ -139,7 +144,44 @@ body {
 					.timer-btn-box {
 						bottom: 15px;
 					}
-					.stopwatch-btn-box,
+					.stopwatch-btn-box {
+						position: absolute;
+						display: flex;
+						justify-content: space-around;
+						align-items: center;
+						width: 100%;
+						height: 40%;
+						bottom: 15px;
+						flex-wrap: wrap;
+						.stopwatch-btn {
+							margin: 5px 2px;
+							border-radius: 5px;
+							border: 2px solid transparent;
+							cursor: pointer;
+							box-shadow: 0 0 4px $shadow-color;
+							background-color: transparent;
+							transition: background-color 0.3s;
+							box-shadow: 0 0 4px $stopwatch-color;
+							padding: 5px 11px;
+						}
+						.stopwatch-history {
+							width: 70%;
+							font-size: 16px;
+							letter-spacing: 2px;
+							font-family: 'Caveat', cursive;
+							transition: color 0.3s;
+							margin-top: 5px;
+						}
+						.stopwatch-btn:hover {
+							background-color: $stopwatch-color;
+						}
+						.stopwatch-btn:hover .fa-solid {
+							color: white;
+						}
+						.stopwatch-history:hover {
+							color: white;
+						}
+					}
 					.timer-btn-box {
 						position: absolute;
 						display: flex;
@@ -149,53 +191,27 @@ body {
 						height: 40%;
 						bottom: 10px;
 						flex-wrap: wrap;
-					}
-
-					.stopwatch-btn,
-					.timer-edit {
-						margin-top: 10px;
-						border-radius: 7px;
-						border: 2px solid transparent;
-						cursor: pointer;
-						box-shadow: 0 0 4px $shadow-color;
-						background-color: transparent;
-						transition: background-color 0.3s;
-
-						.fa-solid {
+						.timer-edit {
+							margin-top: 10px;
+							border-radius: 7px;
+							border: 2px solid transparent;
+							cursor: pointer;
+							box-shadow: 0 0 4px $shadow-color;
+							background-color: transparent;
+							transition: background-color 0.3s;
 							font-size: 16px;
-							transition: color 0.3s;
+							font-family: 'Caveat', cursive;
+							padding: 5px 40px;
+							box-shadow: 0 0 4px $timer-color;
+							.fa-solid {
+								font-size: 16px;
+								transition: color 0.3s;
+							}
 						}
-					}
-					.stopwatch-btn {
-						padding: 5px 11px;
-						box-shadow: 0 0 4px $stopwatch-color;
-					}
-					.timer-edit {
-						font-size: 16px;
-						font-family: 'Caveat', cursive;
-						padding: 5px 40px;
-						box-shadow: 0 0 4px $timer-color;
-					}
 
-					.stopwatch-history {
-						width: 70%;
-						font-size: 16px;
-						letter-spacing: 2px;
-						font-family: 'Caveat', cursive;
-						transition: color 0.3s;
-						margin-top: 5px;
-					}
-					.stopwatch-btn:hover {
-						background-color: $stopwatch-color;
-					}
-					.stopwatch-btn:hover .fa-solid {
-						color: white;
-					}
-					.stopwatch-history:hover {
-						color: white;
-					}
-					.timer-edit:hover {
-						background-color: $timer-color;
+						.timer-edit:hover {
+							background-color: $timer-color;
+						}
 					}
 				}
 
@@ -251,20 +267,20 @@ body {
 			.timer-title-box:after {
 				background-color: $timer-color;
 			}
-			.time-weather-title-box:after {
-				background-color: $time-weather-color;
-				background-color: $time-weather-color;
-				background-color: $time-weather-color;
+			.weather-title-box:after {
+				background-color: $weather-color;
+				background-color: $weather-color;
+				background-color: $weather-color;
 			}
 			.hide-card {
 				display: none;
 			}
-			.time-weather {
-				.time-weather-content {
+			.weather {
+				.weather-content {
 					position: relative;
 					display: flex;
 					align-items: center;
-					.time-weather-popup{
+					.weather-popup {
 						position: absolute;
 						width: 100%;
 						height: 100%;
@@ -275,33 +291,33 @@ body {
 						align-items: center;
 						flex-direction: column;
 						background-color: #fafafa;
-						.city-name{
+						.input-city-name {
 							padding: 5px;
 							font-family: 'Caveat', cursive;
 							border: none;
-							border-bottom: 2px solid $time-weather-color;
+							border-bottom: 2px solid $weather-color;
 							background-color: #fafafa;
 							width: 60%;
 							text-align: center;
 							font-size: 16px;
 						}
-						.city-name:focus {
+						.input-city-name:focus {
 							outline: none;
-							border: 2px solid $time-weather-color;
+							border: 2px solid $weather-color;
 							border-radius: 3px;
 						}
-						.time-weather-send-btn{
+						.weather-send-btn {
 							padding: 5px 12px;
 							font-family: 'Caveat', cursive;
 							font-size: 16px;
 							border-radius: 8px;
 							border: 2px solid transparent;
-							box-shadow: 0 0 6px $time-weather-color;
+							box-shadow: 0 0 6px $weather-color;
 							background-color: #fafafa;
 							cursor: pointer;
 						}
-						.time-weather-send-btn:hover {
-							background-color: $time-weather-color;
+						.weather-send-btn:hover {
+							background-color: $weather-color;
 							color: white;
 						}
 					}
@@ -330,7 +346,7 @@ body {
 						margin-top: 5px;
 						width: 35px;
 					}
-					.show-time-weather-popup {
+					.show-weather-popup {
 						display: flex;
 					}
 				}
@@ -366,7 +382,7 @@ body {
 				-webkit-appearance: none;
 			}
 
-			.date-box {
+			.popup-date-box {
 				width: 60%;
 
 				display: flex;
@@ -396,55 +412,76 @@ body {
 		.show-timer-popup {
 			display: flex;
 		}
-	}
-}
+		.button-box {
+			position: absolute;
+			bottom: 100px;
+			left: 50%;
+			width: 80%;
+			transform: translate(-50%);
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			flex-wrap: wrap;
+			background-color: #fafafa;
+			padding: 7px;
+			box-shadow: 0 0 12px $shadow-color;
+			border-radius: 20px;
 
-.button-box {
-	position: absolute;
-	bottom: 40px;
-	left: 50%;
-	width: 80%;
-	transform: translate(-50%);
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-wrap: wrap;
-	background-color: #fafafa;
-	padding: 7px;
-	box-shadow: 0 0 12px $shadow-color;
-	border-radius: 20px;
-
-	.show-card-bth {
-		font-size: 16px;
-		margin: 5px;
-		font-family: 'Caveat', cursive;
-		padding: 7px;
-		border-radius: 8px;
-		border: 2px solid transparent;
-		width: 90px;
-		background: transparent;
-		cursor: pointer;
-		transition: background-color 0.3s;
-	}
-	.show-stopwatch-btn {
-		box-shadow: 0 0 5px $stopwatch-color;
-	}
-	.show-timer-btn {
-		box-shadow: 0 0 5px $timer-color;
-	}
-	.show-time-weather-btn {
-		box-shadow: 0 0 6px $time-weather-color;
-	}
-	.show-stopwatch-btn:hover {
-		background-color: $stopwatch-color;
-		color: white;
-	}
-	.show-timer-btn:hover {
-		background-color: $timer-color;
-	}
-	.show-time-weather-btn:hover {
-		background-color: $time-weather-color;
-		color: white;
+			.show-card-bth {
+				font-size: 16px;
+				margin: 5px;
+				font-family: 'Caveat', cursive;
+				padding: 7px;
+				border-radius: 8px;
+				border: 2px solid transparent;
+				width: 90px;
+				background: transparent;
+				cursor: pointer;
+				transition: background-color 0.3s;
+			}
+			.show-stopwatch-btn {
+				box-shadow: 0 0 5px $stopwatch-color;
+			}
+			.show-timer-btn {
+				box-shadow: 0 0 5px $timer-color;
+			}
+			.show-weather-btn {
+				box-shadow: 0 0 6px $weather-color;
+			}
+			.show-stopwatch-btn:hover {
+				background-color: $stopwatch-color;
+				color: white;
+			}
+			.show-timer-btn:hover {
+				background-color: $timer-color;
+			}
+			.show-weather-btn:hover {
+				background-color: $weather-color;
+				color: white;
+			}
+		}
+		.time-date-box {
+			position: absolute;
+			width: 100%;
+			height: 50px;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: rgba(0, 0, 0, 0.55);
+			color: #fff;
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+			font-size: 20px;
+			text-shadow: 0 0 5px rgb(0, 0, 0);
+			.clock-name,
+			.date-name {
+				margin-right: 10px;
+			}
+			.time {
+				margin-right: 35px;
+			}
+		}
 	}
 }
 
@@ -454,6 +491,11 @@ body {
 			.card-wrapper {
 				height: 65%;
 				.card {
+					.card-box {
+						.stopwatch-btn-box {
+							bottom: -5px;
+						}
+					}
 					width: 250px;
 					height: 360px;
 					.timer-content {
@@ -464,10 +506,9 @@ body {
 							margin-bottom: -15px;
 						}
 					}
-					
 				}
-				.time-weather {
-					.time-weather-content {
+				.weather {
+					.weather-content {
 						.city {
 							margin-top: 10px;
 						}
@@ -493,7 +534,7 @@ body {
 					font-size: 16px;
 				}
 
-				.date-box {
+				.popup-date-box {
 					.input-box {
 						input {
 							font-size: 16px;
@@ -506,8 +547,8 @@ body {
 					width: 260px;
 					height: 390px;
 				}
-				.time-weather {
-					.time-weather-content {
+				.weather {
+					.weather-content {
 						margin-top: 30px;
 						.weather-icon {
 							margin-top: 32px;
@@ -541,7 +582,7 @@ body {
 					font-size: 20px;
 				}
 
-				.date-box {
+				.popup-date-box {
 					.input-box {
 						input {
 							font-size: 20px;
@@ -592,10 +633,10 @@ body {
 						}
 					}
 				}
-				.time-weather {
-					.time-weather-content {
+				.weather {
+					.weather-content {
 						.city,
-						.time-weather-date {
+						.weather-date {
 							font-size: 22px;
 						}
 						.weather-icon {

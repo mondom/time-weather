@@ -166,25 +166,26 @@ setInterval(getTime, 1000)
 
 // time&weather card
 
-const timeWeatherCard = document.querySelector('.time-weather')
+const timeWeatherCard = document.querySelector('.weather')
 const time = document.querySelector('.time')
-const date = document.querySelector('.time-weather-date')
+const date = document.querySelector('.date')
 const currentWeather = document.querySelector('.current-weather')
 const currentTemp = document.querySelector('.current-temperature')
 const icon = document.querySelector('.weather-icon')
 const showStopwatchBtn = document.querySelector('.show-stopwatch-btn')
 const showTimerBtn = document.querySelector('.show-timer-btn')
-const showTimeWeatherBtn = document.querySelector('.show-time-weather-btn')
-const timeWeatherPopup = document.querySelector('.time-weather-popup')
-const timeWeatherInput = document.querySelector('.city-name')
-const timeWeatherSendBtn = document.querySelector('.time-weather-send-btn')
+const showTimeWeatherBtn = document.querySelector('.show-weather-btn')
+const timeWeatherPopup = document.querySelector('.weather-popup')
+const timeWeatherInput = document.querySelector('.input-city-name')
+const timeWeatherSendBtn = document.querySelector('.weather-send-btn')
+const nameOfCity = document.querySelector('.name-of-city')
 
 const showTimeWeatherPopup = () => {
-	timeWeatherPopup.classList.add('show-time-weather-popup')
+	timeWeatherPopup.classList.add('show-weather-popup')
 }
 
 const getCityData = () => {
-	timeWeatherPopup.classList.remove('show-time-weather-popup')
+	timeWeatherPopup.classList.remove('show-weather-popup')
 }
 
 const getTimeAndDate = () => {
@@ -224,7 +225,7 @@ const API_KEY = '&appid=50808132f3a2f575fce4c8b52cb6f31b'
 const API_UNITS = '&units=metric'
 
 const getCityWeather = () => {
-	const city = timeWeatherInput.value
+	let city = timeWeatherInput.value
 	const URL = API_LINK + city + API_KEY + API_UNITS
 
 	axios.get(URL).then(res => {
