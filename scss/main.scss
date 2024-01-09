@@ -39,6 +39,35 @@ body {
 			border-radius: 20px;
 			box-shadow: 0 0 12px $shadow-color;
 
+			.app-title-box {
+				.app-title {
+					font-size: 35px;
+					font-weight: lighter;
+					letter-spacing: 1px;
+					.time-word {
+						position: relative;
+						.color-dot,
+						.white-dot {
+							position: absolute;
+							width: 5px;
+							height: 5px;
+							
+							border-radius: 50%;
+							top: 33%;
+							right: 55%;
+							z-index: 1;
+						}
+						.color-dot {
+							animation: red-dot 5s infinite;
+						}
+						.white-dot {
+							background-color: #fff;
+							z-index: 0;
+						}
+					}
+				}
+			}
+
 			// .time-box {
 			// 	text-align: center;
 			// 	font-size: 20px;
@@ -414,7 +443,7 @@ body {
 		}
 		.button-box {
 			position: absolute;
-			bottom: 100px;
+			bottom: 70px;
 			left: 50%;
 			width: 80%;
 			transform: translate(-50%);
@@ -668,4 +697,33 @@ body {
 			}
 		}
 	}
+}
+
+@keyframes red-dot {
+	0% {
+		opacity: 0;
+	}
+	17% {
+		opacity: 1;
+		background-color: $weather-color;
+	}
+	33%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+		background-color: $timer-color;
+	}
+	66%{
+		opacity: 0;
+	}
+	83%{
+		opacity: 1;
+		background-color: $stopwatch-color;
+	}
+	100%{
+		opacity: 0;
+	}
+
+	
 }

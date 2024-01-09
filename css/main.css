@@ -36,6 +36,31 @@ body .wrapper .card-wrapper {
   border-radius: 20px;
   box-shadow: 0 0 12px #a0a0a0;
 }
+body .wrapper .card-wrapper .app-title-box .app-title {
+  font-size: 35px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+body .wrapper .card-wrapper .app-title-box .app-title .time-word {
+  position: relative;
+}
+body .wrapper .card-wrapper .app-title-box .app-title .time-word .color-dot,
+body .wrapper .card-wrapper .app-title-box .app-title .time-word .white-dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  top: 33%;
+  right: 55%;
+  z-index: 1;
+}
+body .wrapper .card-wrapper .app-title-box .app-title .time-word .color-dot {
+  animation: red-dot 5s infinite;
+}
+body .wrapper .card-wrapper .app-title-box .app-title .time-word .white-dot {
+  background-color: #fff;
+  z-index: 0;
+}
 body .wrapper .card-wrapper .card {
   position: relative;
   display: flex;
@@ -396,7 +421,7 @@ body .wrapper .show-timer-popup {
 }
 body .wrapper .button-box {
   position: absolute;
-  bottom: 100px;
+  bottom: 70px;
   left: 50%;
   width: 80%;
   transform: translate(-50%);
@@ -588,5 +613,31 @@ body .wrapper .time-date-box .time {
     margin: 10px;
     padding: 5px;
     width: 130px;
+  }
+}
+@keyframes red-dot {
+  0% {
+    opacity: 0;
+  }
+  17% {
+    opacity: 1;
+    background-color: #e76f51;
+  }
+  33% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    background-color: #e9c46a;
+  }
+  66% {
+    opacity: 0;
+  }
+  83% {
+    opacity: 1;
+    background-color: #2a9d8f;
+  }
+  100% {
+    opacity: 0;
   }
 }/*# sourceMappingURL=main.css.map */
