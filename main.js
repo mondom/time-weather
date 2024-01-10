@@ -70,7 +70,7 @@ const showHistory = () => {
 	let number = 1
 	arrOfTimes.forEach(el => {
 		const time = document.createElement('p')
-		time.textContent = `Czas nr ${number}:\u00A0 \u00A0 \u00A0 \u00A0${el}`
+		time.textContent = `Time no. ${number}:\u00A0 \u00A0 \u00A0 \u00A0${el}`
 		historyList.append(time)
 		number++
 	})

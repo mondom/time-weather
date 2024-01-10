@@ -292,6 +292,7 @@ body .wrapper .card-wrapper .weather .weather-content {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 body .wrapper .card-wrapper .weather .weather-content .weather-popup {
   position: absolute;
@@ -334,7 +335,10 @@ body .wrapper .card-wrapper .weather .weather-content .weather-popup .weather-se
   background-color: #e76f51;
   color: white;
 }
-body .wrapper .card-wrapper .weather .weather-content .city,
+body .wrapper .card-wrapper .weather .weather-content .city {
+  font-size: 18px;
+  font-weight: bolder;
+}
 body .wrapper .card-wrapper .weather .weather-content .weather {
   font-size: 16px;
 }

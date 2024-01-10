@@ -312,6 +312,8 @@ body {
 					position: relative;
 					display: flex;
 					align-items: center;
+					justify-content: center;
+					
 					.weather-popup {
 						position: absolute;
 						width: 100%;
@@ -354,7 +356,11 @@ body {
 						}
 					}
 
-					.city,
+					.city {
+			
+						font-size: 18px;
+						font-weight: bolder;
+					}
 					.weather {
 						font-size: 16px;
 					}
