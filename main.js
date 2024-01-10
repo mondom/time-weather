@@ -1,3 +1,7 @@
+const showStopwatchBtn = document.querySelector('.show-stopwatch-btn')
+const showTimerBtn = document.querySelector('.show-timer-btn')
+const showWeatherBtn = document.querySelector('.show-weather-btn')
+
 // stopwatch card
 
 const stopwatchCard = document.querySelector('.stopwatch')
@@ -164,58 +168,22 @@ timerSaveBtn.addEventListener('click', () => {
 dataUpdate()
 setInterval(getTime, 1000)
 
-// time&weather card
+//weather card
 
-const timeWeatherCard = document.querySelector('.weather')
-const time = document.querySelector('.time')
-const date = document.querySelector('.date')
+const weatherCard = document.querySelector('.weather')
 const currentWeather = document.querySelector('.current-weather')
 const currentTemp = document.querySelector('.current-temperature')
 const icon = document.querySelector('.weather-icon')
-const showStopwatchBtn = document.querySelector('.show-stopwatch-btn')
-const showTimerBtn = document.querySelector('.show-timer-btn')
-const showTimeWeatherBtn = document.querySelector('.show-weather-btn')
-const timeWeatherPopup = document.querySelector('.weather-popup')
-const timeWeatherInput = document.querySelector('.input-city-name')
-const timeWeatherSendBtn = document.querySelector('.weather-send-btn')
+const weatherPopup = document.querySelector('.weather-popup')
+const weatherInput = document.querySelector('.input-city-name')
+const weatherSendBtn = document.querySelector('.weather-send-btn')
 const nameOfCity = document.querySelector('.name-of-city')
 const appName = document.querySelector('.app-title-box')
 
 const showWeatherPopup = () => {
-	timeWeatherPopup.classList.add('show-weather-popup')
+	weatherPopup.classList.add('show-weather-popup')
 }
 
-const getCityData = () => {
-	timeWeatherPopup.classList.remove('show-weather-popup')
-}
-
-const getTimeAndDate = () => {
-	const now = new Date()
-	let hours = now.getHours()
-	let minutes = now.getMinutes()
-	let seconds = now.getSeconds()
-
-	if (seconds <= 9 && minutes <= 9) {
-		time.textContent = `${hours} : 0${minutes} : 0${seconds}`
-	} else if (minutes <= 9 && seconds > 9) {
-		time.textContent = `${hours} : 0${minutes} : ${seconds}`
-	} else if (minutes > 9 && seconds <= 9) {
-		time.textContent = `${hours} : ${minutes} : 0${seconds}`
-	} else {
-		time.textContent = `${hours} : ${minutes} : ${seconds}`
-	}
-
-	let day = now.getDate()
-	let month = now.getMonth() + 1
-	let year = now.getFullYear()
-
-	if (month <= 9) {
-		date.textContent = `${day} . 0${month} . ${year}`
-	} else {
-		date.textContent = `${day} . ${month} . ${year}`
-	}
-}
-setInterval(getTimeAndDate, 1000)
 
 // api waether
 
@@ -226,65 +194,103 @@ const API_KEY = '&appid=50808132f3a2f575fce4c8b52cb6f31b'
 const API_UNITS = '&units=metric'
 
 const getCityWeather = () => {
-	let city = timeWeatherInput.value
-	const URL = API_LINK + city + API_KEY + API_UNITS
-
-	axios.get(URL).then(res => {
+	let city = weatherInput.value
+	const ADDRESS = API_LINK + city + API_KEY + API_UNITS
+	
+	axios.get(ADDRESS).then(res => {
 		const temp = res.data.main.temp
 		const status = res.data.weather[0].main
 
+		nameOfCity.textContent = res.data.name
+
+		
 		currentTemp.textContent = Math.floor(temp) + '°C'
 		currentWeather.textContent = status
 
-		if (res.data.weather[0].id >= 200 && status.id < 300) {
+		const iconStatus = res.data.weather[0].id
+		
+		if (iconStatus >= 200 && iconStatus < 300) {
 			icon.setAttribute('src', './assets/icon/thunderstorm.png')
-		} else if (status.id >= 300 && status.id < 400) {
+		} else if (iconStatus >= 300 && iconStatus < 400) {
 			icon.setAttribute('src', './assets/icon/drizzle.png')
-		} else if (status.id >= 500 && status.id < 600) {
+		} else if (iconStatus >= 500 && iconStatus < 600) {
 			icon.setAttribute('src', './assets/icon/rain.png')
-		} else if (status.id >= 600 && status.id < 700) {
+		} else if (iconStatus >= 600 && iconStatus < 700) {
 			icon.setAttribute('src', './assets/icon/snow.png')
-		} else if (status.id >= 701 && status.id < 800) {
+		} else if (iconStatus >= 701 && iconStatus < 800) {
 			icon.setAttribute('src', './assets/icon/fog.png')
-		} else if (status.id === 800) {
+		} else if (iconStatus === 800) {
 			icon.setAttribute('src', './assets/icon/sun.png')
-		} else if (status.id >= 801 && status.id < 900) {
+		} else if (iconStatus >= 801 && iconStatus < 900) {
 			icon.setAttribute('src', './assets/icon/cloud.png')
 		} else {
 			icon.setAttribute('src', './assets/icon/unknown.png')
 		}
-
+		
 		console.log(res.data.weather[0].id)
+		weatherPopup.classList.remove('show-weather-popup')
 	})
 }
+
 getCityWeather()
+weatherSendBtn.addEventListener('click', getCityWeather)
+
+// footer
+const time = document.querySelector('.time')
+const date = document.querySelector('.date')
+
+const getTimeAndDate = () => {
+	const now = new Date()
+	let hours = now.getHours()
+	let minutes = now.getMinutes()
+	let seconds = now.getSeconds()
+	
+	if (seconds <= 9 && minutes <= 9) {
+		time.textContent = `${hours} : 0${minutes} : 0${seconds}`
+	} else if (minutes <= 9 && seconds > 9) {
+		time.textContent = `${hours} : 0${minutes} : ${seconds}`
+	} else if (minutes > 9 && seconds <= 9) {
+		time.textContent = `${hours} : ${minutes} : 0${seconds}`
+	} else {
+		time.textContent = `${hours} : ${minutes} : ${seconds}`
+	}
+	
+	let day = now.getDate()
+	let month = now.getMonth() + 1
+	let year = now.getFullYear()
+	
+	if (month <= 9) {
+		date.textContent = `${day} . 0${month} . ${year}`
+	} else {
+		date.textContent = `${day} . ${month} . ${year}`
+	}
+}
+setInterval(getTimeAndDate, 1000)
 
 // show and hide cards
 
 const showStopwatch = () => {
 	stopwatchCard.classList.remove('hide-card')
 	timerCard.classList.add('hide-card')
-	timeWeatherCard.classList.add('hide-card')
+	weatherCard.classList.add('hide-card')
 	appName.style.display = 'none'
-
 }
 const showTimer = () => {
 	stopwatchCard.classList.add('hide-card')
 	timerCard.classList.remove('hide-card')
-	timeWeatherCard.classList.add('hide-card')
+	weatherCard.classList.add('hide-card')
 	appName.style.display = 'none'
 }
 const showWeather = () => {
 	stopwatchCard.classList.add('hide-card')
 	timerCard.classList.add('hide-card')
-	timeWeatherCard.classList.remove('hide-card')
+	weatherCard.classList.remove('hide-card')
 	appName.style.display = 'none'
 }
 
 showStopwatchBtn.addEventListener('click', showStopwatch)
 showTimerBtn.addEventListener('click', showTimer)
-showTimeWeatherBtn.addEventListener('click', () => {
+showWeatherBtn.addEventListener('click', () => {
 	showWeather()
 	showWeatherPopup()
 })
-timeWeatherSendBtn.addEventListener('click', getCityData)
