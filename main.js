@@ -179,8 +179,9 @@ const timeWeatherPopup = document.querySelector('.weather-popup')
 const timeWeatherInput = document.querySelector('.input-city-name')
 const timeWeatherSendBtn = document.querySelector('.weather-send-btn')
 const nameOfCity = document.querySelector('.name-of-city')
+const appName = document.querySelector('.app-title-box')
 
-const showTimeWeatherPopup = () => {
+const showWeatherPopup = () => {
 	timeWeatherPopup.classList.add('show-weather-popup')
 }
 
@@ -264,22 +265,26 @@ const showStopwatch = () => {
 	stopwatchCard.classList.remove('hide-card')
 	timerCard.classList.add('hide-card')
 	timeWeatherCard.classList.add('hide-card')
+	appName.style.display = 'none'
+
 }
 const showTimer = () => {
 	stopwatchCard.classList.add('hide-card')
 	timerCard.classList.remove('hide-card')
 	timeWeatherCard.classList.add('hide-card')
+	appName.style.display = 'none'
 }
-const showTimeWeather = () => {
+const showWeather = () => {
 	stopwatchCard.classList.add('hide-card')
 	timerCard.classList.add('hide-card')
 	timeWeatherCard.classList.remove('hide-card')
+	appName.style.display = 'none'
 }
 
 showStopwatchBtn.addEventListener('click', showStopwatch)
 showTimerBtn.addEventListener('click', showTimer)
 showTimeWeatherBtn.addEventListener('click', () => {
-	showTimeWeather()
-	showTimeWeatherPopup()
+	showWeather()
+	showWeatherPopup()
 })
 timeWeatherSendBtn.addEventListener('click', getCityData)
