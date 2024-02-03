@@ -1,1 +1,1 @@
-[time-weather](https://mondom.github.io/search_engine/)  ←  Link to the live view 
+[time-weather](https://mondom.github.io/time-weather/)  ←  Link to the live view 
