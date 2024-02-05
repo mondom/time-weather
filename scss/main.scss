@@ -44,7 +44,6 @@ body {
 				position: relative;
 				border-radius: 20px;
 				background-color: #fafafa;
-				
 
 				.app-title {
 					font-size: 35px;
@@ -74,7 +73,6 @@ body {
 					}
 				}
 			}
-			
 
 			.card {
 				position: relative;
@@ -167,11 +165,10 @@ body {
 					height: 60%;
 					background-color: #fafafa;
 					z-index: 1;
-					.clock {
-						font-size: 30px;
-					}
+
 					.stopwatch-clock {
 						margin-top: 30px;
+						font-size: 28px;
 					}
 					.timer-btn-box {
 						bottom: 15px;
@@ -313,7 +310,7 @@ body {
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					
+
 					.weather-popup {
 						position: absolute;
 						width: 100%;
@@ -357,7 +354,6 @@ body {
 					}
 
 					.city {
-			
 						font-size: 18px;
 						font-weight: bolder;
 					}
@@ -476,7 +472,6 @@ body {
 				background: transparent;
 				cursor: pointer;
 				transition: background-color 0.3s;
-				
 			}
 			.show-stopwatch-btn {
 				box-shadow: 0 0 5px $stopwatch-color;
@@ -534,8 +529,14 @@ body {
 				height: 65%;
 				.card {
 					.card-box {
+						.stopwatch-clock {
+							font-size: 40px;
+						}
 						.stopwatch-btn-box {
 							bottom: -5px;
+							.stopwatch-history {
+								margin-top: 15px;
+							}
 						}
 					}
 					width: 250px;
@@ -584,10 +585,24 @@ body {
 					}
 				}
 			}
+
 			.card-wrapper {
 				.card {
 					width: 260px;
 					height: 390px;
+					.card-box {
+						.stopwatch-clock {
+							font-size: 50px;
+						}
+						.stopwatch-btn-box {
+							.stopwatch-btn {
+								padding: 8px 13px;
+							}
+							.stopwatch-history {
+								margin-top: 15px;
+							}
+						}
+					}
 				}
 				.weather {
 					.weather-content {
@@ -601,7 +616,7 @@ body {
 			}
 		}
 		.button-box {
-			bottom: 50px;
+			margin-bottom: 40px;
 			width: 78%;
 
 			.show-card-bth {
@@ -635,6 +650,7 @@ body {
 
 			.card-wrapper {
 				width: 80%;
+
 				margin-top: 50px;
 
 				.card {
@@ -696,17 +712,59 @@ body {
 					}
 				}
 			}
+			.button-box {
+				margin-bottom: 5%;
+				padding: 16px;
+
+				.show-card-bth {
+					font-size: 26px;
+					margin: 10px;
+					padding: 10px 5px;
+					width: 150px;
+				}
+			}
 		}
+	}
+}
 
-		.button-box {
-			bottom: 30px;
-			padding: 20px;
+@media (min-width: 1024px) and (orientation: landscape) {
+	body {
+		.wrapper {
+			.button-box {
+				margin-bottom: -1%;
+				padding: 16px;
 
-			.show-card-bth {
-				font-size: 20px;
-				margin: 10px;
-				padding: 5px;
-				width: 130px;
+				.show-card-bth {
+					font-size: 26px;
+					margin: 10px;
+					padding: 10px 5px;
+					width: 150px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+	body {
+		.wrapper {
+			height: 75%;
+			.card-wrapper {
+				.card {
+					width: 330px;
+					height: 450px;
+				}
+			}
+			.button-box {
+				margin-bottom: 7%;
+				padding: 16px;
+
+				.show-card-bth {
+					font-size: 26px;
+					margin: 10px;
+					padding: 10px 5px;
+					width: 150px;
+				}
 			}
 		}
 	}
@@ -740,35 +798,35 @@ body {
 }
 
 @keyframes stopwatch-pulse {
-	0%{
+	0% {
 		box-shadow: 0 0 5px $stopwatch-color;
 	}
-	50%{
+	50% {
 		box-shadow: 0 0 10px $stopwatch-color;
 	}
-	100%{
+	100% {
 		box-shadow: 0 0 5px $stopwatch-color;
 	}
 }
 @keyframes timer-pulse {
-	0%{
+	0% {
 		box-shadow: 0 0 5px $timer-color;
 	}
-	50%{
+	50% {
 		box-shadow: 0 0 10px $timer-color;
 	}
-	100%{
+	100% {
 		box-shadow: 0 0 5px $timer-color;
 	}
 }
 @keyframes weather-pulse {
-	0%{
+	0% {
 		box-shadow: 0 0 5px $weather-color;
 	}
-	50%{
+	50% {
 		box-shadow: 0 0 10px $weather-color;
 	}
-	100%{
+	100% {
 		box-shadow: 0 0 5px $weather-color;
 	}
 }

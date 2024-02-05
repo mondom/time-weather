@@ -155,11 +155,9 @@ body .wrapper .card-wrapper .card .card-box {
   background-color: #fafafa;
   z-index: 1;
 }
-body .wrapper .card-wrapper .card .card-box .clock {
-  font-size: 30px;
-}
 body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
   margin-top: 30px;
+  font-size: 28px;
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   bottom: 15px;
@@ -510,8 +508,14 @@ body .wrapper .time-date-box .time {
     width: 250px;
     height: 360px;
   }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
+    font-size: 40px;
+  }
   body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
     bottom: -5px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
+    margin-top: 15px;
   }
   body .wrapper .card-wrapper .card .timer-content .timer-box {
     margin-top: 25px;
@@ -541,6 +545,15 @@ body .wrapper .time-date-box .time {
     width: 260px;
     height: 390px;
   }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
+    font-size: 50px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
+    padding: 8px 13px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
+    margin-top: 15px;
+  }
   body .wrapper .card-wrapper .weather .weather-content {
     margin-top: 30px;
   }
@@ -549,7 +562,7 @@ body .wrapper .time-date-box .time {
     width: 70px;
   }
   body .button-box {
-    bottom: 50px;
+    margin-bottom: 40px;
     width: 78%;
   }
   body .button-box .show-card-bth {
@@ -617,15 +630,46 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-info p {
     line-height: 25px;
   }
-  body .button-box {
-    bottom: 30px;
-    padding: 20px;
+  body .wrapper .button-box {
+    margin-bottom: 5%;
+    padding: 16px;
   }
-  body .button-box .show-card-bth {
-    font-size: 20px;
+  body .wrapper .button-box .show-card-bth {
+    font-size: 26px;
     margin: 10px;
-    padding: 5px;
-    width: 130px;
+    padding: 10px 5px;
+    width: 150px;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  body .wrapper .button-box {
+    margin-bottom: -1%;
+    padding: 16px;
+  }
+  body .wrapper .button-box .show-card-bth {
+    font-size: 26px;
+    margin: 10px;
+    padding: 10px 5px;
+    width: 150px;
+  }
+}
+@media (min-width: 1024px) and (orientation: portrait) {
+  body .wrapper {
+    height: 75%;
+  }
+  body .wrapper .card-wrapper .card {
+    width: 330px;
+    height: 450px;
+  }
+  body .wrapper .button-box {
+    margin-bottom: 7%;
+    padding: 16px;
+  }
+  body .wrapper .button-box .show-card-bth {
+    font-size: 26px;
+    margin: 10px;
+    padding: 10px 5px;
+    width: 150px;
   }
 }
 @keyframes red-dot {
