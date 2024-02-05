@@ -156,8 +156,8 @@ body .wrapper .card-wrapper .card .card-box {
   z-index: 1;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
-  margin-top: 30px;
-  font-size: 28px;
+  margin-top: 17px;
+  font-size: 35px;
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   bottom: 15px;
@@ -509,7 +509,10 @@ body .wrapper .time-date-box .time {
     height: 360px;
   }
   body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
-    font-size: 40px;
+    font-size: 44px;
+  }
+  body .wrapper .card-wrapper .card .card-box .show-last-time {
+    font-size: 20px;
   }
   body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
     bottom: -5px;
@@ -545,11 +548,22 @@ body .wrapper .time-date-box .time {
     width: 260px;
     height: 390px;
   }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
+    font-size: 20px;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
+    width: 75%;
+    font-size: 22px;
+  }
   body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
-    font-size: 50px;
+    font-size: 52px;
+  }
+  body .wrapper .card-wrapper .card .card-box .show-last-time {
+    font-size: 22px;
   }
   body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
     padding: 8px 13px;
+    font-size: 18px;
   }
   body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
     margin-top: 15px;
@@ -561,14 +575,28 @@ body .wrapper .time-date-box .time {
     margin-top: 32px;
     width: 70px;
   }
-  body .button-box {
-    margin-bottom: 40px;
+  body .wrapper .button-box {
+    margin-bottom: 5px;
     width: 78%;
   }
-  body .button-box .show-card-bth {
+  body .wrapper .button-box .show-card-bth {
     width: 120px;
     padding: 10px;
     margin: 7px;
+    font-size: 20px;
+  }
+}
+@media (min-width: 568px) and (orientation: landscape) {
+  body {
+    height: 750px;
+    overflow: scroll;
+  }
+  body .wrapper .card-wrapper {
+    height: 60%;
+  }
+  body .wrapper .button-box {
+    margin-bottom: 6%;
+    padding: 20px;
   }
 }
 @media (min-width: 768px) {
@@ -587,8 +615,11 @@ body .wrapper .time-date-box .time {
     margin-top: 50px;
   }
   body .wrapper .card-wrapper .card {
-    min-width: 260px;
-    height: 380px;
+    width: 320px;
+    height: 450px;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
+    font-size: 26px;
   }
   body .wrapper .card-wrapper .card .timer-content .timer-box {
     margin-top: 35px;
@@ -602,14 +633,21 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .card .card-box {
     height: 70%;
   }
-  body .wrapper .card-wrapper .card .card-box .clock {
-    font-size: 35px;
+  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
+    font-size: 60px;
+  }
+  body .wrapper .card-wrapper .card .card-box .show-last-time {
+    font-size: 25px;
   }
   body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
     margin-bottom: 25px;
   }
   body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
     padding: 5px 15px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
+    font-size: 22px;
+    padding: 7px;
   }
   body .wrapper .card-wrapper .card .card-box .timer-btn-box {
     margin-bottom: 5px;
@@ -640,10 +678,31 @@ body .wrapper .time-date-box .time {
     padding: 10px 5px;
     width: 150px;
   }
+  body .wrapper .time-date-box {
+    height: 70px;
+    font-size: 25px;
+  }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
+  body {
+    height: 850px;
+  }
+  body .wrapper {
+    margin-top: 10%;
+    height: 100%;
+  }
+  body .wrapper .card-wrapper .card .title-box .title {
+    font-size: 35px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
+    font-size: 70px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
+    font-size: 28px;
+    padding: 7px;
+  }
   body .wrapper .button-box {
-    margin-bottom: -1%;
+    margin-bottom: 7%;
     padding: 16px;
   }
   body .wrapper .button-box .show-card-bth {
@@ -661,15 +720,47 @@ body .wrapper .time-date-box .time {
     width: 330px;
     height: 450px;
   }
+  body .wrapper .card-wrapper .card .title-box .title {
+    font-size: 35px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
+    font-size: 70px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
+    margin-bottom: 25px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
+    padding: 5px 15px;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
+    font-size: 28px;
+    padding: 7px;
+  }
+  body .wrapper .card-wrapper .card .card-box .timer-btn-box {
+    margin-bottom: 5px;
+  }
+  body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-btn {
+    font-size: 16px;
+    padding: 7px 20px;
+  }
   body .wrapper .button-box {
-    margin-bottom: 7%;
+    margin-bottom: 9%;
     padding: 16px;
   }
   body .wrapper .button-box .show-card-bth {
-    font-size: 26px;
+    font-size: 28px;
     margin: 10px;
     padding: 10px 5px;
     width: 150px;
+  }
+}
+@media (min-width: 1366px) and (orientation: landscape) {
+  body .wrapper {
+    margin-top: 10%;
+  }
+  body .wrapper .button-box {
+    margin-bottom: 8%;
+    padding: 20px 10px;
   }
 }
 @keyframes red-dot {

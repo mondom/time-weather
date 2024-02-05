@@ -167,8 +167,8 @@ body {
 					z-index: 1;
 
 					.stopwatch-clock {
-						margin-top: 30px;
-						font-size: 28px;
+						margin-top: 17px;
+						font-size: 35px;
 					}
 					.timer-btn-box {
 						bottom: 15px;
@@ -530,7 +530,10 @@ body {
 				.card {
 					.card-box {
 						.stopwatch-clock {
-							font-size: 40px;
+							font-size: 44px;
+						}
+						.show-last-time {
+							font-size: 20px;
 						}
 						.stopwatch-btn-box {
 							bottom: -5px;
@@ -590,13 +593,27 @@ body {
 				.card {
 					width: 260px;
 					height: 390px;
+					.stopwatch-history-page {
+						.history-of-times {
+							font-size: 20px;
+						}
+
+						.stopwatch-close-history {
+							width: 75%;
+							font-size: 22px;
+						}
+					}
 					.card-box {
 						.stopwatch-clock {
-							font-size: 50px;
+							font-size: 52px;
+						}
+						.show-last-time {
+							font-size: 22px;
 						}
 						.stopwatch-btn-box {
 							.stopwatch-btn {
 								padding: 8px 13px;
+								font-size: 18px;
 							}
 							.stopwatch-history {
 								margin-top: 15px;
@@ -614,15 +631,32 @@ body {
 					}
 				}
 			}
-		}
-		.button-box {
-			margin-bottom: 40px;
-			width: 78%;
+			.button-box {
+				margin-bottom: 5px;
+				width: 78%;
 
-			.show-card-bth {
-				width: 120px;
-				padding: 10px;
-				margin: 7px;
+				.show-card-bth {
+					width: 120px;
+					padding: 10px;
+					margin: 7px;
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 568px) and (orientation: landscape) {
+	body {
+		height: 750px;
+		overflow: scroll;
+
+		.wrapper {
+			.card-wrapper {
+				height: 60%;
+			}
+			.button-box {
+				margin-bottom: 6%;
+				padding: 20px;
 			}
 		}
 	}
@@ -654,13 +688,19 @@ body {
 				margin-top: 50px;
 
 				.card {
+					width: 320px;
+					height: 450px;
+					.stopwatch-history-page {
+						.history-of-times {
+							font-size: 26px;
+						}
+					}
+
 					.timer-content {
 						.timer-box {
 							margin-top: 35px;
 						}
 					}
-					min-width: 260px;
-					height: 380px;
 
 					.title-box {
 						height: 100px;
@@ -672,13 +712,20 @@ body {
 					.card-box {
 						height: 70%;
 
-						.clock {
-							font-size: 35px;
+						.stopwatch-clock {
+							font-size: 60px;
+						}
+						.show-last-time {
+							font-size: 25px;
 						}
 						.stopwatch-btn-box {
 							margin-bottom: 25px;
 							.stopwatch-btn {
 								padding: 5px 15px;
+							}
+							.stopwatch-history {
+								font-size: 22px;
+								padding: 7px;
 							}
 						}
 						.timer-btn-box {
@@ -723,15 +770,44 @@ body {
 					width: 150px;
 				}
 			}
+			.time-date-box {
+				height: 70px;
+				font-size: 25px;
+			}
 		}
 	}
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
 	body {
+		height: 850px;
+
 		.wrapper {
+			margin-top: 10%;
+			height: 100%;
+			.card-wrapper {
+				.card {
+					.title-box {
+						.title {
+							font-size: 35px;
+						}
+					}
+
+					.card-box {
+						.stopwatch-clock {
+							font-size: 70px;
+						}
+						.stopwatch-btn-box {
+							.stopwatch-history {
+								font-size: 28px;
+								padding: 7px;
+							}
+						}
+					}
+				}
+			}
 			.button-box {
-				margin-bottom: -1%;
+				margin-bottom: 7%;
 				padding: 16px;
 
 				.show-card-bth {
@@ -753,18 +829,60 @@ body {
 				.card {
 					width: 330px;
 					height: 450px;
+					.title-box {
+						.title {
+							font-size: 35px;
+						}
+					}
+
+					.card-box {
+						.stopwatch-clock {
+							font-size: 70px;
+						}
+						.stopwatch-btn-box {
+							margin-bottom: 25px;
+							.stopwatch-btn {
+								padding: 5px 15px;
+							}
+							.stopwatch-history {
+								font-size: 28px;
+								padding: 7px;
+							}
+						}
+
+						.timer-btn-box {
+							margin-bottom: 5px;
+
+							.timer-btn {
+								font-size: 16px;
+								padding: 7px 20px;
+							}
+						}
+					}
 				}
 			}
 			.button-box {
-				margin-bottom: 7%;
+				margin-bottom: 9%;
 				padding: 16px;
 
 				.show-card-bth {
-					font-size: 26px;
+					font-size: 28px;
 					margin: 10px;
 					padding: 10px 5px;
 					width: 150px;
 				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1366px) and (orientation: landscape) {
+	body {
+		.wrapper {
+			margin-top: 10%;
+			.button-box {
+				margin-bottom: 8%;
+				padding: 20px 10px;
 			}
 		}
 	}
