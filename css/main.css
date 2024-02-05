@@ -90,7 +90,6 @@ body .wrapper .card-wrapper .card .stopwatch-page {
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   position: absolute;
@@ -104,6 +103,9 @@ body .wrapper .card-wrapper .card .stopwatch-history-page {
   transition: 0.8s;
   opacity: 0;
   background-image: linear-gradient(340deg, #2a9d8f 20%, #dcf8ef 78%);
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
+  margin-top: 35px;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
   border-radius: 7px;
@@ -508,6 +510,10 @@ body .wrapper .time-date-box .time {
     width: 250px;
     height: 360px;
   }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
+    margin-top: 45px;
+    font-size: 19px;
+  }
   body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
     font-size: 44px;
   }
@@ -619,6 +625,7 @@ body .wrapper .time-date-box .time {
     height: 450px;
   }
   body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
+    margin-top: 55px;
     font-size: 26px;
   }
   body .wrapper .card-wrapper .card .timer-content .timer-box {

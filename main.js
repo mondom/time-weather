@@ -24,7 +24,7 @@ let seconds = 0
 let minutes = 0
 let arrOfTimes = []
 
-let isFunctionExecuting = false
+// let isFunctionExecuting = false
 
 const startCount = () => {
 	clearInterval(count)
@@ -41,7 +41,7 @@ const startCount = () => {
 			seconds = 0
 			stopwatchClock.textContent = `${minutes}:00`
 		}
-	}, 1000)
+	}, 200)
 
 	lastTime.textContent = ''
 }
@@ -58,6 +58,14 @@ const stopCount = () => {
 
 		clearMainDataStopwatch()
 	}
+	const numOfParagraphs = 8
+
+	console.log(arrOfTimes.length);
+
+	if (arrOfTimes.length > numOfParagraphs) {
+		arrOfTimes.splice(0, 1)
+	}
+
 }
 
 const showHistory = () => {
@@ -75,11 +83,7 @@ const showHistory = () => {
 		number++
 	})
 
-	const numOfParagraphs = 8
-
-	if (arrOfTimes.length >= numOfParagraphs) {
-		arrOfTimes.splice(0, 1)
-	}
+	
 }
 
 const hideHistory = () => {
@@ -88,6 +92,8 @@ const hideHistory = () => {
 	stopwatchHistoryPage.style.zIndex = -1
 	stopwatchPage.style.opacity = 1
 	stopwatchPage.style.transform = 'rotate(0)'
+
+	historyList.textContent = ''
 }
 
 const resetStopwatch = () => {

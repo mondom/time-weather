@@ -93,11 +93,12 @@ body {
 					flex-direction: column;
 					width: 100%;
 					height: 100%;
+				
 					transition: 0.8s;
 				}
 				.stopwatch-history-page {
 					display: flex;
-					justify-content: center;
+					// justify-content: center;
 					align-items: center;
 					flex-direction: column;
 					position: absolute;
@@ -111,6 +112,10 @@ body {
 					transition: 0.8s;
 					opacity: 0;
 					background-image: linear-gradient(340deg, $stopwatch-color 20%, #dcf8ef 78%);
+					
+					.history-of-times {
+						margin-top: 35px;
+					}
 					.stopwatch-close-history {
 						border-radius: 7px;
 						border: 2px solid transparent;
@@ -528,12 +533,19 @@ body {
 			.card-wrapper {
 				height: 65%;
 				.card {
+					.stopwatch-history-page {
+						.history-of-times {
+							margin-top: 45px;
+							font-size: 19px;
+						}
+					}
 					.card-box {
 						.stopwatch-clock {
 							font-size: 44px;
 						}
 						.show-last-time {
 							font-size: 20px;
+							
 						}
 						.stopwatch-btn-box {
 							bottom: -5px;
@@ -692,6 +704,7 @@ body {
 					height: 450px;
 					.stopwatch-history-page {
 						.history-of-times {
+							margin-top: 55px;
 							font-size: 26px;
 						}
 					}
