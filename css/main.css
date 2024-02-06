@@ -232,6 +232,12 @@ body .wrapper .card-wrapper .card .card-box .big-button {
   margin-top: 5px;
 }
 body .wrapper .card-wrapper .card .timer-content .event-name {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   margin-top: 8px;
   font-weight: lighter;
   text-align: center;
@@ -528,11 +534,14 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .card .card-box .big-button {
     margin-top: 15px;
   }
+  body .wrapper .card-wrapper .card .timer-content {
+    margin-top: 45px;
+  }
   body .wrapper .card-wrapper .card .timer-content .timer-box {
     margin-top: 25px;
   }
-  body .wrapper .card-wrapper .card .timer-content .timer-btn-box {
-    margin-bottom: -15px;
+  body .wrapper .card-wrapper .card .timer-content .event-name, body .wrapper .card-wrapper .card .timer-content .timer-edit {
+    font-size: 22px;
   }
   body .wrapper .card-wrapper .weather .weather-content .city {
     margin-top: 10px;
@@ -602,6 +611,12 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper {
     height: 60%;
   }
+  body .wrapper .card-wrapper .card .timer-content {
+    margin-top: 45px;
+  }
+  body .wrapper .card-wrapper .card .timer-content .event-name, body .wrapper .card-wrapper .card .timer-content .timer-edit {
+    font-size: 22px;
+  }
   body .wrapper .button-box {
     margin-bottom: 6%;
     padding: 20px;
@@ -632,6 +647,12 @@ body .wrapper .time-date-box .time {
   }
   body .wrapper .card-wrapper .card .timer-content .timer-box {
     margin-top: 35px;
+  }
+  body .wrapper .card-wrapper .card .timer-content .timer-box .count-number {
+    font-size: 27px;
+  }
+  body .wrapper .card-wrapper .card .timer-content .timer-box .time-name {
+    font-size: 20px;
   }
   body .wrapper .card-wrapper .card .title-box {
     height: 100px;
@@ -664,6 +685,9 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .card .card-box .big-button {
     font-size: 22px;
     padding: 7px;
+  }
+  body .wrapper .card-wrapper .card .card-box .event-name {
+    font-size: 28px;
   }
   body .wrapper .card-wrapper .weather .weather-content .city,
   body .wrapper .card-wrapper .weather .weather-content .weather-date {
@@ -707,8 +731,17 @@ body .wrapper .time-date-box .time {
     font-size: 70px;
   }
   body .wrapper .card-wrapper .card .card-box .big-button {
+    font-size: 26px;
+    padding: 5px;
+  }
+  body .wrapper .card-wrapper .card .card-box .event-name {
     font-size: 28px;
-    padding: 7px;
+  }
+  body .wrapper .card-wrapper .card .card-box .timer-box .count-number {
+    font-size: 27px;
+  }
+  body .wrapper .card-wrapper .card .card-box .timer-box .time-name {
+    font-size: 20px;
   }
   body .wrapper .button-box {
     margin-bottom: 7%;

@@ -254,6 +254,12 @@ body {
 
 				.timer-content {
 					.event-name {
+						width: 90%;
+						height: auto;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-wrap: wrap;
 						margin-top: 8px;
 						font-weight: lighter;
 						text-align: center;
@@ -564,12 +570,14 @@ body {
 					width: 250px;
 					height: 360px;
 					.timer-content {
+						margin-top: 45px;
 						.timer-box {
 							margin-top: 25px;
 						}
-						.timer-btn-box {
-							margin-bottom: -15px;
+						.event-name, .timer-edit  {
+							font-size: 22px;
 						}
+						
 					}
 				}
 				.weather {
@@ -673,6 +681,15 @@ body {
 		.wrapper {
 			.card-wrapper {
 				height: 60%;
+				.card {
+					.timer-content {
+						margin-top: 45px;
+						.event-name, .timer-edit  {
+							font-size: 22px;
+						}
+						
+					}
+				}
 			}
 			.button-box {
 				margin-bottom: 6%;
@@ -720,6 +737,12 @@ body {
 					.timer-content {
 						.timer-box {
 							margin-top: 35px;
+							.count-number{
+								font-size: 27px;
+							}
+							.time-name{
+								font-size: 20px;
+							}
 						}
 					}
 
@@ -758,6 +781,10 @@ body {
 							font-size: 22px;
 							padding: 7px;
 						}
+						.event-name {
+							font-size: 28px;
+						}
+						
 					}
 				}
 				.weather {
@@ -821,8 +848,19 @@ body {
 						}
 
 						.big-button {
+							font-size: 26px;
+							padding: 5px;
+						}
+						.event-name {
 							font-size: 28px;
-							padding: 7px;
+						}
+						.timer-box{
+							.count-number{
+								font-size: 27px;
+							}
+							.time-name{
+								font-size: 20px;
+							}
 						}
 					}
 				}
