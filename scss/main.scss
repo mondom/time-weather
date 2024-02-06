@@ -98,7 +98,6 @@ body {
 				.stopwatch-history-page {
 					position: absolute;
 					display: flex;
-
 					align-items: center;
 					flex-direction: column;
 					position: absolute;
@@ -108,11 +107,8 @@ body {
 					right: 0;
 					font-size: 18px;
 					border-radius: 16px;
-
-					// opacity: 0;
 					background-image: linear-gradient(340deg, $stopwatch-color 20%, #dcf8ef 78%);
 					transform: rotateY(180deg);
-					// backface-visibility: hidden;
 
 					.history-of-times {
 						margin-top: 35px;
@@ -255,7 +251,6 @@ body {
 				.timer-content {
 					.event-name {
 						width: 90%;
-						height: auto;
 						display: flex;
 						justify-content: center;
 						align-items: center;
@@ -264,6 +259,7 @@ body {
 						font-weight: lighter;
 						text-align: center;
 					}
+
 					.timer-box {
 						margin-top: 10px;
 						width: 100%;
@@ -419,10 +415,12 @@ body {
 			.popup-timer-header {
 				margin: 20px;
 			}
+			
 			.popup-input-event-name {
 				width: 70%;
 				text-align: center;
 				border: none;
+				font-size: 18px;
 			}
 
 			input {
@@ -574,10 +572,10 @@ body {
 						.timer-box {
 							margin-top: 25px;
 						}
-						.event-name, .timer-edit  {
+						.event-name,
+						.timer-edit {
 							font-size: 22px;
 						}
-						
 					}
 				}
 				.weather {
@@ -684,10 +682,10 @@ body {
 				.card {
 					.timer-content {
 						margin-top: 45px;
-						.event-name, .timer-edit  {
+						.event-name,
+						.timer-edit {
 							font-size: 22px;
 						}
-						
 					}
 				}
 			}
@@ -737,10 +735,10 @@ body {
 					.timer-content {
 						.timer-box {
 							margin-top: 35px;
-							.count-number{
+							.count-number {
 								font-size: 27px;
 							}
-							.time-name{
+							.time-name {
 								font-size: 20px;
 							}
 						}
@@ -784,7 +782,6 @@ body {
 						.event-name {
 							font-size: 28px;
 						}
-						
 					}
 				}
 				.weather {
@@ -854,11 +851,11 @@ body {
 						.event-name {
 							font-size: 28px;
 						}
-						.timer-box{
-							.count-number{
+						.timer-box {
+							.count-number {
 								font-size: 27px;
 							}
-							.time-name{
+							.time-name {
 								font-size: 20px;
 							}
 						}

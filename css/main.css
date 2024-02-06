@@ -233,7 +233,6 @@ body .wrapper .card-wrapper .card .card-box .big-button {
 }
 body .wrapper .card-wrapper .card .timer-content .event-name {
   width: 90%;
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -389,6 +388,9 @@ body .wrapper .timer-popup {
 body .wrapper .timer-popup .popup-timer-header {
   margin: 20px;
 }
+body .wrapper .timer-popup .popup-input-event-name, body .wrapper .timer-popup .popup-date-box {
+  font-size: 18px;
+}
 body .wrapper .timer-popup .popup-input-event-name {
   width: 70%;
   text-align: center;
@@ -540,7 +542,8 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .card .timer-content .timer-box {
     margin-top: 25px;
   }
-  body .wrapper .card-wrapper .card .timer-content .event-name, body .wrapper .card-wrapper .card .timer-content .timer-edit {
+  body .wrapper .card-wrapper .card .timer-content .event-name,
+  body .wrapper .card-wrapper .card .timer-content .timer-edit {
     font-size: 22px;
   }
   body .wrapper .card-wrapper .weather .weather-content .city {
@@ -614,7 +617,8 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .card .timer-content {
     margin-top: 45px;
   }
-  body .wrapper .card-wrapper .card .timer-content .event-name, body .wrapper .card-wrapper .card .timer-content .timer-edit {
+  body .wrapper .card-wrapper .card .timer-content .event-name,
+  body .wrapper .card-wrapper .card .timer-content .timer-edit {
     font-size: 22px;
   }
   body .wrapper .button-box {
