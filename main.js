@@ -60,20 +60,19 @@ const stopCount = () => {
 	}
 	const numOfParagraphs = 8
 
-	console.log(arrOfTimes.length);
+	console.log(arrOfTimes.length)
 
 	if (arrOfTimes.length > numOfParagraphs) {
 		arrOfTimes.splice(0, 1)
 	}
-
 }
 
 const showHistory = () => {
-	stopwatchHistoryPage.style.transform = 'rotate(0)'
-	stopwatchPage.style.transform = 'rotateX(-180deg)'
-	stopwatchHistoryPage.style.opacity = 1
-	stopwatchPage.style.opacity = 0
-	stopwatchHistoryPage.style.zIndex = 1
+	stopwatchCard.style.transform = 'rotateY(180deg)'
+	setTimeout(() => {
+		stopwatchPage.style.opacity = '0'
+		stopwatchHistoryPage.style.opacity = '1'
+	}, 200)
 
 	let number = 1
 	arrOfTimes.forEach(el => {
@@ -82,18 +81,23 @@ const showHistory = () => {
 		historyList.append(time)
 		number++
 	})
-
-	
 }
 
 const hideHistory = () => {
-	stopwatchHistoryPage.style.transform = 'rotateX(-180deg)'
-	stopwatchHistoryPage.style.opacity = 0
-	stopwatchHistoryPage.style.zIndex = -1
-	stopwatchPage.style.opacity = 1
-	stopwatchPage.style.transform = 'rotate(0)'
+	stopwatchCard.style.transform = 'rotateY(0)'
+
+	setTimeout(() => {
+		stopwatchPage.style.opacity = '1'
+		stopwatchHistoryPage.style.opacity = '0'
+	}, 200)
 
 	historyList.textContent = ''
+}
+
+const quickHideHistory = () => {
+	stopwatchCard.style.transform = 'rotateY(0)'
+	stopwatchPage.style.opacity = '1'
+	stopwatchHistoryPage.style.opacity = '0'
 }
 
 const resetStopwatch = () => {
@@ -190,7 +194,6 @@ const showWeatherPopup = () => {
 	weatherPopup.classList.add('show-weather-popup')
 }
 
-
 // api waether
 
 const API_LINK = 'https://api.openweathermap.org/data/2.5/weather?q='
@@ -202,19 +205,18 @@ const API_UNITS = '&units=metric'
 const getCityWeather = () => {
 	let city = weatherInput.value
 	const ADDRESS = API_LINK + city + API_KEY + API_UNITS
-	
+
 	axios.get(ADDRESS).then(res => {
 		const temp = res.data.main.temp
 		const status = res.data.weather[0].main
 
 		nameOfCity.textContent = res.data.name
 
-		
 		currentTemp.textContent = Math.floor(temp) + '°C'
 		currentWeather.textContent = status
 
 		const iconStatus = res.data.weather[0].id
-		
+
 		if (iconStatus >= 200 && iconStatus < 300) {
 			icon.setAttribute('src', './assets/icon/thunderstorm.png')
 		} else if (iconStatus >= 300 && iconStatus < 400) {
@@ -232,7 +234,7 @@ const getCityWeather = () => {
 		} else {
 			icon.setAttribute('src', './assets/icon/unknown.png')
 		}
-		
+
 		console.log(res.data.weather[0].id)
 		weatherPopup.classList.remove('show-weather-popup')
 	})
@@ -250,7 +252,7 @@ const getTimeAndDate = () => {
 	let hours = now.getHours()
 	let minutes = now.getMinutes()
 	let seconds = now.getSeconds()
-	
+
 	if (seconds <= 9 && minutes <= 9) {
 		time.textContent = `${hours} : 0${minutes} : 0${seconds}`
 	} else if (minutes <= 9 && seconds > 9) {
@@ -260,11 +262,11 @@ const getTimeAndDate = () => {
 	} else {
 		time.textContent = `${hours} : ${minutes} : ${seconds}`
 	}
-	
+
 	let day = now.getDate()
 	let month = now.getMonth() + 1
 	let year = now.getFullYear()
-	
+
 	if (month <= 9) {
 		date.textContent = `${day} . 0${month} . ${year}`
 	} else {
