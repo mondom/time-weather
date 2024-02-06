@@ -85,7 +85,6 @@ body {
 				box-shadow: 0 0 12px $shadow-color;
 				overflow: hidden;
 				perspective: 800px;
-				// z-index: 1;
 
 				.stopwatch-page {
 					position: absolute;
@@ -99,7 +98,7 @@ body {
 				.stopwatch-history-page {
 					position: absolute;
 					display: flex;
-					// justify-content: center;
+
 					align-items: center;
 					flex-direction: column;
 					position: absolute;
@@ -109,12 +108,12 @@ body {
 					right: 0;
 					font-size: 18px;
 					border-radius: 16px;
-					
+
 					// opacity: 0;
 					background-image: linear-gradient(340deg, $stopwatch-color 20%, #dcf8ef 78%);
 					transform: rotateY(180deg);
 					// backface-visibility: hidden;
-					
+
 					.history-of-times {
 						margin-top: 35px;
 					}
@@ -191,6 +190,11 @@ body {
 						flex-wrap: wrap;
 						.stopwatch-btn {
 							margin: 5px 2px;
+
+							padding: 5px 11px;
+						}
+						.stopwatch-history,
+						.stopwatch-btn {
 							border-radius: 5px;
 							border: 2px solid transparent;
 							cursor: pointer;
@@ -198,17 +202,9 @@ body {
 							background-color: transparent;
 							transition: background-color 0.3s;
 							box-shadow: 0 0 4px $stopwatch-color;
-							padding: 5px 11px;
 						}
-						.stopwatch-history {
-							width: 70%;
-							font-size: 16px;
-							letter-spacing: 2px;
-							font-family: 'Caveat', cursive;
-							transition: color 0.3s;
-							margin-top: 5px;
-						}
-						.stopwatch-btn:hover {
+						.stopwatch-btn:hover,
+						.stopwatch-history:hover {
 							background-color: $stopwatch-color;
 						}
 						.stopwatch-btn:hover .fa-solid {
@@ -228,16 +224,13 @@ body {
 						bottom: 10px;
 						flex-wrap: wrap;
 						.timer-edit {
-							margin-top: 10px;
-							border-radius: 7px;
+							border-radius: 5px;
 							border: 2px solid transparent;
 							cursor: pointer;
 							box-shadow: 0 0 4px $shadow-color;
 							background-color: transparent;
 							transition: background-color 0.3s;
-							font-size: 16px;
-							font-family: 'Caveat', cursive;
-							padding: 5px 40px;
+
 							box-shadow: 0 0 4px $timer-color;
 							.fa-solid {
 								font-size: 16px;
@@ -248,6 +241,14 @@ body {
 						.timer-edit:hover {
 							background-color: $timer-color;
 						}
+					}
+					.big-button {
+						width: 70%;
+						font-size: 16px;
+						letter-spacing: 2px;
+						font-family: 'Caveat', cursive;
+						transition: color 0.3s;
+						margin-top: 5px;
 					}
 				}
 
@@ -271,7 +272,7 @@ body {
 					}
 				}
 			}
-			.stopwatch{
+			.stopwatch {
 				transform-style: preserve-3d;
 				perspective: 300px;
 				transition: 0.8s;
@@ -350,10 +351,9 @@ body {
 							border-radius: 3px;
 						}
 						.weather-send-btn {
-							padding: 5px 12px;
 							font-family: 'Caveat', cursive;
-							font-size: 16px;
-							border-radius: 8px;
+
+							border-radius: 5px;
 							border: 2px solid transparent;
 							box-shadow: 0 0 6px $weather-color;
 							background-color: #fafafa;
@@ -552,13 +552,13 @@ body {
 						}
 						.show-last-time {
 							font-size: 20px;
-							
 						}
 						.stopwatch-btn-box {
 							bottom: -5px;
-							.stopwatch-history {
-								margin-top: 15px;
-							}
+						}
+
+						.big-button {
+							margin-top: 15px;
 						}
 					}
 					width: 250px;
@@ -634,9 +634,10 @@ body {
 								padding: 8px 13px;
 								font-size: 18px;
 							}
-							.stopwatch-history {
-								margin-top: 15px;
-							}
+						}
+
+						.big-button {
+							margin-top: 15px;
 						}
 					}
 				}
@@ -743,10 +744,6 @@ body {
 							.stopwatch-btn {
 								padding: 5px 15px;
 							}
-							.stopwatch-history {
-								font-size: 22px;
-								padding: 7px;
-							}
 						}
 						.timer-btn-box {
 							margin-bottom: 5px;
@@ -755,6 +752,11 @@ body {
 								font-size: 16px;
 								padding: 7px 20px;
 							}
+						}
+
+						.big-button {
+							font-size: 22px;
+							padding: 7px;
 						}
 					}
 				}
@@ -817,11 +819,10 @@ body {
 						.stopwatch-clock {
 							font-size: 70px;
 						}
-						.stopwatch-btn-box {
-							.stopwatch-history {
-								font-size: 28px;
-								padding: 7px;
-							}
+
+						.big-button {
+							font-size: 28px;
+							padding: 7px;
 						}
 					}
 				}
@@ -864,10 +865,6 @@ body {
 							.stopwatch-btn {
 								padding: 5px 15px;
 							}
-							.stopwatch-history {
-								font-size: 28px;
-								padding: 7px;
-							}
 						}
 
 						.timer-btn-box {
@@ -877,6 +874,11 @@ body {
 								font-size: 16px;
 								padding: 7px 20px;
 							}
+						}
+
+						.big-button {
+							font-size: 28px;
+							padding: 7px;
 						}
 					}
 				}
