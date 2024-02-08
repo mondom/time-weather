@@ -30,11 +30,38 @@ body {
 		justify-content: center;
 		box-shadow: inset 0 0 12px $shadow-color;
 
+		.instruction {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-color: red;
+			z-index: 10;
+			top: -50%;
+			.bookmark {
+				position: absolute;
+				width: 45%;
+				height: 4rem;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				background-color: green;
+				bottom: -2.6rem;
+				z-index: 10;
+				left: 50%;
+				transform: translate(-50%);
+				border-radius: 5px;
+				padding: .4rem;
+				.bookmark-name {
+					font-size: 1.6rem;
+				}
+			}
+		}
+
 		.card-wrapper {
 			position: absolute;
 			width: 85%;
 			height: 60%;
-			margin-top: 2rem;
+			margin-top: 4rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -280,10 +307,8 @@ body {
 								font-weight: bold;
 							}
 							hr {
-								
 								width: 80%;
 								margin: 0 auto;
-								
 							}
 						}
 					}
@@ -459,7 +484,7 @@ body {
 		}
 		.button-box {
 			position: absolute;
-			bottom: 7.3rem;
+			bottom: 6rem;
 			width: 85%;
 			left: 50%;
 			transform: translate(-50%);
