@@ -388,13 +388,12 @@ body .wrapper .timer-popup {
 body .wrapper .timer-popup .popup-timer-header {
   margin: 20px;
 }
-body .wrapper .timer-popup .popup-input-event-name, body .wrapper .timer-popup .popup-date-box {
-  font-size: 18px;
-}
 body .wrapper .timer-popup .popup-input-event-name {
   width: 70%;
   text-align: center;
   border: none;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 body .wrapper .timer-popup input {
   padding: 5px;
@@ -418,12 +417,15 @@ body .wrapper .timer-popup .popup-date-box .input-box {
 }
 body .wrapper .timer-popup .popup-date-box .label-box input,
 body .wrapper .timer-popup .popup-date-box .input-box input {
-  width: 20%;
+  width: 30%;
   text-align: center;
   border: none;
+  font-size: 18px;
+  margin: 5px;
 }
 body .wrapper .timer-popup .timer-save {
   margin-top: 40px;
+  width: 50%;
   font-size: 20px;
   font-family: "Caveat", cursive;
   padding: 5px 12px;
@@ -435,6 +437,11 @@ body .wrapper .timer-popup .timer-save {
 }
 body .wrapper .timer-popup .timer-save:hover {
   background-color: #e9c46a;
+}
+body .wrapper .timer-popup .error {
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+  font-size: 20px;
 }
 body .wrapper .show-timer-popup {
   display: flex;
@@ -626,16 +633,68 @@ body .wrapper .time-date-box .time {
     padding: 20px;
   }
 }
+@media (min-width: 568px) and (orientation: portrait) {
+  body .wrapper {
+    max-width: 700px;
+    height: 90vh;
+  }
+  body .wrapper .timer-popup .popup-input-event-name {
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  body .wrapper .timer-popup .popup-timer-header {
+    font-size: 28px;
+  }
+  body .wrapper .timer-popup .popup-date-box .label-box .popup-label {
+    font-size: 22px;
+  }
+  body .wrapper .timer-popup .popup-date-box .input-box {
+    margin-bottom: 30px;
+  }
+  body .wrapper .timer-popup .popup-date-box .input-box input {
+    font-size: 25px;
+  }
+  body .wrapper .timer-popup .timer-save {
+    width: 30%;
+    padding: 7px 0;
+    font-size: 25px;
+  }
+  body .wrapper .timer-popup .error {
+    margin-top: 30px;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+}
 @media (min-width: 768px) {
   body .wrapper {
     max-width: 700px;
     height: 90vh;
   }
   body .wrapper .timer-popup .popup-input-event-name {
-    font-size: 20px;
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  body .wrapper .timer-popup .popup-timer-header {
+    font-size: 28px;
+  }
+  body .wrapper .timer-popup .popup-date-box .label-box .popup-label {
+    font-size: 22px;
+  }
+  body .wrapper .timer-popup .popup-date-box .input-box {
+    margin-bottom: 30px;
   }
   body .wrapper .timer-popup .popup-date-box .input-box input {
-    font-size: 20px;
+    font-size: 25px;
+  }
+  body .wrapper .timer-popup .timer-save {
+    width: 30%;
+    padding: 7px 0;
+    font-size: 25px;
+  }
+  body .wrapper .timer-popup .error {
+    margin-top: 30px;
+    letter-spacing: 1px;
+    font-size: 30px;
   }
   body .wrapper .card-wrapper {
     width: 80%;

@@ -136,12 +136,14 @@ const hoursCountdown = document.querySelector('.countdown-hours')
 const minutesCountdown = document.querySelector('.countdown-minutes')
 const secondsCountdown = document.querySelector('.countdown-seconds')
 const eventName = document.querySelector('.event-name')
+const error = document.querySelector('.error')
 
 let userTime
+let presenTime
 
 const getTime = () => {
-	const presenTime = new Date()
-	const score = userTime - presenTime
+	presenTime = new Date()
+	let score = userTime - presenTime
 
 	const timerDays = Math.floor(score / 1000 / 60 / 60 / 24)
 	const timerHours = Math.floor(score / 1000 / 60 / 60) % 24
@@ -155,9 +157,25 @@ const getTime = () => {
 }
 
 const dataUpdate = () => {
-	eventName.textContent = popupEventName.value
-	userTime = new Date(`${popupInputMonth.value} ${popupInputDay.value} ${popupInputYear.value}`)
-	getTime()
+	if (
+		popupEventName.value === '' ||
+		popupInputDay.value === '' ||
+		popupInputMonth.value === '' ||
+		popupInputYear.value === ''
+	) {
+		error.textContent = 'Enter all data!'
+		console.log(error)
+	} else if (userTime < presenTime) {
+		error.textContent = 'Enter the date yet to come!'
+	} else {
+		eventName.textContent = popupEventName.value
+		userTime = new Date(`${popupInputMonth.value} ${popupInputDay.value} ${popupInputYear.value}`)
+		error.textContent = ''
+		getTime()
+		closePopup()
+		console.log(userTime)
+		console.log(presenTime)
+	}
 }
 
 const closePopup = () => {
@@ -169,11 +187,15 @@ const showPopup = () => {
 	popup.classList.add('show-timer-popup')
 }
 
+const resetInputsValue = () => {
+	popupEventName.value = ''
+	popupInputDay.value = ''
+	popupInputMonth.value = ''
+	popupInputYear.value = ''
+}
+
 timerEditBtn.addEventListener('click', showPopup)
-timerSaveBtn.addEventListener('click', () => {
-	dataUpdate()
-	closePopup()
-})
+timerSaveBtn.addEventListener('click', dataUpdate)
 
 dataUpdate()
 setInterval(getTime, 1000)

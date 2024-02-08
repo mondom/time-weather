@@ -415,12 +415,13 @@ body {
 			.popup-timer-header {
 				margin: 20px;
 			}
-			
+
 			.popup-input-event-name {
 				width: 70%;
 				text-align: center;
 				border: none;
 				font-size: 18px;
+				margin-bottom: 20px;
 			}
 
 			input {
@@ -445,18 +446,26 @@ body {
 					justify-content: space-around;
 
 					input {
-						width: 20%;
+						width: 30%;
 						text-align: center;
 						border: none;
+						font-size: 18px;
+						margin: 5px;
 					}
 				}
 			}
 			.timer-save {
 				margin-top: 40px;
+				width: 50%;
 				@include timer-button;
 			}
 			.timer-save:hover {
 				background-color: $timer-color;
+			}
+			.error {
+				margin-top: 20px;
+				letter-spacing: 0.5px;
+				font-size: 20px;
 			}
 		}
 		.show-timer-popup {
@@ -697,6 +706,50 @@ body {
 	}
 }
 
+@media (min-width: 568px) and (orientation: portrait){
+	body {
+		.wrapper {
+			max-width: 700px;
+			height: 90vh;
+
+			.timer-popup {
+				.popup-input-event-name {
+					font-size: 25px;
+					margin-bottom: 30px;
+				}
+				.popup-timer-header {
+					font-size: 28px;
+				}
+
+				.popup-date-box {
+					.label-box {
+						.popup-label {
+							font-size: 22px;
+						}
+					}
+					.input-box {
+						margin-bottom: 30px;
+						input {
+							font-size: 25px;
+						}
+					}
+				}
+				.timer-save {
+					width: 30%;
+					padding: 7px 0;
+					font-size: 25px;
+				}
+				.error {
+					margin-top: 30px;
+					letter-spacing: 1px;
+					font-size: 30px;
+				}
+			}
+		
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	body {
 		.wrapper {
@@ -705,15 +758,35 @@ body {
 
 			.timer-popup {
 				.popup-input-event-name {
-					font-size: 20px;
+					font-size: 25px;
+					margin-bottom: 30px;
+				}
+				.popup-timer-header {
+					font-size: 28px;
 				}
 
 				.popup-date-box {
-					.input-box {
-						input {
-							font-size: 20px;
+					.label-box {
+						.popup-label {
+							font-size: 22px;
 						}
 					}
+					.input-box {
+						margin-bottom: 30px;
+						input {
+							font-size: 25px;
+						}
+					}
+				}
+				.timer-save {
+					width: 30%;
+					padding: 7px 0;
+					font-size: 25px;
+				}
+				.error {
+					margin-top: 30px;
+					letter-spacing: 1px;
+					font-size: 30px;
 				}
 			}
 
