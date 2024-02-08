@@ -21,8 +21,7 @@
         <div class="timer-popup">
 
             <h2 class="popup-timer-header">Enter a name for the event:</h2>
-            <input type="text" id="timer-name" class="popup-input-event-name" maxlength="40"
-                value="Your event name">
+            <input type="text" id="timer-name" class="popup-input-event-name" maxlength="40" value="Your event name">
             <h2 class="popup-timer-header">Enter date:</h2>
 
             <div class="popup-date-box">
@@ -85,7 +84,7 @@
 
             </div>
 
-            <div class="timer card">
+            <div class="timer card ">
                 <div class="timer-title-box title-box">
                     <h2 class="title timer-title">timer</h2>
                 </div>
@@ -97,21 +96,25 @@
 
 
                     <div class="timer-box">
-                        <div class="timer-days">
+                        <div class="timer-days small-box">
                             <p class="countdown-days count-number"></p>
+                            <hr>
                             <p class="days-title time-name">days</p>
                         </div>
 
-                        <div class="timer-hours">
+                        <div class="timer-hours small-box">
                             <p class="countdown-hours count-number"></p>
+                            <hr>
                             <p class="hours-title time-name">hours</p>
                         </div>
-                        <div class="timer-minutes">
+                        <div class="timer-minutes small-box">
                             <p class="countdown-minutes count-number"></p>
+                            <hr>
                             <p class="minutes-title time-name">minutes</p>
                         </div>
-                        <div class="timer-seconds">
+                        <div class="timer-seconds small-box">
                             <p class="countdown-seconds count-number"></p>
+                            <hr>
                             <p class="seconds-title time-name">seconds</p>
                         </div>
 
@@ -137,7 +140,7 @@
                         <h3 class="popup-weather-header">Enter city name</h3>
                         <input type="text" id="weather-city" class="input-city-name" maxlength="40" value="London">
 
-                        <button class="weather-send-btn big-button ">Send</button>
+                        <button class="weather-send-btn big-button" onclick="closeWeatherPopup()">Send</button>
 
                     </div>
 
@@ -154,8 +157,8 @@
                             <p class="current-weather"></p>
                             <p class="current-temperature"></p>
                         </div>
-
                     </div>
+
                     <img src="./assets/icon/thunderstorm.png" alt="Obrazek przedstawiający pogodę" class="weather-icon">
                 </div>
 
@@ -168,7 +171,7 @@
         <div class="button-box">
             <button class="show-stopwatch-btn show-card-bth" onclick="quickHideHistory()">stopwatch</button>
             <button class="show-timer-btn show-card-bth">timer</button>
-            <button class="show-weather-btn show-card-bth">weather</button>
+            <button class="show-weather-btn show-card-bth" onclick="openWeatherPopup()">weather</button>
         </div>
 
         <div class="time-date-box">

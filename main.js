@@ -173,8 +173,6 @@ const dataUpdate = () => {
 		error.textContent = ''
 		getTime()
 		closePopup()
-		console.log(userTime)
-		console.log(presenTime)
 	}
 }
 
@@ -258,9 +256,18 @@ const getCityWeather = () => {
 		}
 
 		console.log(res.data.weather[0].id)
-		weatherPopup.classList.remove('show-weather-popup')
 	})
 }
+
+const closeWeatherPopup = () => {
+	weatherPopup.style.display = 'none'
+}
+
+const openWeatherPopup = () => {
+	weatherPopup.style.display = 'flex'
+}
+
+
 
 getCityWeather()
 weatherSendBtn.addEventListener('click', getCityWeather)

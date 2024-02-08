@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+:root {
+  font-size: 62.5%;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -26,9 +30,9 @@ body .wrapper {
 }
 body .wrapper .card-wrapper {
   position: absolute;
-  width: 80%;
+  width: 85%;
   height: 60%;
-  margin-top: 30px;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +47,7 @@ body .wrapper .card-wrapper .app-title-box {
   background-color: #fafafa;
 }
 body .wrapper .card-wrapper .app-title-box .app-title {
-  font-size: 35px;
+  font-size: 3.5rem;
   font-weight: lighter;
   letter-spacing: 1px;
 }
@@ -72,12 +76,11 @@ body .wrapper .card-wrapper .card {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 200px;
-  height: 300px;
+  width: 85%;
+  height: 90%;
   border-radius: 16px;
   box-shadow: 0 0 12px #a0a0a0;
   overflow: hidden;
-  perspective: 800px;
 }
 body .wrapper .card-wrapper .card .stopwatch-page {
   position: absolute;
@@ -98,13 +101,13 @@ body .wrapper .card-wrapper .card .stopwatch-history-page {
   left: 0;
   bottom: 0;
   right: 0;
-  font-size: 18px;
+  font-size: 1.8rem;
   border-radius: 16px;
   background-image: linear-gradient(340deg, #2a9d8f 20%, #dcf8ef 78%);
   transform: rotateY(180deg);
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
-  margin-top: 35px;
+  margin-top: 3.5rem;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
   border-radius: 7px;
@@ -113,14 +116,14 @@ body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-histo
   box-shadow: 0 0 4px #a0a0a0;
   background-color: #fafafa;
   transition: background-color 0.3s;
-  padding: 8px 15px;
-  font-size: 16px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.6rem;
   letter-spacing: 2px;
   font-family: "Caveat", cursive;
   transition: color 0.3s;
-  margin-top: 5px;
+  margin-top: 0.5rem;
   position: absolute;
-  bottom: 25px;
+  bottom: 2.5rem;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history:hover {
   background-color: #dcf8ef;
@@ -128,13 +131,14 @@ body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-histo
 }
 body .wrapper .card-wrapper .card .title-box {
   width: 100%;
-  height: 95px;
+  box-shadow: 0 0 12px #a0a0a0;
 }
 body .wrapper .card-wrapper .card .title-box .title {
   text-align: center;
   letter-spacing: 2px;
-  margin: 20px 0;
-  font-size: 25px;
+  margin: 2rem 0;
+  font-size: 3.3rem;
+  font-weight: lighter;
 }
 body .wrapper .card-wrapper .card .stopwatch-title-box {
   background-color: #2a9d8f;
@@ -150,18 +154,21 @@ body .wrapper .card-wrapper .card .card-box {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 25px;
+  margin-top: 2.5rem;
   width: 90%;
   height: 60%;
   background-color: #fafafa;
   z-index: 1;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
-  margin-top: 17px;
-  font-size: 35px;
+  margin-top: 1.7rem;
+  font-size: 4rem;
+}
+body .wrapper .card-wrapper .card .card-box .show-last-time {
+  font-size: 1.8rem;
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box {
-  bottom: 15px;
+  bottom: 1.5rem;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
   position: absolute;
@@ -170,12 +177,15 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
   align-items: center;
   width: 100%;
   height: 40%;
-  bottom: 15px;
+  bottom: 1rem;
   flex-wrap: wrap;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
-  margin: 5px 2px;
-  padding: 5px 11px;
+  margin: 0.5rem 0.2rem;
+  padding: 0.5rem 1.1rem;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
+  margin-top: 0.8rem;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history,
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
@@ -199,37 +209,32 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-histor
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   position: absolute;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  text-align: center;
   width: 100%;
-  height: 40%;
-  bottom: 10px;
-  flex-wrap: wrap;
+  bottom: 1rem;
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-edit {
   border-radius: 5px;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 0 4px #a0a0a0;
   background-color: transparent;
   transition: background-color 0.3s;
   box-shadow: 0 0 4px #e9c46a;
-}
-body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-edit .fa-solid {
-  font-size: 16px;
-  transition: color 0.3s;
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-edit:hover {
   background-color: #e9c46a;
 }
 body .wrapper .card-wrapper .card .card-box .big-button {
-  width: 70%;
-  font-size: 16px;
+  width: 60%;
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0;
   letter-spacing: 2px;
   font-family: "Caveat", cursive;
   transition: color 0.3s;
-  margin-top: 5px;
+}
+body .wrapper .card-wrapper .card .timer-content {
+  width: 100%;
 }
 body .wrapper .card-wrapper .card .timer-content .event-name {
   width: 90%;
@@ -237,62 +242,38 @@ body .wrapper .card-wrapper .card .timer-content .event-name {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 8px;
+  font-size: 2rem;
+  margin-top: 1.5rem;
   font-weight: lighter;
   text-align: center;
 }
 body .wrapper .card-wrapper .card .timer-content .timer-box {
-  margin-top: 10px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  padding: 0.4rem;
 }
-body .wrapper .card-wrapper .card .timer-content .timer-box .count-number {
+body .wrapper .card-wrapper .card .timer-content .timer-box .small-box {
+  padding: 0.2rem 0.3rem;
+  width: 23%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   text-align: center;
-  font-size: 20px;
+  border-radius: 5px;
+}
+body .wrapper .card-wrapper .card .timer-content .timer-box .small-box .count-number {
+  font-size: 2rem;
   font-weight: bold;
+}
+body .wrapper .card-wrapper .card .timer-content .timer-box .small-box hr {
+  width: 80%;
+  margin: 0 auto;
 }
 body .wrapper .card-wrapper .stopwatch {
   transform-style: preserve-3d;
   perspective: 300px;
   transition: 0.8s;
-}
-body .wrapper .card-wrapper .title-box:before {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 100%;
-  width: 100%;
-  height: 300px;
-  background-color: #fafafa;
-  right: -25%;
-  top: 75px;
-  z-index: 0;
-}
-body .wrapper .card-wrapper .title-box:after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 100%;
-  width: 100%;
-  height: 300px;
-  left: -25%;
-  top: -184.2px;
-  -webkit-clip-path: ellipse(100% 30% at -18% 100%);
-          clip-path: ellipse(100% 30% at -18% 100%);
-  z-index: 0;
-}
-body .wrapper .card-wrapper .stopwatch-title-box:after {
-  background-color: #2a9d8f;
-}
-body .wrapper .card-wrapper .timer-title-box:after {
-  background-color: #e9c46a;
-}
-body .wrapper .card-wrapper .weather-title-box:after {
-  background-color: #e76f51;
-  background-color: #e76f51;
-  background-color: #e76f51;
 }
 body .wrapper .card-wrapper .hide-card {
   display: none;
@@ -301,29 +282,31 @@ body .wrapper .card-wrapper .weather .weather-content {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 body .wrapper .card-wrapper .weather .weather-content .weather-popup {
   position: absolute;
+  display: flex;
+  justify-content: space-around;
   width: 100%;
   height: 100%;
-  display: none;
   left: 0;
   bottom: 0;
-  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   background-color: #fafafa;
 }
+body .wrapper .card-wrapper .weather .weather-content .weather-popup .popup-weather-header {
+  font-size: 2rem;
+}
 body .wrapper .card-wrapper .weather .weather-content .weather-popup .input-city-name {
-  padding: 5px;
+  padding: 0.5rem;
   font-family: "Caveat", cursive;
   border: none;
   border-bottom: 2px solid #e76f51;
   background-color: #fafafa;
   width: 60%;
   text-align: center;
-  font-size: 16px;
+  font-size: 1.7rem;
 }
 body .wrapper .card-wrapper .weather .weather-content .weather-popup .input-city-name:focus {
   outline: none;
@@ -343,19 +326,16 @@ body .wrapper .card-wrapper .weather .weather-content .weather-popup .weather-se
   color: white;
 }
 body .wrapper .card-wrapper .weather .weather-content .city {
-  font-size: 18px;
+  font-size: 2rem;
   font-weight: bolder;
-}
-body .wrapper .card-wrapper .weather .weather-content .weather {
-  font-size: 16px;
-}
-body .wrapper .card-wrapper .weather .weather-content .city {
+  margin-bottom: 1rem;
   margin-top: 7px;
 }
 body .wrapper .card-wrapper .weather .weather-content .weather-box {
   display: flex;
-  margin-top: 5px;
   width: 80%;
+  font-size: 1.8rem;
+  margin-top: 5px;
 }
 body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-headings,
 body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-info {
@@ -366,11 +346,8 @@ body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-info
   justify-content: center;
 }
 body .wrapper .card-wrapper .weather .weather-content .weather-icon {
-  margin-top: 5px;
-  width: 35px;
-}
-body .wrapper .card-wrapper .weather .weather-content .show-weather-popup {
-  display: flex;
+  margin-top: 2.5rem;
+  width: 50px;
 }
 body .wrapper .timer-popup {
   position: absolute;
@@ -386,17 +363,20 @@ body .wrapper .timer-popup {
   color: rgb(249, 246, 246);
 }
 body .wrapper .timer-popup .popup-timer-header {
-  margin: 20px;
+  margin: 2rem;
+  font-size: 2.2rem;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+  letter-spacing: 1px;
 }
 body .wrapper .timer-popup .popup-input-event-name {
   width: 70%;
   text-align: center;
   border: none;
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 body .wrapper .timer-popup input {
-  padding: 5px;
+  padding: 0.5rem;
   border-radius: 5px;
   font-family: "Caveat", cursive;
 }
@@ -409,6 +389,9 @@ body .wrapper .timer-popup .popup-date-box {
   align-items: center;
   flex-direction: column;
 }
+body .wrapper .timer-popup .popup-date-box .label-box .popup-label {
+  font-size: 1.6rem;
+}
 body .wrapper .timer-popup .popup-date-box .label-box,
 body .wrapper .timer-popup .popup-date-box .input-box {
   width: 100%;
@@ -420,12 +403,12 @@ body .wrapper .timer-popup .popup-date-box .input-box input {
   width: 30%;
   text-align: center;
   border: none;
-  font-size: 18px;
-  margin: 5px;
+  font-size: 1.8rem;
+  margin: 0.5rem;
 }
 body .wrapper .timer-popup .timer-save {
   margin-top: 40px;
-  width: 50%;
+  width: 30%;
   font-size: 20px;
   font-family: "Caveat", cursive;
   padding: 5px 12px;
@@ -434,56 +417,54 @@ body .wrapper .timer-popup .timer-save {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-shadow: inset 0 0 4px #e9c46a;
 }
 body .wrapper .timer-popup .timer-save:hover {
   background-color: #e9c46a;
 }
 body .wrapper .timer-popup .error {
-  margin-top: 20px;
+  margin-top: 2rem;
   letter-spacing: 0.5px;
-  font-size: 20px;
+  font-size: 2rem;
 }
 body .wrapper .show-timer-popup {
   display: flex;
 }
 body .wrapper .button-box {
   position: absolute;
-  bottom: 70px;
+  bottom: 7.3rem;
+  width: 85%;
   left: 50%;
-  width: 80%;
   transform: translate(-50%);
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   background-color: #fafafa;
-  padding: 7px;
-  box-shadow: 0 0 12px #a0a0a0;
-  border-radius: 20px;
+  padding: 0.7rem;
+  box-shadow: 0 0 1rem #a0a0a0;
+  border-radius: 15px;
 }
 body .wrapper .button-box .show-card-bth {
-  font-size: 16px;
-  margin: 5px;
+  font-size: 2rem;
+  margin: 0.5rem;
   font-family: "Caveat", cursive;
-  padding: 7px;
+  padding: 0.5rem 0;
   border-radius: 8px;
   border: 2px solid transparent;
-  width: 90px;
+  width: 40%;
   background: transparent;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 body .wrapper .button-box .show-stopwatch-btn {
   box-shadow: 0 0 5px #2a9d8f;
-  animation: stopwatch-pulse 2s infinite;
 }
 body .wrapper .button-box .show-timer-btn {
   box-shadow: 0 0 6px #e9c46a;
-  animation: timer-pulse 2s infinite;
 }
 body .wrapper .button-box .show-weather-btn {
   box-shadow: 0 0 6px #e76f51;
-  animation: weather-pulse 2s infinite;
 }
 body .wrapper .button-box .show-stopwatch-btn:hover {
   background-color: #2a9d8f;
@@ -499,375 +480,26 @@ body .wrapper .button-box .show-weather-btn:hover {
 body .wrapper .time-date-box {
   position: absolute;
   width: 100%;
-  height: 50px;
-  bottom: 0;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 0;
+  font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.55);
   color: #fff;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  font-size: 20px;
   text-shadow: 0 0 5px rgb(0, 0, 0);
 }
 body .wrapper .time-date-box .clock-name,
 body .wrapper .time-date-box .date-name {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 body .wrapper .time-date-box .time {
-  margin-right: 35px;
+  margin-right: 3.5rem;
 }
 
-@media (min-width: 375px) {
-  body .wrapper .card-wrapper {
-    height: 65%;
-  }
-  body .wrapper .card-wrapper .card {
-    width: 250px;
-    height: 360px;
-  }
-  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
-    margin-top: 45px;
-    font-size: 19px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
-    font-size: 44px;
-  }
-  body .wrapper .card-wrapper .card .card-box .show-last-time {
-    font-size: 20px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
-    bottom: -5px;
-  }
-  body .wrapper .card-wrapper .card .card-box .big-button {
-    margin-top: 15px;
-  }
-  body .wrapper .card-wrapper .card .timer-content {
-    margin-top: 45px;
-  }
-  body .wrapper .card-wrapper .card .timer-content .timer-box {
-    margin-top: 25px;
-  }
-  body .wrapper .card-wrapper .card .timer-content .event-name,
-  body .wrapper .card-wrapper .card .timer-content .timer-edit {
-    font-size: 22px;
-  }
-  body .wrapper .card-wrapper .weather .weather-content .city {
-    margin-top: 10px;
-  }
-  body .wrapper .card-wrapper .weather .weather-content .weather-box {
-    margin-top: 10px;
-  }
-  body .wrapper .card-wrapper .weather .weather-content .weather-icon {
-    margin-top: 30px;
-    width: 65px;
-  }
-}
-@media (min-width: 414px) {
-  body .wrapper .timer-popup .popup-input-event-name {
-    font-size: 16px;
-  }
-  body .wrapper .timer-popup .popup-date-box .input-box input {
-    font-size: 16px;
-  }
-  body .wrapper .card-wrapper .card {
-    width: 260px;
-    height: 390px;
-  }
-  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
-    font-size: 20px;
-  }
-  body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
-    width: 75%;
-    font-size: 22px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
-    font-size: 52px;
-  }
-  body .wrapper .card-wrapper .card .card-box .show-last-time {
-    font-size: 22px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
-    padding: 8px 13px;
-    font-size: 18px;
-  }
-  body .wrapper .card-wrapper .card .card-box .big-button {
-    margin-top: 15px;
-  }
-  body .wrapper .card-wrapper .weather .weather-content {
-    margin-top: 30px;
-  }
-  body .wrapper .card-wrapper .weather .weather-content .weather-icon {
-    margin-top: 32px;
-    width: 70px;
-  }
-  body .wrapper .button-box {
-    margin-bottom: 5px;
-    width: 78%;
-  }
-  body .wrapper .button-box .show-card-bth {
-    width: 120px;
-    padding: 10px;
-    margin: 7px;
-    font-size: 20px;
-  }
-}
-@media (min-width: 568px) and (orientation: landscape) {
-  body {
-    height: 750px;
-    overflow: scroll;
-  }
-  body .wrapper .card-wrapper {
-    height: 60%;
-  }
-  body .wrapper .card-wrapper .card .timer-content {
-    margin-top: 45px;
-  }
-  body .wrapper .card-wrapper .card .timer-content .event-name,
-  body .wrapper .card-wrapper .card .timer-content .timer-edit {
-    font-size: 22px;
-  }
-  body .wrapper .button-box {
-    margin-bottom: 6%;
-    padding: 20px;
-  }
-}
-@media (min-width: 568px) and (orientation: portrait) {
-  body .wrapper {
-    max-width: 700px;
-    height: 90vh;
-  }
-  body .wrapper .timer-popup .popup-input-event-name {
-    font-size: 25px;
-    margin-bottom: 30px;
-  }
-  body .wrapper .timer-popup .popup-timer-header {
-    font-size: 28px;
-  }
-  body .wrapper .timer-popup .popup-date-box .label-box .popup-label {
-    font-size: 22px;
-  }
-  body .wrapper .timer-popup .popup-date-box .input-box {
-    margin-bottom: 30px;
-  }
-  body .wrapper .timer-popup .popup-date-box .input-box input {
-    font-size: 25px;
-  }
-  body .wrapper .timer-popup .timer-save {
-    width: 30%;
-    padding: 7px 0;
-    font-size: 25px;
-  }
-  body .wrapper .timer-popup .error {
-    margin-top: 30px;
-    letter-spacing: 1px;
-    font-size: 30px;
-  }
-}
-@media (min-width: 768px) {
-  body .wrapper {
-    max-width: 700px;
-    height: 90vh;
-  }
-  body .wrapper .timer-popup .popup-input-event-name {
-    font-size: 25px;
-    margin-bottom: 30px;
-  }
-  body .wrapper .timer-popup .popup-timer-header {
-    font-size: 28px;
-  }
-  body .wrapper .timer-popup .popup-date-box .label-box .popup-label {
-    font-size: 22px;
-  }
-  body .wrapper .timer-popup .popup-date-box .input-box {
-    margin-bottom: 30px;
-  }
-  body .wrapper .timer-popup .popup-date-box .input-box input {
-    font-size: 25px;
-  }
-  body .wrapper .timer-popup .timer-save {
-    width: 30%;
-    padding: 7px 0;
-    font-size: 25px;
-  }
-  body .wrapper .timer-popup .error {
-    margin-top: 30px;
-    letter-spacing: 1px;
-    font-size: 30px;
-  }
-  body .wrapper .card-wrapper {
-    width: 80%;
-    margin-top: 50px;
-  }
-  body .wrapper .card-wrapper .card {
-    width: 320px;
-    height: 450px;
-  }
-  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
-    margin-top: 55px;
-    font-size: 26px;
-  }
-  body .wrapper .card-wrapper .card .timer-content .timer-box {
-    margin-top: 35px;
-  }
-  body .wrapper .card-wrapper .card .timer-content .timer-box .count-number {
-    font-size: 27px;
-  }
-  body .wrapper .card-wrapper .card .timer-content .timer-box .time-name {
-    font-size: 20px;
-  }
-  body .wrapper .card-wrapper .card .title-box {
-    height: 100px;
-  }
-  body .wrapper .card-wrapper .card .title-box .title {
-    font-size: 27px;
-  }
-  body .wrapper .card-wrapper .card .card-box {
-    height: 70%;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
-    font-size: 60px;
-  }
-  body .wrapper .card-wrapper .card .card-box .show-last-time {
-    font-size: 25px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
-    margin-bottom: 25px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
-    padding: 5px 15px;
-  }
-  body .wrapper .card-wrapper .card .card-box .timer-btn-box {
-    margin-bottom: 5px;
-  }
-  body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-btn {
-    font-size: 16px;
-    padding: 7px 20px;
-  }
-  body .wrapper .card-wrapper .card .card-box .big-button {
-    font-size: 22px;
-    padding: 7px;
-  }
-  body .wrapper .card-wrapper .card .card-box .event-name {
-    font-size: 28px;
-  }
-  body .wrapper .card-wrapper .weather .weather-content .city,
-  body .wrapper .card-wrapper .weather .weather-content .weather-date {
-    font-size: 22px;
-  }
-  body .wrapper .card-wrapper .weather .weather-content .weather-icon {
-    margin-top: 20px;
-    width: 85px;
-  }
-  body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-headings p,
-  body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-info p {
-    line-height: 25px;
-  }
-  body .wrapper .button-box {
-    margin-bottom: 5%;
-    padding: 16px;
-  }
-  body .wrapper .button-box .show-card-bth {
-    font-size: 26px;
-    margin: 10px;
-    padding: 10px 5px;
-    width: 150px;
-  }
-  body .wrapper .time-date-box {
-    height: 70px;
-    font-size: 25px;
-  }
-}
-@media (min-width: 1024px) and (orientation: landscape) {
-  body {
-    height: 850px;
-  }
-  body .wrapper {
-    margin-top: 10%;
-    height: 100%;
-  }
-  body .wrapper .card-wrapper .card .title-box .title {
-    font-size: 35px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
-    font-size: 70px;
-  }
-  body .wrapper .card-wrapper .card .card-box .big-button {
-    font-size: 26px;
-    padding: 5px;
-  }
-  body .wrapper .card-wrapper .card .card-box .event-name {
-    font-size: 28px;
-  }
-  body .wrapper .card-wrapper .card .card-box .timer-box .count-number {
-    font-size: 27px;
-  }
-  body .wrapper .card-wrapper .card .card-box .timer-box .time-name {
-    font-size: 20px;
-  }
-  body .wrapper .button-box {
-    margin-bottom: 7%;
-    padding: 16px;
-  }
-  body .wrapper .button-box .show-card-bth {
-    font-size: 26px;
-    margin: 10px;
-    padding: 10px 5px;
-    width: 150px;
-  }
-}
-@media (min-width: 1024px) and (orientation: portrait) {
-  body .wrapper {
-    height: 75%;
-  }
-  body .wrapper .card-wrapper .card {
-    width: 330px;
-    height: 450px;
-  }
-  body .wrapper .card-wrapper .card .title-box .title {
-    font-size: 35px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
-    font-size: 70px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
-    margin-bottom: 25px;
-  }
-  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
-    padding: 5px 15px;
-  }
-  body .wrapper .card-wrapper .card .card-box .timer-btn-box {
-    margin-bottom: 5px;
-  }
-  body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-btn {
-    font-size: 16px;
-    padding: 7px 20px;
-  }
-  body .wrapper .card-wrapper .card .card-box .big-button {
-    font-size: 28px;
-    padding: 7px;
-  }
-  body .wrapper .button-box {
-    margin-bottom: 9%;
-    padding: 16px;
-  }
-  body .wrapper .button-box .show-card-bth {
-    font-size: 28px;
-    margin: 10px;
-    padding: 10px 5px;
-    width: 150px;
-  }
-}
-@media (min-width: 1366px) and (orientation: landscape) {
-  body .wrapper {
-    margin-top: 10%;
-  }
-  body .wrapper .button-box {
-    margin-bottom: 8%;
-    padding: 20px 10px;
-  }
-}
 @keyframes red-dot {
   0% {
     opacity: 0;
@@ -892,38 +524,5 @@ body .wrapper .time-date-box .time {
   }
   100% {
     opacity: 0;
-  }
-}
-@keyframes stopwatch-pulse {
-  0% {
-    box-shadow: 0 0 5px #2a9d8f;
-  }
-  50% {
-    box-shadow: 0 0 10px #2a9d8f;
-  }
-  100% {
-    box-shadow: 0 0 5px #2a9d8f;
-  }
-}
-@keyframes timer-pulse {
-  0% {
-    box-shadow: 0 0 5px #e9c46a;
-  }
-  50% {
-    box-shadow: 0 0 10px #e9c46a;
-  }
-  100% {
-    box-shadow: 0 0 5px #e9c46a;
-  }
-}
-@keyframes weather-pulse {
-  0% {
-    box-shadow: 0 0 5px #e76f51;
-  }
-  50% {
-    box-shadow: 0 0 10px #e76f51;
-  }
-  100% {
-    box-shadow: 0 0 5px #e76f51;
   }
 }/*# sourceMappingURL=main.css.map */
