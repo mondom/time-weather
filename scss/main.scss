@@ -14,103 +14,104 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: 'Caveat', cursive;
+	font-family: 'Raleway', sans-serif;
 	color: $font-color;
 	background-color: #f4f4f4;
 	height: 100vh;
 	overflow: hidden;
-
+	color: #fafafa;
 	.wrapper {
 		position: relative;
 		width: 100%;
 		height: 100%;
-		background-color: #e2e2e2;
-		border-radius: 20px;
+		// background-color: #e2e2e2;
+		// border-radius: 20px;
 		display: flex;
 		justify-content: center;
-		box-shadow: inset 0 0 12px $shadow-color;
 
-		.instruction {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			background-color: red;
-			z-index: 10;
-			top: -50%;
-			.bookmark {
-				position: absolute;
-				width: 45%;
-				height: 4rem;
-				display: flex;
-				justify-content: center;
-				align-items: flex-end;
-				background-color: green;
-				bottom: -2.6rem;
-				z-index: 10;
-				left: 50%;
-				transform: translate(-50%);
-				border-radius: 5px;
-				padding: .4rem;
-				.bookmark-name {
-					font-size: 1.6rem;
-				}
-			}
-		}
+		// box-shadow: inset 0 0 12px $shadow-color;
+
+		// .instruction {
+		// 	position: relative;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background-color: red;
+		// 	z-index: 10;
+		// 	top: -50%;
+		// 	.bookmark {
+		// 		position: absolute;
+		// 		width: 45%;
+		// 		height: 4rem;
+		// 		display: flex;
+		// 		justify-content: center;
+		// 		align-items: flex-end;
+		// 		background-color: green;
+		// 		bottom: -2.6rem;
+		// 		z-index: 10;
+		// 		left: 50%;
+		// 		transform: translate(-50%);
+		// 		border-radius: 5px;
+		// 		padding: .4rem;
+		// 		.bookmark-name {
+		// 			font-size: 1.6rem;
+		// 		}
+		// 	}
+		// }
 
 		.card-wrapper {
 			position: absolute;
-			width: 85%;
-			height: 60%;
-			margin-top: 4rem;
+			width: 100%;
+			height: 95%;
 			display: flex;
 			justify-content: center;
-			align-items: center;
-			background-color: #fafafa;
-			border-radius: 20px;
-			box-shadow: 0 0 12px $shadow-color;
+			// align-items: center;
+			// border-radius: 20px;
+			// box-shadow: 0 0 12px $shadow-color;
 			z-index: 0;
 
-			.app-title-box {
-				position: relative;
-				border-radius: 20px;
-				background-color: #fafafa;
+			// .app-title-box {
+			// 	position: relative;
+			// 	border-radius: 20px;
+			// 	background-color: #fafafa;
 
-				.app-title {
-					font-size: 3.5rem;
-					font-weight: lighter;
-					letter-spacing: 1px;
+			// 	// .app-title {
+			// 	// 	font-size: 3.5rem;
+			// 	// 	font-weight: lighter;
+			// 	// 	letter-spacing: 1px;
 
-					.time-word {
-						position: relative;
-						.color-dot,
-						.white-dot {
-							position: absolute;
-							width: 5px;
-							height: 5px;
+			// 	// 	.time-word {
+			// 	// 		position: relative;
+			// 	// 		.color-dot,
+			// 	// 		.white-dot {
+			// 	// 			position: absolute;
+			// 	// 			width: 5px;
+			// 	// 			height: 5px;
 
-							border-radius: 50%;
-							top: 33%;
-							right: 55%;
-							z-index: 1;
-						}
-						.color-dot {
-							animation: red-dot 5s infinite;
-						}
-						.white-dot {
-							background-color: #fff;
-							z-index: 0;
-						}
-					}
-				}
-			}
+			// 	// 			border-radius: 50%;
+			// 	// 			top: 33%;
+			// 	// 			right: 55%;
+			// 	// 			z-index: 1;
+			// 	// 		}
+			// 	// 		.color-dot {
+			// 	// 			animation: red-dot 5s infinite;
+			// 	// 		}
+			// 	// 		.white-dot {
+			// 	// 			background-color: #fff;
+			// 	// 			z-index: 0;
+			// 	// 		}
+			// 	// 	}
+			// 	// }
+			// }
 
 			.card {
 				position: relative;
 				display: flex;
 				align-items: center;
 				flex-direction: column;
-				width: 85%;
-				height: 90%;
+				margin-top: 3rem;
+				width: 90%;
+				height: 70%;
+				background-color: #fafafa;
 				border-radius: 16px;
 				box-shadow: 0 0 12px $shadow-color;
 				overflow: hidden;
@@ -136,7 +137,9 @@ body {
 					right: 0;
 					font-size: 1.8rem;
 					border-radius: 16px;
-					background-image: linear-gradient(340deg, $stopwatch-color 20%, #dcf8ef 78%);
+					background-image: url(../assets/img/technologybackground.jpg);
+					background-position: center;
+					background-size: cover;
 					transform: rotateY(180deg);
 
 					.history-of-times {
@@ -165,37 +168,31 @@ body {
 				}
 
 				.title-box {
+					position: relative;
 					width: 100%;
-					// height: 95px;
-					box-shadow: 0 0 12px $shadow-color;
+					height: 25%;
+
 					.title {
-						text-align: center;
-						letter-spacing: 2px;
-						margin: 2rem 0;
-						font-size: 3.3rem;
-						font-weight: lighter;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						color: #fafafa;
+						font-size: 3rem;
+						letter-spacing: 0.1rem;
 					}
 				}
-				.stopwatch-title-box {
-					background-color: $stopwatch-color;
-				}
 
-				.timer-title-box {
-					background-color: $timer-color;
-				}
-
-				.weather-title-box {
-					background-color: $weather-color;
-				}
 				.card-box {
+					// background-color: red;
 					position: relative;
 					display: flex;
 					align-items: center;
 					flex-direction: column;
-					margin-top: 2.5rem;
-					width: 90%;
-					height: 60%;
-					background-color: #fafafa;
+					margin-top: 3rem;
+					width: 100%;
+					height: 100%;
+
 					z-index: 1;
 
 					.stopwatch-clock {
@@ -314,7 +311,15 @@ body {
 					}
 				}
 			}
+			.timer {
+				background-image: url(../assets/img/timer.jpg);
+				background-position: center;
+				background-size: cover;
+			}
 			.stopwatch {
+				background-image: url(../assets/img/vioolet.jpg);
+				background-position: center;
+				background-size: cover;
 				transform-style: preserve-3d;
 				perspective: 300px;
 				transition: 0.8s;
@@ -324,6 +329,9 @@ body {
 				display: none;
 			}
 			.weather {
+				background-image: url(../assets/img/weather.jpg);
+				background-position: center;
+				background-size: cover;
 				.weather-content {
 					position: relative;
 					display: flex;
@@ -340,7 +348,9 @@ body {
 						bottom: 0;
 						align-items: center;
 						flex-direction: column;
-						background-color: #fafafa;
+						background-image: url(../assets/img/sun-tornado-two.png);
+						background-position: center;
+						background-size: cover;
 						.popup-weather-header {
 							font-size: 2rem;
 						}
@@ -398,6 +408,63 @@ body {
 						margin-top: 2.5rem;
 						width: 50px;
 					}
+				}
+			}
+			.button-box {
+				position: absolute;
+				bottom: 5rem;
+				width: 100%;
+				left: 50%;
+				transform: translate(-50%);
+				display: flex;
+
+				justify-content: center;
+				padding: 0.7rem;
+
+				.show-card-bth {
+					// font-size: 1.6rem;
+					margin: 0.5rem;
+					// font-family: 'Caveat', cursive;
+					// // padding: 0.5rem 0;
+					// border-radius: 8px;
+					// border: 2px solid transparent;
+					width: 30%;
+					// background: transparent;
+					// cursor: pointer;
+					// transition: background-color 0.3s;
+					// display: inline-block;
+					// box-sizing: border-box;
+					// height: 70px;
+					// line-height: 64px;
+					background: #6188ff;
+					padding: 1rem;
+					border-radius: 999em;
+					text-decoration: none;
+					color: #fff;
+					font-size: 16px;
+					vertical-align: bottom;
+					white-space: nowrap;
+					border: 3px solid #5c81f2;
+				}
+				.show-stopwatch-btn {
+					box-shadow: 0 0 5px $stopwatch-color;
+				}
+				.show-timer-btn {
+					box-shadow: 0 0 6px $timer-color;
+				}
+				.show-weather-btn {
+					box-shadow: 0 0 6px $weather-color;
+				}
+				.show-stopwatch-btn:hover {
+					background-color: $stopwatch-color;
+					color: white;
+				}
+				.show-timer-btn:hover {
+					background-color: $timer-color;
+				}
+				.show-weather-btn:hover {
+					background-color: $weather-color;
+					color: white;
 				}
 			}
 		}
@@ -482,54 +549,7 @@ body {
 		.show-timer-popup {
 			display: flex;
 		}
-		.button-box {
-			position: absolute;
-			bottom: 6rem;
-			width: 85%;
-			left: 50%;
-			transform: translate(-50%);
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			flex-wrap: wrap;
-			background-color: #fafafa;
-			padding: 0.7rem;
-			box-shadow: 0 0 1rem $shadow-color;
-			border-radius: 15px;
 
-			.show-card-bth {
-				font-size: 2rem;
-				margin: 0.5rem;
-				font-family: 'Caveat', cursive;
-				padding: 0.5rem 0;
-				border-radius: 8px;
-				border: 2px solid transparent;
-				width: 40%;
-				background: transparent;
-				cursor: pointer;
-				transition: background-color 0.3s;
-			}
-			.show-stopwatch-btn {
-				box-shadow: 0 0 5px $stopwatch-color;
-			}
-			.show-timer-btn {
-				box-shadow: 0 0 6px $timer-color;
-			}
-			.show-weather-btn {
-				box-shadow: 0 0 6px $weather-color;
-			}
-			.show-stopwatch-btn:hover {
-				background-color: $stopwatch-color;
-				color: white;
-			}
-			.show-timer-btn:hover {
-				background-color: $timer-color;
-			}
-			.show-weather-btn:hover {
-				background-color: $weather-color;
-				color: white;
-			}
-		}
 		.time-date-box {
 			position: absolute;
 			width: 100%;
@@ -538,11 +558,11 @@ body {
 			justify-content: center;
 			align-items: center;
 			bottom: 0;
-			font-size: 2rem;
-			background-color: rgba(0, 0, 0, 0.55);
+			font-size: 1.6rem;
+			// background-color: rgb(45, 13, 48);
+			background-color: #2d0d30;
 			color: #fff;
-			border-bottom-left-radius: 20px;
-			border-bottom-right-radius: 20px;
+
 			text-shadow: 0 0 5px rgb(0, 0, 0);
 			.clock-name,
 			.date-name {

@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time&Weather</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://kit.fontawesome.com/f234464579.js" crossorigin="anonymous"></script>
@@ -18,7 +19,7 @@
 
     <div class="wrapper">
 
-        <div class="instruction stopwatch-instruction">
+        <!-- <div class="instruction stopwatch-instruction">
             <p>blablabla</p>
             <p>blablabla</p>
             <p>blablabla</p>
@@ -26,7 +27,7 @@
             <div class="bookmark stopwatch-bookmark">
                 <p class="bookmark-name">how to use</p>
             </div>
-        </div>
+        </div> -->
 
         <div class="timer-popup">
 
@@ -65,12 +66,14 @@
             </div> -->
 
 
-            <div class="stopwatch card hide-card">
+            <div class="stopwatch card">
 
                 <div class="stopwatch-page">
 
                     <div class="stopwatch-title-box title-box">
+
                         <h2 class="title stopwatch-title">stopwatch</h2>
+
                     </div>
                     <div class="stopwatch-content card-box">
                         <p class="stopwatch-clock">0:00</p>
@@ -94,7 +97,7 @@
 
             </div>
 
-            <div class="timer card ">
+            <div class="timer card hide-card">
                 <div class="timer-title-box title-box">
                     <h2 class="title timer-title">timer</h2>
                 </div>
@@ -173,16 +176,17 @@
                 </div>
 
             </div>
+            <div class="button-box">
+                <button class="show-stopwatch-btn show-card-bth" onclick="quickHideHistory()">stopwatch</button>
+                <button class="show-timer-btn show-card-bth">timer</button>
+                <button class="show-weather-btn show-card-bth" onclick="openWeatherPopup()">weather</button>
+            </div>
         </div>
 
 
 
 
-        <div class="button-box">
-            <button class="show-stopwatch-btn show-card-bth" onclick="quickHideHistory()">stopwatch</button>
-            <button class="show-timer-btn show-card-bth">timer</button>
-            <button class="show-weather-btn show-card-bth" onclick="openWeatherPopup()">weather</button>
-        </div>
+
 
         <div class="time-date-box">
             <p class="clock-name">Time:</p>

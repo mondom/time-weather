@@ -112,7 +112,7 @@ const clearMainDataStopwatch = () => {
 	minutes = 0
 	seconds = 0
 }
-
+document.addEventListener('DOMContentLoaded', hideHistory) 
 stopwatchHistoryBtn.addEventListener('click', showHistory)
 stopwatchCloseHistoryBtn.addEventListener('click', hideHistory)
 stopwatchStartBtn.addEventListener('click', startCount)
