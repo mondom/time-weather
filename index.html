@@ -145,7 +145,8 @@
 
                 <h3 class="popup-weather-header">Enter city name</h3>
                 <img class="weather-arrow" src="./assets/icon/down-arrow.png" alt="arrow">
-                <input type="text" id="weather-city" class="input-city-name" maxlength="40" value="London" placeholder="enter city">
+                <input type="text" id="weather-city" class="input-city-name" maxlength="40" value="London"
+                    placeholder="enter city">
 
                 <button class="weather-send-btn big-button" onclick="closeWeatherPopup()">Send</button>
 
@@ -159,7 +160,7 @@
                 </div>
                 <div class="weather-content card-box">
 
-                  
+
 
                     <p class="city">Weather in <span class="name-of-city"></span></p>
 
@@ -181,9 +182,18 @@
 
             </div>
             <div class="button-box">
-                <button class="show-stopwatch-btn show-card-bth" onclick="quickHideHistory()">stopwatch</button>
-                <button class="show-timer-btn show-card-bth">timer</button>
-                <button class="show-weather-btn show-card-bth" onclick="openWeatherPopup()">weather</button>
+
+                <a href="#" class="show-stopwatch-btn show-card-bth" onclick="quickHideHistory()">
+                    <span>stopwatch</span>
+                    <a href="#" class="show-timer-btn show-card-bth">
+                        <span>timer</span>
+                        <a href="#" class="show-weather-btn show-card-bth" onclick="openWeatherPopup()">
+                            <span>weather</span>
+
+                        </a>
+                        <!-- <button class="show-stopwatch-btn show-card-bth" onclick="quickHideHistory()"><span>stopwatch</span></button> -->
+                        <!-- <button class="show-timer-btn show-card-bth">timer</button>
+                <button class="show-weather-btn show-card-bth" onclick="openWeatherPopup()">weather</button> -->
             </div>
         </div>
 

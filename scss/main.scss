@@ -224,7 +224,7 @@ body {
 						.stopwatch-history {
 							margin-top: 0.8rem;
 						}
-						
+
 						.stopwatch-btn {
 							border-radius: 50%;
 							border: 2px solid transparent;
@@ -233,7 +233,6 @@ body {
 							height: 40px;
 							background-color: white;
 							transition: background-color 0.3s;
-							
 						}
 						.stopwatch-btn:hover,
 						.stopwatch-history:hover {
@@ -253,7 +252,6 @@ body {
 						bottom: 1rem;
 						// .timer-edit {
 
-						
 						// }
 
 						.timer-edit:hover {
@@ -396,14 +394,14 @@ body {
 					border: 2px solid #fdc82f;
 					border-radius: 8px;
 				}
-				.weather-send-btn {
-					// font-family: 'Caveat', cursive;
-					// border-radius: 5px;
-					// border: 2px solid transparent;
-					// box-shadow: 0 0 6px $weather-color;
-					// background-color: #fafafa;
-					// cursor: pointer;
-				}
+				// .weather-send-btn {
+				// 	// font-family: 'Caveat', cursive;
+				// 	// border-radius: 5px;
+				// 	// border: 2px solid transparent;
+				// 	// box-shadow: 0 0 6px $weather-color;
+				// 	// background-color: #fafafa;
+				// 	// cursor: pointer;
+				// }
 				.weather-send-btn:hover {
 					background-color: $weather-color;
 					color: white;
@@ -424,27 +422,60 @@ body {
 				padding: 0.7rem;
 
 				.show-card-bth {
-					text-transform: uppercase;
-					margin: 0.5rem;
-					width: 30%;
-					background-color: #fdc82f;
-					padding: 1.2rem;
-					border-radius: 999em;
-					color: #000000;
-					font-size: 1.2rem;
-					vertical-align: bottom;
-					white-space: nowrap;
-					border: 1px solid transparent;
-					box-shadow: 0 0 5px $shadow-color;
+					// text-transform: uppercase;
+					// margin: 0.5rem;
+					// width: 30%;
+					// background-color: #fdc82f;
+					// padding: 1.2rem;
+					// border-radius: 999em;
+					// color: #000000;
+					// font-size: 1.2rem;
+					// vertical-align: bottom;
+					// white-space: nowrap;
+					// border: 1px solid transparent;
+					// box-shadow: 0 0 5px $shadow-color;
+					position: relative;
+					display: inline-block;
+					padding: 19px 22px;
+					margin: auto;
+					transition: all 0.2s ease;
+					text-decoration: none;
+					span {
+						position: relative;
+						font-size: 1.6rem;
+						// line-height: 18px;
+						// font-weight: 900;
+						// letter-spacing: 0.25em;
+						// text-transform: uppercase;
+						
+						// vertical-align: middle;
+						
+					}
 				}
-				.show-stopwatch-btn {
-					display: flex;
-					justify-content: center;
+				.show-card-bth::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: block;
+					border-radius: 28px;
+					background: rgba(255, 171, 157, 0.5);
+					width: 56px;
+					height: 56px;
+					transition: all 0.3s ease;
 				}
-				.show-card-bth:hover {
-					background-color: #2d0d30;
-					color: #fff;
+				.show-card-bth:hover::before {
+					width: 100%;
+					background: rgba(255, 171, 157, 1);
 				}
+				.show-card-bth:active {
+					transform: scale(0.96);
+				}
+
+				// .show-card-bth:hover {
+				// 	background-color: #2d0d30;
+				// 	color: #fff;
+				// }
 
 				// .show-stopwatch-btn:hover {
 				// 	background-color: $stopwatch-color;

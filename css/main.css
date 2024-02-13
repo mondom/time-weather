@@ -313,26 +313,35 @@ body .wrapper .card-wrapper .button-box {
   padding: 0.7rem;
 }
 body .wrapper .card-wrapper .button-box .show-card-bth {
-  text-transform: uppercase;
-  margin: 0.5rem;
-  width: 30%;
-  background-color: #fdc82f;
-  padding: 1.2rem;
-  border-radius: 999em;
-  color: #000000;
-  font-size: 1.2rem;
-  vertical-align: bottom;
-  white-space: nowrap;
-  border: 1px solid transparent;
-  box-shadow: 0 0 5px #a0a0a0;
+  position: relative;
+  display: inline-block;
+  padding: 19px 22px;
+  margin: auto;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
-body .wrapper .card-wrapper .button-box .show-stopwatch-btn {
-  display: flex;
-  justify-content: center;
+body .wrapper .card-wrapper .button-box .show-card-bth span {
+  position: relative;
+  font-size: 1.6rem;
 }
-body .wrapper .card-wrapper .button-box .show-card-bth:hover {
-  background-color: #2d0d30;
-  color: #fff;
+body .wrapper .card-wrapper .button-box .show-card-bth::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: rgba(255, 171, 157, 0.5);
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+body .wrapper .card-wrapper .button-box .show-card-bth:hover::before {
+  width: 100%;
+  background: rgb(255, 171, 157);
+}
+body .wrapper .card-wrapper .button-box .show-card-bth:active {
+  transform: scale(0.96);
 }
 body .wrapper .card-wrapper .big-button {
   width: 60%;
