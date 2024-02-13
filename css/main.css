@@ -33,7 +33,7 @@ body .wrapper .card-wrapper {
   height: 95%;
   display: flex;
   justify-content: center;
-  background-color: #fff;
+  background-color: #f8f0ee;
   z-index: 0;
 }
 body .wrapper .card-wrapper .card {
@@ -45,7 +45,6 @@ body .wrapper .card-wrapper .card {
   width: 90%;
   height: 70%;
   border-radius: 16px;
-  overflow: hidden;
 }
 body .wrapper .card-wrapper .card .stopwatch-page {
   position: absolute;
@@ -100,6 +99,7 @@ body .wrapper .card-wrapper .card .title-box {
   position: relative;
   width: 100%;
   height: 25%;
+  margin-top: 1.6rem;
 }
 body .wrapper .card-wrapper .card .title-box .title {
   position: absolute;
@@ -147,15 +147,14 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
   margin-top: 0.8rem;
 }
-body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history,
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
-  border-radius: 5px;
+  border-radius: 50%;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 0 4px #a0a0a0;
-  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  background-color: white;
   transition: background-color 0.3s;
-  box-shadow: 0 0 4px #2a9d8f;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn:hover,
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history:hover {
@@ -173,25 +172,8 @@ body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   width: 100%;
   bottom: 1rem;
 }
-body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-edit {
-  border-radius: 5px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  background-color: transparent;
-  transition: background-color 0.3s;
-  box-shadow: 0 0 4px #e9c46a;
-}
 body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-edit:hover {
   background-color: #e9c46a;
-}
-body .wrapper .card-wrapper .card .card-box .big-button {
-  width: 60%;
-  font-size: 1.8rem;
-  margin-top: 0.5rem;
-  padding: 0.4rem 0;
-  letter-spacing: 2px;
-  font-family: "Caveat", cursive;
-  transition: color 0.3s;
 }
 body .wrapper .card-wrapper .card .timer-content {
   width: 100%;
@@ -243,61 +225,12 @@ body .wrapper .card-wrapper .stopwatch {
   perspective: 300px;
   transition: 0.8s;
 }
-body .wrapper .card-wrapper .hide-card {
-  display: none;
-}
 body .wrapper .card-wrapper .weather {
   background-image: url(../assets/img/gradient\ weather.jpg);
   background-position: center;
   background-size: cover;
 }
-body .wrapper .card-wrapper .weather .weather-popup {
-  position: absolute;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  bottom: 0;
-  align-items: center;
-  flex-direction: column;
-  background-image: url(../assets/img/gradient\ weather.jpg);
-  background-position: center;
-  background-size: cover;
-  background-color: red;
-}
-body .wrapper .card-wrapper .weather .weather-popup .popup-weather-header {
-  font-size: 2rem;
-}
-body .wrapper .card-wrapper .weather .weather-popup .input-city-name {
-  padding: 0.5rem;
-  font-family: "Caveat", cursive;
-  border: none;
-  border-bottom: 2px solid #e76f51;
-  background-color: #fafafa;
-  width: 60%;
-  text-align: center;
-  font-size: 1.7rem;
-}
-body .wrapper .card-wrapper .weather .weather-popup .input-city-name:focus {
-  outline: none;
-  border: 2px solid #e76f51;
-  border-radius: 3px;
-}
-body .wrapper .card-wrapper .weather .weather-popup .weather-send-btn {
-  font-family: "Caveat", cursive;
-  border-radius: 5px;
-  border: 2px solid transparent;
-  box-shadow: 0 0 6px #e76f51;
-  background-color: #fafafa;
-  cursor: pointer;
-}
-body .wrapper .card-wrapper .weather .weather-popup .weather-send-btn:hover {
-  background-color: #e76f51;
-  color: white;
-}
 body .wrapper .card-wrapper .weather .weather-content {
-  position: relative;
   display: flex;
   align-items: center;
 }
@@ -325,6 +258,50 @@ body .wrapper .card-wrapper .weather .weather-content .weather-icon {
   margin-top: 2.5rem;
   width: 50px;
 }
+body .wrapper .card-wrapper .weather-popup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 3rem;
+  width: 90%;
+  height: 70%;
+  border-radius: 16px;
+  background-image: url(../assets/img/gradient\ weather.jpg);
+  background-position: center;
+  background-size: cover;
+  background-color: red;
+}
+body .wrapper .card-wrapper .weather-popup .popup-weather-header {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+body .wrapper .card-wrapper .weather-popup .weather-arrow {
+  width: 4rem;
+}
+body .wrapper .card-wrapper .weather-popup .input-city-name {
+  padding: 0.5rem;
+  font-family: "Caveat", cursive;
+  border: none;
+  border-bottom: 2px solid #fdc82f;
+  background: none;
+  width: 70%;
+  text-align: center;
+  font-size: 2rem;
+}
+body .wrapper .card-wrapper .weather-popup .input-city-name:focus {
+  outline: none;
+  border: 2px solid #fdc82f;
+  border-radius: 8px;
+}
+body .wrapper .card-wrapper .weather-popup .weather-send-btn:hover {
+  background-color: #e76f51;
+  color: white;
+}
+body .wrapper .card-wrapper .hide-card {
+  display: none;
+}
 body .wrapper .card-wrapper .button-box {
   position: absolute;
   bottom: 5rem;
@@ -336,35 +313,39 @@ body .wrapper .card-wrapper .button-box {
   padding: 0.7rem;
 }
 body .wrapper .card-wrapper .button-box .show-card-bth {
+  text-transform: uppercase;
   margin: 0.5rem;
   width: 30%;
-  padding: 1rem;
+  background-color: #fdc82f;
+  padding: 1.2rem;
   border-radius: 999em;
-  color: #fff;
-  font-size: 16px;
+  color: #000000;
+  font-size: 1.2rem;
   vertical-align: bottom;
   white-space: nowrap;
   border: 1px solid transparent;
+  box-shadow: 0 0 5px #a0a0a0;
 }
 body .wrapper .card-wrapper .button-box .show-stopwatch-btn {
-  background-color: #431347;
+  display: flex;
+  justify-content: center;
 }
-body .wrapper .card-wrapper .button-box .show-timer-btn {
-  background-color: #21107a;
+body .wrapper .card-wrapper .button-box .show-card-bth:hover {
+  background-color: #2d0d30;
+  color: #fff;
 }
-body .wrapper .card-wrapper .button-box .show-weather-btn {
-  background-color: #f77321;
-}
-body .wrapper .card-wrapper .button-box .show-stopwatch-btn:hover {
-  background-color: #2a9d8f;
-  color: white;
-}
-body .wrapper .card-wrapper .button-box .show-timer-btn:hover {
-  background-color: #e9c46a;
-}
-body .wrapper .card-wrapper .button-box .show-weather-btn:hover {
-  background-color: #e76f51;
-  color: white;
+body .wrapper .card-wrapper .big-button {
+  width: 60%;
+  font-size: 1.8rem;
+  padding: 0.4rem 0;
+  letter-spacing: 2px;
+  font-family: "Caveat", cursive;
+  transition: color 0.3s;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s;
 }
 body .wrapper .timer-popup {
   position: absolute;

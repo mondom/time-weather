@@ -112,7 +112,7 @@ const clearMainDataStopwatch = () => {
 	minutes = 0
 	seconds = 0
 }
-document.addEventListener('DOMContentLoaded', hideHistory) 
+document.addEventListener('DOMContentLoaded', hideHistory)
 stopwatchHistoryBtn.addEventListener('click', showHistory)
 stopwatchCloseHistoryBtn.addEventListener('click', hideHistory)
 stopwatchStartBtn.addEventListener('click', startCount)
@@ -263,14 +263,19 @@ const closeWeatherPopup = () => {
 	weatherPopup.style.display = 'none'
 }
 
+const showWeatherCard = () => {
+	weatherCard.classList.remove('hide-card')
+}
+
 const openWeatherPopup = () => {
 	weatherPopup.style.display = 'flex'
 }
 
-
-
 getCityWeather()
-weatherSendBtn.addEventListener('click', getCityWeather)
+weatherSendBtn.addEventListener('click', () => {
+	showWeatherCard()
+	getCityWeather()
+})
 
 // footer
 const time = document.querySelector('.time')
@@ -307,12 +312,14 @@ setInterval(getTimeAndDate, 1000)
 // show and hide cards
 
 const showStopwatch = () => {
+	closeWeatherPopup()
 	stopwatchCard.classList.remove('hide-card')
 	timerCard.classList.add('hide-card')
 	weatherCard.classList.add('hide-card')
 	appName.style.display = 'none'
 }
 const showTimer = () => {
+	closeWeatherPopup()
 	stopwatchCard.classList.add('hide-card')
 	timerCard.classList.remove('hide-card')
 	weatherCard.classList.add('hide-card')
@@ -321,7 +328,6 @@ const showTimer = () => {
 const showWeather = () => {
 	stopwatchCard.classList.add('hide-card')
 	timerCard.classList.add('hide-card')
-	weatherCard.classList.remove('hide-card')
 	appName.style.display = 'none'
 }
 

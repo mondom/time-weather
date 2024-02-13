@@ -141,16 +141,18 @@
                 </div>
             </div>
 
+            <div class="weather-popup">
+
+                <h3 class="popup-weather-header">Enter city name</h3>
+                <img class="weather-arrow" src="./assets/icon/down-arrow.png" alt="arrow">
+                <input type="text" id="weather-city" class="input-city-name" maxlength="40" value="London" placeholder="enter city">
+
+                <button class="weather-send-btn big-button" onclick="closeWeatherPopup()">Send</button>
+
+            </div>
+
             <div class="weather card ">
-
-                <div class="weather-popup">
-
-                    <h3 class="popup-weather-header">Enter city name</h3>
-                    <input type="text" id="weather-city" class="input-city-name" maxlength="40" value="London">
-
-                    <button class="weather-send-btn big-button" onclick="closeWeatherPopup()">Send</button>
-
-                </div>
+                <!-- <img class="yellow-dot" src="./assets/icon/record_8114034.png" alt="yellow-dot"> -->
 
                 <div class="weather-title-box title-box">
                     <h2 class="title weather-title">weather</h2>
@@ -164,7 +166,7 @@
 
                     <div class="weather-box">
                         <div class="weather-headings">
-                            <p class="weather">Weather:</p>
+                            <p class="ph-weather">Weather:</p>
                             <p class="temperature">Temperature:</p>
                         </div>
 

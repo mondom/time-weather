@@ -64,7 +64,7 @@ body {
 			height: 95%;
 			display: flex;
 			justify-content: center;
-			background-color: #fff;
+			background-color: #f8f0ee;
 			// align-items: center;
 			// border-radius: 20px;
 			// box-shadow: 0 0 12px $shadow-color;
@@ -115,7 +115,7 @@ body {
 
 				border-radius: 16px;
 
-				overflow: hidden;
+				// overflow: hidden;
 
 				.stopwatch-page {
 					position: absolute;
@@ -172,6 +172,8 @@ body {
 					position: relative;
 					width: 100%;
 					height: 25%;
+					// background-color: red;
+					margin-top: 1.6rem;
 
 					.title {
 						position: absolute;
@@ -222,15 +224,16 @@ body {
 						.stopwatch-history {
 							margin-top: 0.8rem;
 						}
-						.stopwatch-history,
+						
 						.stopwatch-btn {
-							border-radius: 5px;
+							border-radius: 50%;
 							border: 2px solid transparent;
 							cursor: pointer;
-							box-shadow: 0 0 4px $shadow-color;
-							background-color: transparent;
+							width: 40px;
+							height: 40px;
+							background-color: white;
 							transition: background-color 0.3s;
-							box-shadow: 0 0 4px $stopwatch-color;
+							
 						}
 						.stopwatch-btn:hover,
 						.stopwatch-history:hover {
@@ -248,28 +251,14 @@ body {
 						text-align: center;
 						width: 100%;
 						bottom: 1rem;
-						.timer-edit {
-							border-radius: 5px;
-							border: 2px solid transparent;
-							cursor: pointer;
-							// box-shadow: 0 0 4px $shadow-color;
-							background-color: transparent;
-							transition: background-color 0.3s;
-							box-shadow: 0 0 4px $timer-color;
-						}
+						// .timer-edit {
+
+						
+						// }
 
 						.timer-edit:hover {
 							background-color: $timer-color;
 						}
-					}
-					.big-button {
-						width: 60%;
-						font-size: 1.8rem;
-						margin-top: 0.5rem;
-						padding: 0.4rem 0;
-						letter-spacing: 2px;
-						font-family: 'Caveat', cursive;
-						transition: color 0.3s;
 					}
 				}
 
@@ -326,65 +315,19 @@ body {
 				transition: 0.8s;
 			}
 
-			.hide-card {
-				display: none;
-			}
 			.weather {
 				background-image: url(../assets/img/gradient\ weather.jpg);
 				background-position: center;
 				background-size: cover;
-				// visibility: hidden;
-				.weather-popup {
-					
-					position: absolute;
-					display: flex;
-					// display: none;
-					justify-content: space-around;
-					width: 100%;
-					height: 100%;
-					left: 0;
-					bottom: 0;
-					align-items: center;
-					flex-direction: column;
-					background-image: url(../assets/img/gradient\ weather.jpg);
-					background-position: center;
-					background-size: cover;
-					background-color: red;
 
-					.popup-weather-header {
-						font-size: 2rem;
-					}
-					.input-city-name {
-						padding: 0.5rem;
-						font-family: 'Caveat', cursive;
-						border: none;
-						border-bottom: 2px solid $weather-color;
-						background-color: #fafafa;
-						width: 60%;
-						text-align: center;
-						font-size: 1.7rem;
-					}
-					.input-city-name:focus {
-						outline: none;
-						border: 2px solid $weather-color;
-						border-radius: 3px;
-					}
-					.weather-send-btn {
-						font-family: 'Caveat', cursive;
-						border-radius: 5px;
-						border: 2px solid transparent;
-						box-shadow: 0 0 6px $weather-color;
-						background-color: #fafafa;
-						cursor: pointer;
-					}
-					.weather-send-btn:hover {
-						background-color: $weather-color;
-						color: white;
-					}
-				}
+				// .yellow-dot{
+				// 	position: absolute;
+				// 	width: 35px;
+				// 	top: 40px;
+				// 	left: -17px;
+				// }
 
 				.weather-content {
-					position: relative;
 					display: flex;
 					align-items: center;
 
@@ -400,7 +343,7 @@ body {
 						width: 80%;
 						font-size: 1.8rem;
 						margin-top: 5px;
-						
+
 						.weather-headings,
 						.weather-info {
 							width: 50%;
@@ -416,6 +359,59 @@ body {
 					}
 				}
 			}
+			.weather-popup {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				flex-direction: column;
+				position: absolute;
+				margin-top: 3rem;
+				width: 90%;
+				height: 70%;
+				border-radius: 16px;
+				background-image: url(../assets/img/gradient\ weather.jpg);
+				background-position: center;
+				background-size: cover;
+				background-color: red;
+
+				.popup-weather-header {
+					margin-top: 2rem;
+					font-size: 2rem;
+				}
+				.weather-arrow {
+					width: 4rem;
+				}
+				.input-city-name {
+					padding: 0.5rem;
+					font-family: 'Caveat', cursive;
+					border: none;
+					border-bottom: 2px solid #fdc82f;
+					background: none;
+					width: 70%;
+					text-align: center;
+					font-size: 2rem;
+				}
+				.input-city-name:focus {
+					outline: none;
+					border: 2px solid #fdc82f;
+					border-radius: 8px;
+				}
+				.weather-send-btn {
+					// font-family: 'Caveat', cursive;
+					// border-radius: 5px;
+					// border: 2px solid transparent;
+					// box-shadow: 0 0 6px $weather-color;
+					// background-color: #fafafa;
+					// cursor: pointer;
+				}
+				.weather-send-btn:hover {
+					background-color: $weather-color;
+					color: white;
+				}
+			}
+			.hide-card {
+				display: none;
+			}
 			.button-box {
 				position: absolute;
 				bottom: 5rem;
@@ -423,55 +419,59 @@ body {
 				left: 50%;
 				transform: translate(-50%);
 				display: flex;
-
+				// background-color: #2d0d30;
 				justify-content: center;
 				padding: 0.7rem;
 
 				.show-card-bth {
-					// font-size: 1.6rem;
+					text-transform: uppercase;
 					margin: 0.5rem;
-					// font-family: 'Caveat', cursive;
-					// // padding: 0.5rem 0;
-					// border-radius: 8px;
-					// border: 2px solid transparent;
 					width: 30%;
-					// background: transparent;
-					// cursor: pointer;
-					// transition: background-color 0.3s;
-					// display: inline-block;
-					// box-sizing: border-box;
-					// height: 70px;
-					// line-height: 64px;
-
-					padding: 1rem;
+					background-color: #fdc82f;
+					padding: 1.2rem;
 					border-radius: 999em;
-					// text-decoration: none;
-					color: #fff;
-					font-size: 16px;
+					color: #000000;
+					font-size: 1.2rem;
 					vertical-align: bottom;
 					white-space: nowrap;
 					border: 1px solid transparent;
+					box-shadow: 0 0 5px $shadow-color;
 				}
 				.show-stopwatch-btn {
-					background-color: #431347;
+					display: flex;
+					justify-content: center;
 				}
-				.show-timer-btn {
-					background-color: #21107a;
+				.show-card-bth:hover {
+					background-color: #2d0d30;
+					color: #fff;
 				}
-				.show-weather-btn {
-					background-color: #f77321;
-				}
-				.show-stopwatch-btn:hover {
-					background-color: $stopwatch-color;
-					color: white;
-				}
-				.show-timer-btn:hover {
-					background-color: $timer-color;
-				}
-				.show-weather-btn:hover {
-					background-color: $weather-color;
-					color: white;
-				}
+
+				// .show-stopwatch-btn:hover {
+				// 	background-color: $stopwatch-color;
+				// 	color: white;
+				// }
+				// .show-timer-btn:hover {
+				// 	background-color: $timer-color;
+				// }
+				// .show-weather-btn:hover {
+				// 	background-color: $weather-color;
+				// 	color: white;
+				// }
+			}
+			.big-button {
+				width: 60%;
+				font-size: 1.8rem;
+				// margin-top: 0.5rem;
+				padding: 0.4rem 0;
+				letter-spacing: 2px;
+				font-family: 'Caveat', cursive;
+				transition: color 0.3s;
+				border-radius: 5px;
+				border: 2px solid transparent;
+				cursor: pointer;
+
+				background-color: white;
+				transition: background-color 0.3s;
 			}
 		}
 		.timer-popup {
