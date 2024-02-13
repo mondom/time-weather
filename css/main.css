@@ -316,7 +316,7 @@ body .wrapper .card-wrapper .button-box .show-card-bth {
   position: relative;
   display: inline-block;
   padding: 19px 22px;
-  margin: auto;
+  margin: 0.5rem;
   transition: all 0.2s ease;
   text-decoration: none;
 }

@@ -422,34 +422,18 @@ body {
 				padding: 0.7rem;
 
 				.show-card-bth {
-					// text-transform: uppercase;
-					// margin: 0.5rem;
-					// width: 30%;
-					// background-color: #fdc82f;
-					// padding: 1.2rem;
-					// border-radius: 999em;
-					// color: #000000;
-					// font-size: 1.2rem;
-					// vertical-align: bottom;
-					// white-space: nowrap;
-					// border: 1px solid transparent;
-					// box-shadow: 0 0 5px $shadow-color;
+				
 					position: relative;
 					display: inline-block;
 					padding: 19px 22px;
-					margin: auto;
+					margin: 0.5rem;
 					transition: all 0.2s ease;
 					text-decoration: none;
+
 					span {
 						position: relative;
 						font-size: 1.6rem;
-						// line-height: 18px;
-						// font-weight: 900;
-						// letter-spacing: 0.25em;
-						// text-transform: uppercase;
-						
-						// vertical-align: middle;
-						
+	
 					}
 				}
 				.show-card-bth::before {
