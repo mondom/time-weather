@@ -75,25 +75,19 @@ body .wrapper .card-wrapper .card .stopwatch-history-page {
 body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
   margin-top: 3.5rem;
 }
+body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p {
+  line-height: 2.8rem;
+}
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
-  border-radius: 7px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  box-shadow: 0 0 4px #a0a0a0;
-  background-color: #fafafa;
-  transition: background-color 0.3s;
-  padding: 0.8rem 1.5rem;
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-  font-family: "Caveat", cursive;
-  transition: color 0.3s;
-  margin-top: 0.5rem;
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 3rem;
+  border: 3px solid rgb(255, 149, 0);
+  background-color: white;
+  font-size: 2rem;
+  color: black;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history:hover {
-  background-color: #dcf8ef;
-  box-shadow: 0 0 4px #fafafa;
+  background-color: rgb(252, 185, 0);
 }
 body .wrapper .card-wrapper .card .title-box {
   position: relative;
@@ -137,7 +131,7 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
   align-items: center;
   width: 100%;
   height: 40%;
-  bottom: 1rem;
+  bottom: 2rem;
   flex-wrap: wrap;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
@@ -145,26 +139,27 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
   padding: 0.5rem 1.1rem;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
-  margin-top: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border: 3px solid rgb(255, 149, 0);
+  background-color: white;
+  font-size: 2rem;
+  color: black;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
   border-radius: 50%;
-  border: 2px solid transparent;
   cursor: pointer;
   width: 40px;
   height: 40px;
-  background-color: white;
   transition: background-color 0.3s;
+  border: 3px solid rgb(255, 149, 0);
+  background-color: white;
+  font-size: 2rem;
+  color: black;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn:hover,
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history:hover {
-  background-color: #2a9d8f;
-}
-body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn:hover .fa-solid {
-  color: white;
-}
-body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history:hover {
-  color: white;
+  background-color: rgb(252, 185, 0);
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   position: absolute;
@@ -173,7 +168,7 @@ body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   bottom: 1rem;
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-edit:hover {
-  background-color: #e9c46a;
+  background-color: rgb(252, 185, 0);
 }
 body .wrapper .card-wrapper .card .timer-content {
   width: 100%;
@@ -190,7 +185,7 @@ body .wrapper .card-wrapper .card .timer-content .event-name {
   text-align: center;
 }
 body .wrapper .card-wrapper .card .timer-content .timer-box {
-  width: 100%;
+  width: 95%;
   display: flex;
   justify-content: space-between;
   font-size: 1.6rem;
@@ -199,7 +194,7 @@ body .wrapper .card-wrapper .card .timer-content .timer-box {
 }
 body .wrapper .card-wrapper .card .timer-content .timer-box .small-box {
   padding: 0.2rem 0.3rem;
-  width: 23%;
+  width: 22%;
   border: 1px solid rgba(0, 0, 0, 0.3);
   text-align: center;
   border-radius: 5px;
@@ -217,6 +212,9 @@ body .wrapper .card-wrapper .timer {
   background-position: center;
   background-size: cover;
 }
+body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
+  margin-bottom: 2rem;
+}
 body .wrapper .card-wrapper .stopwatch {
   background-image: url(../assets/img/violet.jpg);
   background-position: center;
@@ -224,6 +222,26 @@ body .wrapper .card-wrapper .stopwatch {
   transform-style: preserve-3d;
   perspective: 300px;
   transition: 0.8s;
+}
+body .wrapper .card-wrapper .stopwatch .clock-icon {
+  position: absolute;
+  width: 22%;
+  left: -7%;
+  top: -6%;
+}
+body .wrapper .card-wrapper .stopwatch .dot1,
+body .wrapper .card-wrapper .stopwatch .dot2 {
+  position: absolute;
+}
+body .wrapper .card-wrapper .stopwatch .dot1 {
+  width: 5%;
+  left: 10%;
+  top: 9%;
+}
+body .wrapper .card-wrapper .stopwatch .dot2 {
+  width: 8%;
+  top: -3%;
+  left: 13%;
 }
 body .wrapper .card-wrapper .weather {
   background-image: url(../assets/img/gradient\ weather.jpg);
@@ -253,10 +271,11 @@ body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-info
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  line-height: 2.5rem;
 }
 body .wrapper .card-wrapper .weather .weather-content .weather-icon {
-  margin-top: 2.5rem;
-  width: 50px;
+  margin-top: 3.5rem;
+  width: 30%;
 }
 body .wrapper .card-wrapper .weather-popup {
   display: flex;
@@ -282,7 +301,7 @@ body .wrapper .card-wrapper .weather-popup .weather-arrow {
 }
 body .wrapper .card-wrapper .weather-popup .input-city-name {
   padding: 0.5rem;
-  font-family: "Caveat", cursive;
+  font-family: "Raleway", sans-serif;
   border: none;
   border-bottom: 2px solid #fdc82f;
   background: none;
@@ -295,9 +314,11 @@ body .wrapper .card-wrapper .weather-popup .input-city-name:focus {
   border: 2px solid #fdc82f;
   border-radius: 8px;
 }
+body .wrapper .card-wrapper .weather-popup .weather-send-btn {
+  font-family: "Raleway", sans-serif;
+}
 body .wrapper .card-wrapper .weather-popup .weather-send-btn:hover {
-  background-color: #e76f51;
-  color: white;
+  background-color: rgb(252, 185, 0);
 }
 body .wrapper .card-wrapper .hide-card {
   display: none;
@@ -314,8 +335,10 @@ body .wrapper .card-wrapper .button-box {
 }
 body .wrapper .card-wrapper .button-box .show-card-bth {
   position: relative;
-  display: inline-block;
-  padding: 19px 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 1rem;
   margin: 0.5rem;
   transition: all 0.2s ease;
   text-decoration: none;
@@ -323,22 +346,24 @@ body .wrapper .card-wrapper .button-box .show-card-bth {
 body .wrapper .card-wrapper .button-box .show-card-bth span {
   position: relative;
   font-size: 1.6rem;
+  color: black;
+  font-weight: bold;
 }
 body .wrapper .card-wrapper .button-box .show-card-bth::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 6px;
   left: 0;
   display: block;
   border-radius: 28px;
-  background: rgba(255, 171, 157, 0.5);
-  width: 56px;
-  height: 56px;
+  background-color: rgba(252, 185, 0, 0.5);
+  width: 32px;
+  height: 32px;
   transition: all 0.3s ease;
 }
 body .wrapper .card-wrapper .button-box .show-card-bth:hover::before {
   width: 100%;
-  background: rgb(255, 171, 157);
+  background-color: rgb(252, 185, 0);
 }
 body .wrapper .card-wrapper .button-box .show-card-bth:active {
   transform: scale(0.96);
@@ -348,13 +373,17 @@ body .wrapper .card-wrapper .big-button {
   font-size: 1.8rem;
   padding: 0.4rem 0;
   letter-spacing: 2px;
-  font-family: "Caveat", cursive;
+  font-family: "Raleway", sans-serif;
   transition: color 0.3s;
   border-radius: 5px;
   border: 2px solid transparent;
+  font-weight: bold;
   cursor: pointer;
   background-color: white;
   transition: background-color 0.3s;
+}
+body .wrapper .card-wrapper .big-button:hover {
+  background-color: rgb(252, 185, 0);
 }
 body .wrapper .timer-popup {
   position: absolute;
@@ -365,7 +394,7 @@ body .wrapper .timer-popup {
   align-items: center;
   flex-direction: column;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(45, 13, 48, 0.9);
   border-radius: 20px;
   color: rgb(249, 246, 246);
 }
@@ -374,6 +403,7 @@ body .wrapper .timer-popup .popup-timer-header {
   font-size: 2.2rem;
   text-shadow: 0 0 5px rgb(0, 0, 0);
   letter-spacing: 1px;
+  text-align: center;
 }
 body .wrapper .timer-popup .popup-input-event-name {
   width: 70%;
@@ -385,7 +415,7 @@ body .wrapper .timer-popup .popup-input-event-name {
 body .wrapper .timer-popup input {
   padding: 0.5rem;
   border-radius: 5px;
-  font-family: "Caveat", cursive;
+  font-family: "Raleway", sans-serif;
 }
 body .wrapper .timer-popup input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -417,17 +447,16 @@ body .wrapper .timer-popup .timer-save {
   margin-top: 40px;
   width: 30%;
   font-size: 20px;
-  font-family: "Caveat", cursive;
+  font-family: "Raleway", sans-serif;
   padding: 5px 12px;
   box-shadow: 0 0 4px #e9c46a;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
-  box-shadow: inset 0 0 4px #e9c46a;
 }
 body .wrapper .timer-popup .timer-save:hover {
-  background-color: #e9c46a;
+  background-color: rgb(252, 185, 0);
 }
 body .wrapper .timer-popup .error {
   margin-top: 2rem;

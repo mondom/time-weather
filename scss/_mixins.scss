@@ -1,11 +1,17 @@
 @mixin timer-button {
-   
-    font-size: 20px;
-    font-family: 'Caveat', cursive;
-    padding: 5px 12px;
-    box-shadow: 0 0 4px $timer-color;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	padding: 5px 12px;
+	box-shadow: 0 0 4px $timer-color;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+@mixin stopwatch-button {
+	border: 3px solid rgb(255, 149, 0);
+	background-color: white;
+	font-size: 2rem;
+	color: black;
 }
