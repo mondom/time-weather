@@ -6,16 +6,16 @@
 
 :root {
   font-size: 62.5%;
-  --1bb-height: 80%;
+  --1bb-height: 70%;
   --1bb-flex-direction: column;
   --1bb-justify-content: space-around;
-  --1bb-margin-top: 10%;
+  --1bb-margin-top: 35%;
   --1scb-padding: 3rem 2rem;
   --1scb-width: fit-content;
-  --1span-font-size: 3rem;
-  --1before-width: 52px;
-  --1before-height: 52px;
-  --1before-top: 6%;
+  --1span-font-size: 2rem;
+  --1before-width: 42px;
+  --1before-height: 42px;
+  --1before-top: 16%;
   --1before-left: 0;
 }
 
@@ -37,6 +37,28 @@ body .wrapper {
   background-color: #2d0d30;
   display: flex;
   justify-content: center;
+}
+body .wrapper .app-title-box {
+  width: 100%;
+  height: 30%;
+  z-index: 1;
+  color: #2d0d30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .wrapper .app-title-box .app-title {
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+}
+body .wrapper .app-title-box .choose {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+body .wrapper .app-title-box .double-arrow {
+  width: 50px;
+  animation: bounce-arrow 2s infinite;
 }
 body .wrapper .card-wrapper {
   position: absolute;
@@ -372,6 +394,15 @@ body .wrapper .card-wrapper .button-box .show-card-bth::before {
   top: var(--1before-top);
   left: var(--1before-left);
 }
+body .wrapper .card-wrapper .button-box .show-card-bth:nth-child(1)::before {
+  animation: resize-before 2s 1s infinite;
+}
+body .wrapper .card-wrapper .button-box .show-card-bth:nth-child(2)::before {
+  animation: resize-before 2s 2s infinite;
+}
+body .wrapper .card-wrapper .button-box .show-card-bth:nth-child(3)::before {
+  animation: resize-before 2s 3s infinite;
+}
 body .wrapper .card-wrapper .button-box .show-card-bth:hover::before {
   width: 100%;
   background-color: rgb(252, 185, 0);
@@ -522,5 +553,39 @@ body .wrapper .time-date-box .time {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes bounce-arrow {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes resize-before {
+  0% {
+    scale: 1.1;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.1;
   }
 }/*# sourceMappingURL=main.css.map */

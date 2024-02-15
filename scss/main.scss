@@ -9,22 +9,22 @@
 :root {
 	font-size: 62.5%;
 	// button-box
-	--1bb-height: 80%;
+	--1bb-height: 70%;
 	--1bb-flex-direction: column;
 	--1bb-justify-content: space-around;
-	--1bb-margin-top: 10%;
+	--1bb-margin-top: 35%;
 
 	// show-card-btn
 	--1scb-padding: 3rem 2rem;
 	--1scb-width: fit-content;
 
 	// span
-	--1span-font-size: 3rem;
+	--1span-font-size: 2rem;
 
 	// before
-	--1before-width: 52px;
-	--1before-height: 52px;
-	--1before-top: 6%;
+	--1before-width: 42px;
+	--1before-height: 42px;
+	--1before-top: 16%;
 	--1before-left: 0;
 }
 
@@ -73,6 +73,30 @@ body {
 		// 		}
 		// 	}
 		// }
+
+		.app-title-box {
+			width: 100%;
+			height: 30%;
+			z-index: 1;
+			color: #2d0d30;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			.app-title {
+				font-size: 2.3rem;
+				// margin-top: 1rem;
+				margin-bottom: .5rem;
+			}
+			.choose{
+				font-size: 1.3rem;
+				margin-bottom: 2rem;
+			}
+			.double-arrow {
+				width: 50px;
+				animation: bounce-arrow 2s infinite;
+			}
+		}
 
 		.card-wrapper {
 			position: absolute;
@@ -442,6 +466,7 @@ body {
 			.button-box {
 				position: absolute;
 				display: flex;
+				// background-color: red;
 				height: var(--1bb-height);
 				flex-direction: var(--1bb-flex-direction);
 				justify-content: var(--1bb-justify-content);
@@ -477,7 +502,18 @@ body {
 					height: var(--1before-height);
 					top: var(--1before-top);
 					left: var(--1before-left);
+					
 				}
+				.show-card-bth:nth-child(1)::before{
+					animation: resize-before 2s 1s infinite;
+				}
+				.show-card-bth:nth-child(2)::before{
+					animation: resize-before 2s 2s infinite;
+				}
+				.show-card-bth:nth-child(3)::before{
+					animation: resize-before 2s 3s infinite;
+				}
+				
 				.show-card-bth:hover::before {
 					width: 100%;
 					background-color: rgba(252, 185, 0, 1);
@@ -641,3 +677,39 @@ body {
 		opacity: 0;
 	}
 }
+
+@keyframes bounce-arrow {
+	0%{
+		transform: translateY(0);
+	} 20%{
+		transform: translateY(0);
+	} 
+	40% {
+	  transform: translateY(-15px);
+	}
+	50%{
+		transform: translateY(0);
+	}
+	60% {
+	  transform: translateY(-8px);
+	}
+	80%{
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(0);
+	  }
+  }
+
+  @keyframes resize-before {
+	0%{
+		scale: 1.1;
+	} 
+	50%{
+		scale: 1;
+	}
+	
+	100% {
+		scale: 1.1;
+	  }
+  }
