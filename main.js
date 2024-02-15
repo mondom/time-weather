@@ -209,12 +209,15 @@ const weatherInput = document.querySelector('.input-city-name')
 const weatherSendBtn = document.querySelector('.weather-send-btn')
 const nameOfCity = document.querySelector('.name-of-city')
 const appName = document.querySelector('.app-title-box')
+const errorWeatherPopup = document.querySelector('.error-weather-popup')
 
-const showWeatherPopup = () => {
-	weatherPopup.classList.add('show-weather-popup')
-}
+// const showWeatherPopup = () => {
+// 	weatherPopup.classList.add('show-weather-popup')
+// }
 
 // api waether
+
+let apiError
 
 const API_LINK = 'https://api.openweathermap.org/data/2.5/weather?q='
 
@@ -226,41 +229,60 @@ const getCityWeather = () => {
 	let city = weatherInput.value
 	const ADDRESS = API_LINK + city + API_KEY + API_UNITS
 
-	axios.get(ADDRESS).then(res => {
-		const temp = res.data.main.temp
-		const status = res.data.weather[0].main
+	checkWeatherPopup()
 
-		nameOfCity.textContent = res.data.name
+	axios
+		.get(ADDRESS)
+		.then(res => {
+			const temp = res.data.main.temp
+			const status = res.data.weather[0].main
 
-		currentTemp.textContent = Math.floor(temp) + '°C'
-		currentWeather.textContent = status
+			nameOfCity.textContent = res.data.name
 
-		const iconStatus = res.data.weather[0].id
+			currentTemp.textContent = Math.floor(temp) + '°C'
+			currentWeather.textContent = status
 
-		if (iconStatus >= 200 && iconStatus < 300) {
-			icon.setAttribute('src', './assets/icon/thunderstorm.png')
-		} else if (iconStatus >= 300 && iconStatus < 400) {
-			icon.setAttribute('src', './assets/icon/drizzle.png')
-		} else if (iconStatus >= 500 && iconStatus < 600) {
-			icon.setAttribute('src', './assets/icon/rain.png')
-		} else if (iconStatus >= 600 && iconStatus < 700) {
-			icon.setAttribute('src', './assets/icon/snow.png')
-		} else if (iconStatus >= 701 && iconStatus < 800) {
-			icon.setAttribute('src', './assets/icon/fog.png')
-		} else if (iconStatus === 800) {
-			icon.setAttribute('src', './assets/icon/sun.png')
-		} else if (iconStatus >= 801 && iconStatus < 900) {
-			icon.setAttribute('src', './assets/icon/cloud.png')
-		} else {
-			icon.setAttribute('src', './assets/icon/unknown.png')
-		}
+			const iconStatus = res.data.weather[0].id
 
-		console.log(res.data.weather[0].id)
-	})
+			if (iconStatus >= 200 && iconStatus < 300) {
+				icon.setAttribute('src', './assets/icon/thunderstorm.png')
+			} else if (iconStatus >= 300 && iconStatus < 400) {
+				icon.setAttribute('src', './assets/icon/drizzle.png')
+			} else if (iconStatus >= 500 && iconStatus < 600) {
+				icon.setAttribute('src', './assets/icon/rain.png')
+			} else if (iconStatus >= 600 && iconStatus < 700) {
+				icon.setAttribute('src', './assets/icon/snow.png')
+			} else if (iconStatus >= 701 && iconStatus < 800) {
+				icon.setAttribute('src', './assets/icon/fog.png')
+			} else if (iconStatus === 800) {
+				icon.setAttribute('src', './assets/icon/sun.png')
+			} else if (iconStatus >= 801 && iconStatus < 900) {
+				icon.setAttribute('src', './assets/icon/cloud.png')
+			} else {
+				icon.setAttribute('src', './assets/icon/unknown.png')
+			}
+
+			errorWeatherPopup.textContent = ''
+			closeWeatherPopup()
+			showWeatherCard()
+		})
+		.catch(error => {
+			apiError = error.response.status
+
+			if (apiError === 404) {
+				errorWeatherPopup.textContent = 'Enter the correct city name!'
+			}
+		})
 }
 
 const closeWeatherPopup = () => {
 	weatherPopup.style.display = 'none'
+}
+
+const checkWeatherPopup = () => {
+	if (weatherInput.value == '') {
+		errorWeatherPopup.textContent = 'Enter the name of the city!'
+	}
 }
 
 const showWeatherCard = () => {
@@ -268,14 +290,18 @@ const showWeatherCard = () => {
 }
 
 const openWeatherPopup = () => {
+	errorWeatherPopup.textContent = ''
 	weatherPopup.style.display = 'flex'
+	weatherInput.value = ''
 }
+// weatherSendBtn.addEventListener('click', checkWeatherPopup)
+weatherSendBtn.addEventListener('click', getCityWeather)
 
-getCityWeather()
-weatherSendBtn.addEventListener('click', () => {
-	showWeatherCard()
-	getCityWeather()
-})
+// getCityWeather()
+// weatherSendBtn.addEventListener('click', () => {
+// 	showWeatherCard()
+// 	getCityWeather()
+// })
 
 // footer
 const time = document.querySelector('.time')
@@ -329,13 +355,14 @@ const showWeather = () => {
 	stopwatchCard.classList.add('hide-card')
 	timerCard.classList.add('hide-card')
 	appName.style.display = 'none'
+	openWeatherPopup()
 }
 
 showStopwatchBtn.addEventListener('click', showStopwatch)
 showTimerBtn.addEventListener('click', showTimer)
 showWeatherBtn.addEventListener('click', () => {
 	showWeather()
-	showWeatherPopup()
+	openWeatherPopup()
 })
 
 // start of application
@@ -355,22 +382,20 @@ const span = document.querySelector('span')
 let root = document.documentElement
 
 const setTheButtons = () => {
-	root.style.setProperty('--1bb-height', 'auto');
-	root.style.setProperty('--1bb-flex-direction', 'row');
-	root.style.setProperty('--1bb-justify-content', 'center');
-	root.style.setProperty('--1bb-margin-top', '0');
+	root.style.setProperty('--1bb-height', 'auto')
+	root.style.setProperty('--1bb-flex-direction', 'row')
+	root.style.setProperty('--1bb-justify-content', 'center')
+	root.style.setProperty('--1bb-margin-top', '0')
 
-	root.style.setProperty('--1scb-padding', '1.5rem 1rem');
-	root.style.setProperty('--1scb-width', 'auto');
+	root.style.setProperty('--1scb-padding', '1.5rem 1rem')
+	root.style.setProperty('--1scb-width', 'auto')
 
-	root.style.setProperty('--1span-font-size', '1.6rem');
+	root.style.setProperty('--1span-font-size', '1.6rem')
 
-	root.style.setProperty('--1before-width', '32px');
-	root.style.setProperty('--1before-height', '32px');
-	root.style.setProperty('--1before-top', '-3%');
-	root.style.setProperty('--1before-left', '-1px');
-
-
+	root.style.setProperty('--1before-width', '32px')
+	root.style.setProperty('--1before-height', '32px')
+	root.style.setProperty('--1before-top', '-3%')
+	root.style.setProperty('--1before-left', '-1px')
 
 	buttonBox.style.bottom = '5rem'
 	buttonBox.style.width = '100%'
@@ -380,5 +405,4 @@ const setTheButtons = () => {
 		btn.style.justifyContent = 'center'
 		btn.style.margin = '0.5rem'
 	})
-
 }

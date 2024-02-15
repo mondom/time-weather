@@ -149,10 +149,10 @@
 
                 <h3 class="popup-weather-header">Enter city name</h3>
                 <img class="weather-arrow" src="./assets/icon/down-arrow.png" alt="arrow">
-                <input type="text" id="weather-city" class="input-city-name" maxlength="40" value="London"
+                <input type="text" id="weather-city" class="input-city-name" maxlength="40" 
                     placeholder="enter city">
-
-                <button class="weather-send-btn big-button" onclick="closeWeatherPopup()">Send</button>
+                <p class="error-weather-popup"></p>
+                <button class="weather-send-btn big-button">Send</button>
 
             </div>
 
@@ -192,7 +192,7 @@
                     <a href="#" class="show-timer-btn show-card-bth" onclick="setTheButtons()">
                         <span>timer</span>
                         <a href="#" class="show-weather-btn show-card-bth"
-                            onclick="openWeatherPopup(); setTheButtons()">
+                            onclick="setTheButtons()">
                             <span>weather</span>
 
                         </a>

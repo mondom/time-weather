@@ -86,9 +86,9 @@ body {
 			.app-title {
 				font-size: 2.3rem;
 				// margin-top: 1rem;
-				margin-bottom: .5rem;
+				margin-bottom: 0.5rem;
 			}
-			.choose{
+			.choose {
 				font-size: 1.3rem;
 				margin-bottom: 2rem;
 			}
@@ -458,6 +458,10 @@ body {
 				.weather-send-btn:hover {
 					background-color: rgba(252, 185, 0, 1);
 				}
+				.error-weather-popup {
+					font-size: 1.6rem;
+					height: 1.6rem;
+				}
 			}
 			.hide-card {
 				display: none;
@@ -502,18 +506,17 @@ body {
 					height: var(--1before-height);
 					top: var(--1before-top);
 					left: var(--1before-left);
-					
 				}
-				.show-card-bth:nth-child(1)::before{
+				.show-card-bth:nth-child(1)::before {
 					animation: resize-before 2s 1s infinite;
 				}
-				.show-card-bth:nth-child(2)::before{
+				.show-card-bth:nth-child(2)::before {
 					animation: resize-before 2s 2s infinite;
 				}
-				.show-card-bth:nth-child(3)::before{
+				.show-card-bth:nth-child(3)::before {
 					animation: resize-before 2s 3s infinite;
 				}
-				
+
 				.show-card-bth:hover::before {
 					width: 100%;
 					background-color: rgba(252, 185, 0, 1);
@@ -679,37 +682,38 @@ body {
 }
 
 @keyframes bounce-arrow {
-	0%{
+	0% {
 		transform: translateY(0);
-	} 20%{
-		transform: translateY(0);
-	} 
-	40% {
-	  transform: translateY(-15px);
 	}
-	50%{
+	20% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-15px);
+	}
+	50% {
 		transform: translateY(0);
 	}
 	60% {
-	  transform: translateY(-8px);
+		transform: translateY(-8px);
 	}
-	80%{
+	80% {
 		transform: translateY(0);
 	}
 	100% {
 		transform: translateY(0);
-	  }
-  }
+	}
+}
 
-  @keyframes resize-before {
-	0%{
+@keyframes resize-before {
+	0% {
 		scale: 1.1;
-	} 
-	50%{
+	}
+	50% {
 		scale: 1;
 	}
-	
+
 	100% {
 		scale: 1.1;
-	  }
-  }
+	}
+}

@@ -353,6 +353,10 @@ body .wrapper .card-wrapper .weather-popup .weather-send-btn {
 body .wrapper .card-wrapper .weather-popup .weather-send-btn:hover {
   background-color: rgb(252, 185, 0);
 }
+body .wrapper .card-wrapper .weather-popup .error-weather-popup {
+  font-size: 1.6rem;
+  height: 1.6rem;
+}
 body .wrapper .card-wrapper .hide-card {
   display: none;
 }
