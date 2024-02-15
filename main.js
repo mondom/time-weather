@@ -337,3 +337,48 @@ showWeatherBtn.addEventListener('click', () => {
 	showWeather()
 	showWeatherPopup()
 })
+
+// start of application
+
+const buttonBox = document.querySelector('.button-box')
+const showCardBtns = document.querySelectorAll('.show-card-btn')
+const span = document.querySelector('span')
+// const showCardBtnsBefore = document.querySelectorAll('.show-card-bth::before')
+
+// showCardBtns.forEach(element => {
+// 	// Pobierz pseudoelement '::before' dla każdego elementu
+// 	const showCardBtnsBefore = window.getComputedStyle(element, '::before')
+
+// 	console.log(showCardBtnsBefore)
+// })
+
+let root = document.documentElement
+
+const setTheButtons = () => {
+	root.style.setProperty('--1bb-height', 'auto');
+	root.style.setProperty('--1bb-flex-direction', 'row');
+	root.style.setProperty('--1bb-justify-content', 'center');
+	root.style.setProperty('--1bb-margin-top', '0');
+
+	root.style.setProperty('--1scb-padding', '1.5rem 1rem');
+	root.style.setProperty('--1scb-width', 'auto');
+
+	root.style.setProperty('--1span-font-size', '1.6rem');
+
+	root.style.setProperty('--1before-width', '32px');
+	root.style.setProperty('--1before-height', '32px');
+	root.style.setProperty('--1before-top', '-3%');
+	root.style.setProperty('--1before-left', '-1px');
+
+
+
+	buttonBox.style.bottom = '5rem'
+	buttonBox.style.width = '100%'
+	buttonBox.style.padding = '0.7rem'
+
+	showCardBtns.forEach(btn => {
+		btn.style.justifyContent = 'center'
+		btn.style.margin = '0.5rem'
+	})
+
+}

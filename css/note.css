@@ -1,0 +1,35 @@
+:root {
+  --1bb-height: 80%;
+  --1bb-flex-direction: column;
+  --1bb-justify-content: space-around;
+  --1bb-margin-top: 10%;
+  --2bb-height: auto;
+  --2bb-flex-direction: row;
+  --2bb-justify-content: center;
+  --2bb-margin-top: 0;
+  --1scb-padding: 3rem 2rem;
+  --1scb-width: fit-content;
+  --2scb-padding: 1.5rem 1rem;
+  --2scb-width: auto;
+  --1span-font-size: 3rem;
+  --2span-font-size: 1.6rem;
+  --1before-width: 52px;
+  --1before-height: 52px;
+  --1before-top: 6%;
+  --1before-left: 0;
+  --2before-width: 32px;
+  --2before-height: 32px;
+  --2before-top: -3%;
+  --2before-left: -1px;
+}
+
+.button-box {
+  bottom: 5rem;
+  width: 100%;
+  padding: 0.7rem;
+}
+
+.show-card-btn {
+  justify-content: center;
+  margin: 0.5rem;
+}/*# sourceMappingURL=note.css.map */

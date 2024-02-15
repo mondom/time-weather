@@ -6,6 +6,17 @@
 
 :root {
   font-size: 62.5%;
+  --1bb-height: 80%;
+  --1bb-flex-direction: column;
+  --1bb-justify-content: space-around;
+  --1bb-margin-top: 10%;
+  --1scb-padding: 3rem 2rem;
+  --1scb-width: fit-content;
+  --1span-font-size: 3rem;
+  --1before-width: 52px;
+  --1before-height: 52px;
+  --1before-top: 6%;
+  --1before-left: 0;
 }
 
 body {
@@ -278,7 +289,7 @@ body .wrapper .card-wrapper .weather .weather-content .weather-icon {
   width: 30%;
 }
 body .wrapper .card-wrapper .weather-popup {
-  display: flex;
+  display: none;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
@@ -325,41 +336,41 @@ body .wrapper .card-wrapper .hide-card {
 }
 body .wrapper .card-wrapper .button-box {
   position: absolute;
-  bottom: 5rem;
-  width: 100%;
-  left: 50%;
-  transform: translate(-50%);
   display: flex;
-  justify-content: center;
-  padding: 0.7rem;
+  height: var(--1bb-height);
+  flex-direction: var(--1bb-flex-direction);
+  justify-content: var(--1bb-justify-content);
+  margin-top: var(--1bb-margin-top);
 }
 body .wrapper .card-wrapper .button-box .show-card-bth {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1.2rem 1rem;
   margin: 0.5rem;
   transition: all 0.2s ease;
   text-decoration: none;
+  height: 30px;
+  padding: var(--1scb-padding);
+  width: var(--1scb-width);
 }
 body .wrapper .card-wrapper .button-box .show-card-bth span {
   position: relative;
-  font-size: 1.6rem;
   color: black;
   font-weight: bold;
+  font-size: var(--1span-font-size);
 }
 body .wrapper .card-wrapper .button-box .show-card-bth::before {
   content: "";
   position: absolute;
-  top: 6px;
-  left: 0;
   display: block;
   border-radius: 28px;
   background-color: rgba(252, 185, 0, 0.5);
-  width: 32px;
-  height: 32px;
+  z-index: -1;
   transition: all 0.3s ease;
+  width: var(--1before-width);
+  height: var(--1before-height);
+  top: var(--1before-top);
+  left: var(--1before-left);
 }
 body .wrapper .card-wrapper .button-box .show-card-bth:hover::before {
   width: 100%;

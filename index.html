@@ -19,6 +19,13 @@
 
     <div class="wrapper">
 
+              <!-- <div class="app-title-box">
+                <h1 class="app-title">world of <span class="time-word">time<div class="color-dot"></div>
+                        <div class="white-dot"></div>
+                    </span><br> and weather</h1>
+            </div> -->
+
+
         <!-- <div class="instruction stopwatch-instruction">
             <p>blablabla</p>
             <p>blablabla</p>
@@ -59,12 +66,7 @@
 
         <div class="card-wrapper">
 
-            <!-- <div class="app-title-box">
-                <h1 class="app-title">world of <span class="time-word">time<div class="color-dot"></div>
-                        <div class="white-dot"></div>
-                    </span><br> and weather</h1>
-            </div> -->
-
+      
 
             <div class="stopwatch card hide-card">
 <img src="./assets/icon/clock_11883744.png" alt="clock-icon" class="clock-icon">
@@ -154,7 +156,7 @@
 
             </div>
 
-            <div class="weather card ">
+            <div class="weather card hide-card">
                 <!-- <img class="yellow-dot" src="./assets/icon/record_8114034.png" alt="yellow-dot"> -->
 
                 <div class="weather-title-box title-box">
@@ -185,11 +187,11 @@
             </div>
             <div class="button-box">
 
-                <a href="#" class="show-stopwatch-btn show-card-bth" onclick="quickHideHistory()">
+                <a href="#" class="show-stopwatch-btn show-card-bth" onclick="quickHideHistory(); setTheButtons()">
                     <span>stopwatch</span>
-                    <a href="#" class="show-timer-btn show-card-bth">
+                    <a href="#" class="show-timer-btn show-card-bth" onclick="setTheButtons()">
                         <span>timer</span>
-                        <a href="#" class="show-weather-btn show-card-bth" onclick="openWeatherPopup()">
+                        <a href="#" class="show-weather-btn show-card-bth" onclick="openWeatherPopup(); setTheButtons()">
                             <span>weather</span>
 
                         </a>
