@@ -138,12 +138,14 @@ const secondsCountdown = document.querySelector('.countdown-seconds')
 const eventName = document.querySelector('.event-name')
 const error = document.querySelector('.error')
 
-let userTime
-let presenTime
+let enterTime
+let score
 
 const getTime = () => {
-	presenTime = new Date()
-	let score = userTime - presenTime
+	let presenTime = new Date().getTime()
+	enterTime = new Date(`${popupInputMonth.value} ${popupInputDay.value} ${popupInputYear.value}`).getTime()
+
+	score = enterTime - presenTime
 
 	const timerDays = Math.floor(score / 1000 / 60 / 60 / 24)
 	const timerHours = Math.floor(score / 1000 / 60 / 60) % 24
@@ -154,9 +156,12 @@ const getTime = () => {
 	hoursCountdown.textContent = timerHours
 	minutesCountdown.textContent = timerMinutes
 	secondsCountdown.textContent = timerSeconds
+
 }
 
 const dataUpdate = () => {
+	getTime()
+
 	if (
 		popupEventName.value === '' ||
 		popupInputDay.value === '' ||
@@ -164,14 +169,13 @@ const dataUpdate = () => {
 		popupInputYear.value === ''
 	) {
 		error.textContent = 'Enter all data!'
-		console.log(error)
-	} else if (userTime < presenTime) {
+	} else if (score < 0) {
+	
 		error.textContent = 'Enter the date yet to come!'
 	} else {
 		eventName.textContent = popupEventName.value
-		userTime = new Date(`${popupInputMonth.value} ${popupInputDay.value} ${popupInputYear.value}`)
+		
 		error.textContent = ''
-		getTime()
 		closePopup()
 	}
 }
@@ -195,8 +199,8 @@ const resetInputsValue = () => {
 timerEditBtn.addEventListener('click', showPopup)
 timerSaveBtn.addEventListener('click', dataUpdate)
 
-dataUpdate()
 setInterval(getTime, 1000)
+// dataUpdate()
 
 //weather card
 
@@ -210,10 +214,6 @@ const weatherSendBtn = document.querySelector('.weather-send-btn')
 const nameOfCity = document.querySelector('.name-of-city')
 const appName = document.querySelector('.app-title-box')
 const errorWeatherPopup = document.querySelector('.error-weather-popup')
-
-// const showWeatherPopup = () => {
-// 	weatherPopup.classList.add('show-weather-popup')
-// }
 
 // api waether
 
@@ -294,14 +294,8 @@ const openWeatherPopup = () => {
 	weatherPopup.style.display = 'flex'
 	weatherInput.value = ''
 }
-// weatherSendBtn.addEventListener('click', checkWeatherPopup)
-weatherSendBtn.addEventListener('click', getCityWeather)
 
-// getCityWeather()
-// weatherSendBtn.addEventListener('click', () => {
-// 	showWeatherCard()
-// 	getCityWeather()
-// })
+weatherSendBtn.addEventListener('click', getCityWeather)
 
 // footer
 const time = document.querySelector('.time')
