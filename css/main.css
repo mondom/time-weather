@@ -242,7 +242,7 @@ body .wrapper .card-wrapper .card .timer-content .timer-box .small-box .count-nu
 }
 body .wrapper .card-wrapper .card .timer-content .timer-box .small-box hr {
   width: 80%;
-  margin: 0 auto;
+  margin: 0.5rem auto;
 }
 body .wrapper .card-wrapper .timer {
   background-image: url(../assets/img/timer.jpg);
@@ -603,7 +603,7 @@ body .wrapper .time-date-box .time {
     left: 0;
   }
   to {
-    left: 1000px;
+    left: 500px;
   }
 }
 @keyframes shift-left {
@@ -611,6 +611,6 @@ body .wrapper .time-date-box .time {
     left: 0;
   }
   to {
-    left: -1000px;
+    left: -500px;
   }
 }/*# sourceMappingURL=main.css.map */

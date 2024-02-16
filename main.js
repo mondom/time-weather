@@ -390,8 +390,8 @@ const setTheButtons = () => {
 }
 
 const activateAnimation = () => {
-	root.style.setProperty('--animation-left', 'shift-left 2.5s 1')
-	root.style.setProperty('--animation-right', 'shift-right 2.5s 1')
+	root.style.setProperty('--animation-left', 'shift-left 2s .5s 1')
+	root.style.setProperty('--animation-right', 'shift-right 2s .5s 1')
 }
 
 
@@ -399,8 +399,12 @@ const activateAnimation = () => {
 const connectTheDotsWeather = () => {
 	if (!buttonBox.classList.contains('done')) {
 		activateAnimation()
-		setTimeout(showWeather, 1000)
-		setTimeout(setTheButtons, 1000)
+		setTimeout(()=>{
+			showWeather()
+			setTheButtons()
+		}, 1500)
+		// setTimeout(showWeather, 1500)
+		// setTimeout(setTheButtons, 1000)
 	} else {
 		openWeatherPopup()
 		showWeather()
@@ -409,8 +413,11 @@ const connectTheDotsWeather = () => {
 const connectTheDotsTimer = () => {
 	if (!buttonBox.classList.contains('done')) {
 		activateAnimation()
-		setTimeout(showTimer, 1000)
-		setTimeout(setTheButtons, 1000)
+		setTimeout(()=>{
+			showTimer()
+			setTheButtons()
+		}, 1500)
+		// setTimeout(setTheButtons, 1000)
 	} else {
 		setTheButtons()
 		showTimer()
@@ -419,8 +426,12 @@ const connectTheDotsTimer = () => {
 const connectTheDotsStopwatch = () => {
 	if (!buttonBox.classList.contains('done')) {
 		activateAnimation()
-		setTimeout(showStopwatch, 1000)
-		setTimeout(setTheButtons, 1000)
+		setTimeout(()=>{
+			showStopwatch()
+			setTheButtons()
+		}, 1500)
+		// setTimeout(showStopwatch, 1500)
+		// setTimeout(setTheButtons, 1000)
 	} else {
 		setTheButtons()
 		showStopwatch()

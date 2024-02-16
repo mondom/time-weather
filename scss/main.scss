@@ -333,7 +333,7 @@ body {
 							}
 							hr {
 								width: 80%;
-								margin: 0 auto;
+								margin: .5rem auto;
 							}
 						}
 					}
@@ -732,7 +732,7 @@ body {
 		left: 0;
 	}
 	to {
-		left: 1000px;
+		left: 500px;
 	}
 }
 @keyframes shift-left {
@@ -740,6 +740,6 @@ body {
 		left: 0;
 	}
 	to {
-		left: -1000px;
+		left: -500px;
 	}
 }
