@@ -26,6 +26,10 @@
 	--1before-height: 42px;
 	--1before-top: 16%;
 	--1before-left: 0;
+
+	--animation-left: none;
+
+	--animation-right: none;
 }
 
 body {
@@ -42,11 +46,11 @@ body {
 		position: relative;
 		width: 100%;
 		height: 100%;
-		background-color: #2d0d30;
+		// background-color: #2d0d30;
 		// border-radius: 20px;
 		display: flex;
 		justify-content: center;
-
+		overflow: hidden;
 		// .instruction {
 		// 	position: relative;
 		// 	width: 100%;
@@ -76,9 +80,10 @@ body {
 
 		.app-title-box {
 			width: 100%;
-			height: 30%;
+			height: 25%;
 			z-index: 1;
-			color: #2d0d30;
+			color: white;
+			background-color: #2d0d30;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -101,11 +106,14 @@ body {
 		.card-wrapper {
 			position: absolute;
 			width: 100%;
-			height: 95%;
+			height: 85%;
 			display: flex;
 			justify-content: center;
+			// align-items: center;
 			background-color: #f8f0ee;
+			// background-color: red;
 			z-index: 0;
+			bottom: 4rem;
 
 			// .app-title-box {
 			// 	position: relative;
@@ -486,11 +494,12 @@ body {
 					padding: var(--1scb-padding);
 					width: var(--1scb-width);
 
-					span {
+					.btn-name {
 						position: relative;
 						color: black;
 						font-weight: bold;
 						font-size: var(--1span-font-size);
+						animation: var(--animation-left);
 					}
 				}
 
@@ -508,13 +517,13 @@ body {
 					left: var(--1before-left);
 				}
 				.show-card-bth:nth-child(1)::before {
-					animation: resize-before 2s 1s infinite;
+					animation: var(--animation-right);
 				}
 				.show-card-bth:nth-child(2)::before {
-					animation: resize-before 2s 2s infinite;
+					animation: var(--animation-right);
 				}
 				.show-card-bth:nth-child(3)::before {
-					animation: resize-before 2s 3s infinite;
+					animation: var(--animation-right);
 				}
 
 				.show-card-bth:hover::before {
@@ -635,8 +644,8 @@ body {
 			align-items: center;
 			bottom: 0;
 			font-size: 1.6rem;
-
 			background-color: #2d0d30;
+			// background-color: green;
 			color: #fff;
 
 			text-shadow: 0 0 5px rgb(0, 0, 0);
@@ -715,5 +724,22 @@ body {
 
 	100% {
 		scale: 1.1;
+	}
+}
+
+@keyframes shift-right {
+	from {
+		left: 0;
+	}
+	to {
+		left: 1000px;
+	}
+}
+@keyframes shift-left {
+	from {
+		left: 0;
+	}
+	to {
+		left: -1000px;
 	}
 }

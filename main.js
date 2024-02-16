@@ -156,7 +156,6 @@ const getTime = () => {
 	hoursCountdown.textContent = timerHours
 	minutesCountdown.textContent = timerMinutes
 	secondsCountdown.textContent = timerSeconds
-
 }
 
 const dataUpdate = () => {
@@ -170,11 +169,10 @@ const dataUpdate = () => {
 	) {
 		error.textContent = 'Enter all data!'
 	} else if (score < 0) {
-	
 		error.textContent = 'Enter the date yet to come!'
 	} else {
 		eventName.textContent = popupEventName.value
-		
+
 		error.textContent = ''
 		closePopup()
 	}
@@ -352,26 +350,12 @@ const showWeather = () => {
 	openWeatherPopup()
 }
 
-showStopwatchBtn.addEventListener('click', showStopwatch)
-showTimerBtn.addEventListener('click', showTimer)
-showWeatherBtn.addEventListener('click', () => {
-	showWeather()
-	openWeatherPopup()
-})
-
 // start of application
 
 const buttonBox = document.querySelector('.button-box')
 const showCardBtns = document.querySelectorAll('.show-card-btn')
-const span = document.querySelector('span')
-// const showCardBtnsBefore = document.querySelectorAll('.show-card-bth::before')
-
-// showCardBtns.forEach(element => {
-// 	// Pobierz pseudoelement '::before' dla każdego elementu
-// 	const showCardBtnsBefore = window.getComputedStyle(element, '::before')
-
-// 	console.log(showCardBtnsBefore)
-// })
+const span = document.querySelector('.btn-name')
+const cardWrapper = document.querySelector('.card-wrapper')
 
 let root = document.documentElement
 
@@ -394,9 +378,55 @@ const setTheButtons = () => {
 	buttonBox.style.bottom = '5rem'
 	buttonBox.style.width = '100%'
 	buttonBox.style.padding = '0.7rem'
+	buttonBox.classList.add('done')
+
+	cardWrapper.style.height = '95%'
+	cardWrapper.style.bottom = 'auto'
 
 	showCardBtns.forEach(btn => {
 		btn.style.justifyContent = 'center'
 		btn.style.margin = '0.5rem'
 	})
 }
+
+const activateAnimation = () => {
+	root.style.setProperty('--animation-left', 'shift-left 2.5s 1')
+	root.style.setProperty('--animation-right', 'shift-right 2.5s 1')
+}
+
+
+
+const connectTheDotsWeather = () => {
+	if (!buttonBox.classList.contains('done')) {
+		activateAnimation()
+		setTimeout(showWeather, 1000)
+		setTimeout(setTheButtons, 1000)
+	} else {
+		openWeatherPopup()
+		showWeather()
+	}
+}
+const connectTheDotsTimer = () => {
+	if (!buttonBox.classList.contains('done')) {
+		activateAnimation()
+		setTimeout(showTimer, 1000)
+		setTimeout(setTheButtons, 1000)
+	} else {
+		setTheButtons()
+		showTimer()
+	}
+}
+const connectTheDotsStopwatch = () => {
+	if (!buttonBox.classList.contains('done')) {
+		activateAnimation()
+		setTimeout(showStopwatch, 1000)
+		setTimeout(setTheButtons, 1000)
+	} else {
+		setTheButtons()
+		showStopwatch()
+	}
+}
+
+showWeatherBtn.addEventListener('click', connectTheDotsWeather)
+showTimerBtn.addEventListener('click', connectTheDotsTimer)
+showStopwatchBtn.addEventListener('click', connectTheDotsStopwatch)
