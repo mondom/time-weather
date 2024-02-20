@@ -19,6 +19,9 @@
   --1before-left: 0;
   --animation-left: none;
   --animation-right: none;
+  --card-anime-stopwatch: none;
+  --card-anime-timer: none;
+  --card-anime-weather: none;
 }
 
 body {
@@ -249,7 +252,7 @@ body .wrapper .card-wrapper .timer {
   background-image: url(../assets/img/timer.jpg);
   background-position: center;
   background-size: cover;
-  animation: cardFalling 1.2s forwards;
+  animation: var(--card-anime-timer);
 }
 body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
   margin-bottom: 2rem;
@@ -261,7 +264,7 @@ body .wrapper .card-wrapper .stopwatch {
   transform-style: preserve-3d;
   perspective: 300px;
   transition: 0.8s;
-  animation: cardFalling 1.2s forwards;
+  animation: var(--card-anime-stopwatch);
 }
 body .wrapper .card-wrapper .stopwatch .clock-icon {
   position: absolute;
@@ -322,7 +325,7 @@ body .wrapper .card-wrapper .weather-popup {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   margin-top: 3rem;
   width: 90%;
   height: 70%;
@@ -331,7 +334,7 @@ body .wrapper .card-wrapper .weather-popup {
   background-position: center;
   background-size: cover;
   background-color: red;
-  animation: cardFalling 1.2s forwards;
+  animation: var(--card-anime-weather);
 }
 body .wrapper .card-wrapper .weather-popup .popup-weather-header {
   margin-top: 2rem;
@@ -542,32 +545,6 @@ body .wrapper .time-date-box .time {
   margin-right: 3.5rem;
 }
 
-@keyframes red-dot {
-  0% {
-    opacity: 0;
-  }
-  17% {
-    opacity: 1;
-    background-color: #e76f51;
-  }
-  33% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    background-color: #e9c46a;
-  }
-  66% {
-    opacity: 0;
-  }
-  83% {
-    opacity: 1;
-    background-color: #2a9d8f;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 @keyframes bounce-arrow {
   0% {
     transform: translateY(0);
@@ -616,13 +593,5 @@ body .wrapper .time-date-box .time {
   }
   to {
     left: -500px;
-  }
-}
-@keyframes cardFalling {
-  0% {
-    top: -700px;
-  }
-  100% {
-    top: 0;
   }
 }/*# sourceMappingURL=main.css.map */

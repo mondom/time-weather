@@ -330,22 +330,27 @@ setInterval(getTimeAndDate, 1000)
 // show and hide cards
 
 const showStopwatch = () => {
-	closeWeatherPopup()
 	stopwatchCard.classList.remove('hide-card')
+
+	closeWeatherPopup()
 	timerCard.classList.add('hide-card')
 	weatherCard.classList.add('hide-card')
+
 	appName.style.display = 'none'
 }
 const showTimer = () => {
+	timerCard.classList.remove('hide-card')
+
 	closeWeatherPopup()
 	stopwatchCard.classList.add('hide-card')
-	timerCard.classList.remove('hide-card')
 	weatherCard.classList.add('hide-card')
+
 	appName.style.display = 'none'
 }
 const showWeather = () => {
 	stopwatchCard.classList.add('hide-card')
 	timerCard.classList.add('hide-card')
+
 	appName.style.display = 'none'
 	openWeatherPopup()
 }
@@ -394,12 +399,16 @@ const activateAnimation = () => {
 	root.style.setProperty('--animation-right', 'shift-right 2s .5s 1')
 }
 
-
-
 const connectTheDotsWeather = () => {
+	// setTimeout(() => {
+	// 	stopwatchCard.classList.remove('active')
+	// 	timerCard.classList.remove('active')
+	// }, 1000)
+
+	// weatherCard.classList.active('active')
 	if (!buttonBox.classList.contains('done')) {
 		activateAnimation()
-		setTimeout(()=>{
+		setTimeout(() => {
 			showWeather()
 			setTheButtons()
 		}, 1500)
@@ -409,11 +418,21 @@ const connectTheDotsWeather = () => {
 		openWeatherPopup()
 		showWeather()
 	}
+	// if (timerCard.classList.contains('active')) {
+	// 	root.style.setProperty('--card-anime-timer', 'card-showing .8s forwards')
+	// } else if (stopwatchCard.classList.contains('active') || weatherCard.classList.contains('active')) {
+	// 	root.style.setProperty('--card-anime-timer', 'card-hiding .8s forwards')
+	// }
 }
 const connectTheDotsTimer = () => {
+	// stopwatchCard.classList.remove('active')
+	// weatherCard.classList.remove('active')
+
+	// timerCard.classList.add('active')
+
 	if (!buttonBox.classList.contains('done')) {
 		activateAnimation()
-		setTimeout(()=>{
+		setTimeout(() => {
 			showTimer()
 			setTheButtons()
 		}, 1500)
@@ -422,11 +441,21 @@ const connectTheDotsTimer = () => {
 		setTheButtons()
 		showTimer()
 	}
+
+	// if (timerCard.classList.contains('active')) {
+	// 	root.style.setProperty('--card-anime-timer', 'card-showing .8s forwards')
+	// } else if (stopwatchCard.classList.contains('active') || weatherCard.classList.contains('active')) {
+	// 	root.style.setProperty('--card-anime-timer', 'card-hiding .8s forwards')
+	// }
 }
 const connectTheDotsStopwatch = () => {
+	// stopwatchCard.classList.add('active')
+	// timerCard.classList.remove('active')
+	// weatherCard.classList.remove('active')
+
 	if (!buttonBox.classList.contains('done')) {
 		activateAnimation()
-		setTimeout(()=>{
+		setTimeout(() => {
 			showStopwatch()
 			setTheButtons()
 		}, 1500)
@@ -436,6 +465,12 @@ const connectTheDotsStopwatch = () => {
 		setTheButtons()
 		showStopwatch()
 	}
+
+	// if (stopwatchCard.classList.contains('active')) {
+	// 	root.style.setProperty('--card-anime-stopwatch', 'card-showing .8s forwards')
+	// } else if (timerCard.classList.contains('active') || weatherCard.classList.contains('active')) {
+	// 	root.style.setProperty('--card-anime-stopwatch', 'card-hiding .8s forwards')
+	// }
 }
 
 showWeatherBtn.addEventListener('click', connectTheDotsWeather)
