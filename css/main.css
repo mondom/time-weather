@@ -82,6 +82,7 @@ body .wrapper .card-wrapper .card {
   width: 90%;
   height: 70%;
   border-radius: 16px;
+  box-shadow: 0 0 8px #a0a0a0;
 }
 body .wrapper .card-wrapper .card .stopwatch-page {
   position: absolute;
@@ -248,6 +249,7 @@ body .wrapper .card-wrapper .timer {
   background-image: url(../assets/img/timer.jpg);
   background-position: center;
   background-size: cover;
+  animation: cardFalling 1.2s forwards;
 }
 body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
   margin-bottom: 2rem;
@@ -259,6 +261,7 @@ body .wrapper .card-wrapper .stopwatch {
   transform-style: preserve-3d;
   perspective: 300px;
   transition: 0.8s;
+  animation: cardFalling 1.2s forwards;
 }
 body .wrapper .card-wrapper .stopwatch .clock-icon {
   position: absolute;
@@ -328,6 +331,7 @@ body .wrapper .card-wrapper .weather-popup {
   background-position: center;
   background-size: cover;
   background-color: red;
+  animation: cardFalling 1.2s forwards;
 }
 body .wrapper .card-wrapper .weather-popup .popup-weather-header {
   margin-top: 2rem;
@@ -612,5 +616,13 @@ body .wrapper .time-date-box .time {
   }
   to {
     left: -500px;
+  }
+}
+@keyframes cardFalling {
+  0% {
+    top: -700px;
+  }
+  100% {
+    top: 0;
   }
 }/*# sourceMappingURL=main.css.map */

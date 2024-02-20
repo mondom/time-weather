@@ -88,6 +88,7 @@ body {
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+			// animation: opacity-off 1s forwards;
 			.app-title {
 				font-size: 2.3rem;
 				// margin-top: 1rem;
@@ -157,9 +158,9 @@ body {
 				margin-top: 3rem;
 				width: 90%;
 				height: 70%;
-
 				border-radius: 16px;
-
+				box-shadow: 0 0 8px $shadow-color;
+				
 				// overflow: hidden;
 
 				.stopwatch-page {
@@ -333,7 +334,7 @@ body {
 							}
 							hr {
 								width: 80%;
-								margin: .5rem auto;
+								margin: 0.5rem auto;
 							}
 						}
 					}
@@ -343,6 +344,7 @@ body {
 				background-image: url(../assets/img/timer.jpg);
 				background-position: center;
 				background-size: cover;
+				animation: cardFalling 1.2s forwards;
 				.timer-btn-box {
 					.timer-edit {
 						margin-bottom: 2rem;
@@ -356,6 +358,7 @@ body {
 				transform-style: preserve-3d;
 				perspective: 300px;
 				transition: 0.8s;
+				animation: cardFalling 1.2s forwards;
 				.clock-icon {
 					position: absolute;
 					width: 22%;
@@ -437,6 +440,7 @@ body {
 				background-position: center;
 				background-size: cover;
 				background-color: red;
+				animation: cardFalling 1.2s forwards;
 
 				.popup-weather-header {
 					margin-top: 2rem;
@@ -743,3 +747,22 @@ body {
 		left: -500px;
 	}
 }
+
+@keyframes cardFalling {
+	0% {
+		top: -700px;
+	}
+
+	100% {
+		top: 0;
+	}
+}
+
+// @keyframes opacity-off {
+// 	from {
+// 		opacity: 1;
+// 	}
+// 	to {
+// 		opacity: 0;
+// 	}
+// }
