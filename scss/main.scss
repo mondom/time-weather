@@ -63,15 +63,36 @@ body {
 			height: 100%;
 			background-color: #2d0d30;
 			z-index: 10;
-			justify-content: center;
+			// justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			// top: -50%;
-			padding: 5rem;
+			top: -100%;
+			// top: 0;
+			padding: 4rem;
 			text-align: center;
 			font-size: 1.6rem;
+			transition: .5s cubic-bezier(0.65, 0.05, 0.36, 1);
+			
+			.roll-up {
+				padding: 0.5rem;
+				width: 30%;
+				margin-top: 5rem;
+				border-radius: 8px;
+				font-size: 1.4rem;
+				cursor: pointer;
+			}
+			h3 {
+				margin-top: 4rem;
+			}
 			p {
 				line-height: 3rem;
+			}
+			.open-instruction-line-anime {
+				animation: openInstructionLineAnime 1s none;
+				
+			}
+			.close-instruction-line-anime{
+				animation: closeInstructionLineAnime 1s none;
 			}
 			.bookmark {
 				position: absolute;
@@ -80,15 +101,26 @@ body {
 				display: flex;
 				justify-content: center;
 				align-items: flex-end;
+				line-height: 2rem;
 				background-color: #2d0d30;
-				bottom: -3.2rem;
+				// background-color: red;
+				bottom: -3.4rem;
 				z-index: 10;
-				left: 50%;
-				transform: translate(-50%);
-				border-radius: 5px;
-				padding: 0.4rem;
+				// left: 50%;
+				// transform: translate(-50%);
+				border-radius: 8px;
+				// padding: 0.4rem;
+				cursor: pointer;
 				.bookmark-name {
 					font-size: 1.6rem;
+				}
+				img {
+					// display: inline-block;
+					width: 4rem;
+					margin-bottom: -0.6rem;
+					margin-left: auto;
+					margin-right: auto;
+					animation: small-bounce-arrow 2s infinite;
 				}
 			}
 			.stopwatch-info-header,
@@ -106,16 +138,16 @@ body {
 				margin-top: 3rem;
 			}
 		}
+		.active {
+			top: 0;
+		}
 		.stopwatch-instruction {
 			display: none;
-			display: flex;
 		}
 		.timer-instruction {
 			display: none;
-			// display: flex;
 		}
 		.weather-instruction {
-			// display: flex;
 			display: none;
 		}
 
@@ -125,8 +157,8 @@ body {
 			z-index: 1;
 			color: white;
 			background-color: #2d0d30;
-			// display: flex;
-			display: none;
+			display: flex;
+			// display: none;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
@@ -142,7 +174,7 @@ body {
 			}
 			.double-arrow {
 				width: 50px;
-				animation: bounce-arrow 2s infinite;
+				cursor: auto;
 			}
 		}
 
@@ -197,7 +229,8 @@ body {
 				display: flex;
 				align-items: center;
 				flex-direction: column;
-				margin-top: 3rem;
+				margin-top: 5rem;
+
 				width: 90%;
 				height: 70%;
 				border-radius: 16px;
@@ -476,7 +509,7 @@ body {
 				align-items: center;
 				flex-direction: column;
 				position: relative;
-				margin-top: 3rem;
+				margin-top: 5rem;
 				width: 90%;
 				height: 70%;
 				border-radius: 16px;
@@ -493,7 +526,7 @@ body {
 				.weather-arrow {
 					width: 4rem;
 					margin-top: 3rem;
-					animation: bounce-arrow 2s infinite;
+					// animation: bounce-arrow 2s infinite;
 				}
 				.input-city-name {
 					padding: 0.5rem;
@@ -533,6 +566,7 @@ body {
 				flex-direction: var(--1bb-flex-direction);
 				justify-content: var(--1bb-justify-content);
 				margin-top: var(--1bb-margin-top);
+
 				.show-card-bth {
 					position: relative;
 					display: flex;
@@ -763,6 +797,29 @@ body {
 		transform: translateY(0);
 	}
 }
+@keyframes small-bounce-arrow {
+	0% {
+		transform: translateY(0);
+	}
+	20% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-5px);
+	}
+	50% {
+		transform: translateY(0);
+	}
+	60% {
+		transform: translateY(-2px);
+	}
+	80% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
 
 @keyframes resize-before {
 	0% {
@@ -812,3 +869,20 @@ body {
 // 		right: -700px;
 // 	}
 // }
+
+@keyframes openInstructionLineAnime {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+@keyframes closeInstructionLineAnime {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(200%);
+	}
+}

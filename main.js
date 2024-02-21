@@ -329,9 +329,15 @@ setInterval(getTimeAndDate, 1000)
 
 // show and hide cards
 
+const stopwatchInfo = document.querySelector('.stopwatch-instruction')
+const timerInfo = document.querySelector('.timer-instruction')
+const weatherInfo = document.querySelector('.weather-instruction')
+
 const showStopwatch = () => {
 	stopwatchCard.classList.remove('hide-card')
-
+	stopwatchInfo.style.display = 'flex'
+	timerInfo.style.display = 'none'
+	weatherInfo.style.display = 'none'
 	closeWeatherPopup()
 	timerCard.classList.add('hide-card')
 	weatherCard.classList.add('hide-card')
@@ -339,6 +345,10 @@ const showStopwatch = () => {
 	appName.style.display = 'none'
 }
 const showTimer = () => {
+	stopwatchInfo.style.display = 'none'
+	timerInfo.style.display = 'flex'
+	weatherInfo.style.display = 'none'
+
 	timerCard.classList.remove('hide-card')
 
 	closeWeatherPopup()
@@ -348,6 +358,9 @@ const showTimer = () => {
 	appName.style.display = 'none'
 }
 const showWeather = () => {
+	stopwatchInfo.style.display = 'none'
+	timerInfo.style.display = 'none'
+	weatherInfo.style.display = 'flex'
 	stopwatchCard.classList.add('hide-card')
 	timerCard.classList.add('hide-card')
 
@@ -361,8 +374,20 @@ const buttonBox = document.querySelector('.button-box')
 const showCardBtns = document.querySelectorAll('.show-card-btn')
 const span = document.querySelector('.btn-name')
 const cardWrapper = document.querySelector('.card-wrapper')
+const weatherBookmark = document.querySelector('.weather-bookmark')
+const timerBookmark = document.querySelector('.timer-bookmark')
+const stopwatchBookmark = document.querySelector('.stopwatch-bookmark')
+
+const rollUpBtn = document.querySelector('.roll-up')
 
 let root = document.documentElement
+
+const showStopwatchInstrucions = () => {
+	stopwatchInfo.classList.add('active')
+}
+const hideStopwatchInstrucions = () => {
+	stopwatchInfo.classList.remove('active')
+}
 
 const setTheButtons = () => {
 	root.style.setProperty('--1bb-height', 'auto')
@@ -380,7 +405,7 @@ const setTheButtons = () => {
 	root.style.setProperty('--1before-top', '-3%')
 	root.style.setProperty('--1before-left', '-1px')
 
-	buttonBox.style.bottom = '5rem'
+	buttonBox.style.bottom = '4rem'
 	buttonBox.style.width = '100%'
 	buttonBox.style.padding = '0.7rem'
 	buttonBox.classList.add('done')
@@ -476,3 +501,11 @@ const connectTheDotsStopwatch = () => {
 showWeatherBtn.addEventListener('click', connectTheDotsWeather)
 showTimerBtn.addEventListener('click', connectTheDotsTimer)
 showStopwatchBtn.addEventListener('click', connectTheDotsStopwatch)
+
+stopwatchBookmark.addEventListener('click', () => {
+	showStopwatchInstrucions()
+})
+
+rollUpBtn.addEventListener('click', () => {
+	hideStopwatchInstrucions()
+})

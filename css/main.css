@@ -49,15 +49,33 @@ body .wrapper .instruction {
   height: 100%;
   background-color: #2d0d30;
   z-index: 10;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 5rem;
+  top: -100%;
+  padding: 4rem;
   text-align: center;
   font-size: 1.6rem;
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+body .wrapper .instruction .roll-up {
+  padding: 0.5rem;
+  width: 30%;
+  margin-top: 5rem;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+body .wrapper .instruction h3 {
+  margin-top: 4rem;
 }
 body .wrapper .instruction p {
   line-height: 3rem;
+}
+body .wrapper .instruction .open-instruction-line-anime {
+  animation: openInstructionLineAnime 1s none;
+}
+body .wrapper .instruction .close-instruction-line-anime {
+  animation: closeInstructionLineAnime 1s none;
 }
 body .wrapper .instruction .bookmark {
   position: absolute;
@@ -66,16 +84,22 @@ body .wrapper .instruction .bookmark {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  line-height: 2rem;
   background-color: #2d0d30;
-  bottom: -3.2rem;
+  bottom: -3.4rem;
   z-index: 10;
-  left: 50%;
-  transform: translate(-50%);
-  border-radius: 5px;
-  padding: 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
 }
 body .wrapper .instruction .bookmark .bookmark-name {
   font-size: 1.6rem;
+}
+body .wrapper .instruction .bookmark img {
+  width: 4rem;
+  margin-bottom: -0.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  animation: small-bounce-arrow 2s infinite;
 }
 body .wrapper .instruction .stopwatch-info-header,
 body .wrapper .instruction .timer-info-header {
@@ -91,9 +115,11 @@ body .wrapper .instruction .stopwatch-info {
 body .wrapper .instruction .timer-button-info {
   margin-top: 3rem;
 }
+body .wrapper .active {
+  top: 0;
+}
 body .wrapper .stopwatch-instruction {
   display: none;
-  display: flex;
 }
 body .wrapper .timer-instruction {
   display: none;
@@ -107,7 +133,7 @@ body .wrapper .app-title-box {
   z-index: 1;
   color: white;
   background-color: #2d0d30;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -122,7 +148,7 @@ body .wrapper .app-title-box .choose {
 }
 body .wrapper .app-title-box .double-arrow {
   width: 50px;
-  animation: bounce-arrow 2s infinite;
+  cursor: auto;
 }
 body .wrapper .card-wrapper {
   position: absolute;
@@ -139,7 +165,7 @@ body .wrapper .card-wrapper .card {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 5rem;
   width: 90%;
   height: 70%;
   border-radius: 16px;
@@ -384,7 +410,7 @@ body .wrapper .card-wrapper .weather-popup {
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin-top: 3rem;
+  margin-top: 5rem;
   width: 90%;
   height: 70%;
   border-radius: 16px;
@@ -401,7 +427,6 @@ body .wrapper .card-wrapper .weather-popup .popup-weather-header {
 body .wrapper .card-wrapper .weather-popup .weather-arrow {
   width: 4rem;
   margin-top: 3rem;
-  animation: bounce-arrow 2s infinite;
 }
 body .wrapper .card-wrapper .weather-popup .input-city-name {
   padding: 0.5rem;
@@ -628,6 +653,29 @@ body .wrapper .time-date-box .time {
     transform: translateY(0);
   }
 }
+@keyframes small-bounce-arrow {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @keyframes resize-before {
   0% {
     scale: 1.1;
@@ -653,5 +701,21 @@ body .wrapper .time-date-box .time {
   }
   to {
     left: -500px;
+  }
+}
+@keyframes openInstructionLineAnime {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes closeInstructionLineAnime {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200%);
   }
 }/*# sourceMappingURL=main.css.map */

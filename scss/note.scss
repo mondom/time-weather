@@ -84,3 +84,33 @@
 	justify-content: center;
 	margin: 0.5rem;
 }
+
+
+// const handleNavItemsAnimation = () => {
+// 	let delayTime = 0
+
+// 	allNavItems.forEach(item => {
+// 		item.classList.toggle('nav-items-animation')
+// 		// animation-delay: 0.3s;
+// 		item.style.animationDelay = '.' + delayTime + 's'
+// 		delayTime++
+// 	})
+// }
+
+
+// .nav {
+// 	position: fixed;
+// 	top: 0;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	height: 100vh;
+// 	width: 100%;
+// 	transform: translateX(100%);
+// 	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+// 	background-image: $blue-gradient-solid;
+// 	z-index: 100;
+
+// 	&--active {
+// 		transform: translateX(0);
+// 	}}
