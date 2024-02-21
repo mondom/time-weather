@@ -378,16 +378,22 @@ const weatherBookmark = document.querySelector('.weather-bookmark')
 const timerBookmark = document.querySelector('.timer-bookmark')
 const stopwatchBookmark = document.querySelector('.stopwatch-bookmark')
 
-const rollUpBtn = document.querySelector('.roll-up')
+const stopwatchRollUpBtn = document.querySelector('.stopwatch-roll-up')
+const timerRollUpBtn = document.querySelector('.timer-roll-up')
+const weatherRollUpBtn = document.querySelector('.weather-roll-up')
 
 let root = document.documentElement
 
-const showStopwatchInstrucions = () => {
-	stopwatchInfo.classList.add('active')
+const handleStopwatchInstrucions = () => {
+	stopwatchInfo.classList.toggle('active')
 }
-const hideStopwatchInstrucions = () => {
-	stopwatchInfo.classList.remove('active')
+const handleTimerInstrucions = () => {
+	timerInfo.classList.toggle('active')
 }
+const handleWeatherInstrucions = () => {
+	weatherInfo.classList.toggle('active')
+}
+
 
 const setTheButtons = () => {
 	root.style.setProperty('--1bb-height', 'auto')
@@ -502,10 +508,10 @@ showWeatherBtn.addEventListener('click', connectTheDotsWeather)
 showTimerBtn.addEventListener('click', connectTheDotsTimer)
 showStopwatchBtn.addEventListener('click', connectTheDotsStopwatch)
 
-stopwatchBookmark.addEventListener('click', () => {
-	showStopwatchInstrucions()
-})
+stopwatchBookmark.addEventListener('click', handleStopwatchInstrucions)
+timerBookmark.addEventListener('click', handleTimerInstrucions)
+weatherBookmark.addEventListener('click', handleWeatherInstrucions)
 
-rollUpBtn.addEventListener('click', () => {
-	hideStopwatchInstrucions()
-})
+stopwatchRollUpBtn.addEventListener('click', handleStopwatchInstrucions)
+timerRollUpBtn.addEventListener('click', handleTimerInstrucions)
+weatherRollUpBtn.addEventListener('click', handleWeatherInstrucions)

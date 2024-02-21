@@ -49,6 +49,7 @@ body .wrapper .instruction {
   height: 100%;
   background-color: #2d0d30;
   z-index: 10;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   top: -100%;
@@ -59,14 +60,15 @@ body .wrapper .instruction {
 }
 body .wrapper .instruction .roll-up {
   padding: 0.5rem;
-  width: 30%;
+  width: 40%;
   margin-top: 5rem;
   border-radius: 8px;
   font-size: 1.4rem;
+  transition: background-color 0.3s;
   cursor: pointer;
 }
-body .wrapper .instruction h3 {
-  margin-top: 4rem;
+body .wrapper .instruction .roll-up:hover {
+  background-color: #fdc82f;
 }
 body .wrapper .instruction p {
   line-height: 3rem;
@@ -350,26 +352,6 @@ body .wrapper .card-wrapper .stopwatch {
   transition: 0.8s;
   animation: var(--card-anime-stopwatch);
 }
-body .wrapper .card-wrapper .stopwatch .clock-icon {
-  position: absolute;
-  width: 22%;
-  left: -7%;
-  top: -6%;
-}
-body .wrapper .card-wrapper .stopwatch .dot1,
-body .wrapper .card-wrapper .stopwatch .dot2 {
-  position: absolute;
-}
-body .wrapper .card-wrapper .stopwatch .dot1 {
-  width: 5%;
-  left: 10%;
-  top: 9%;
-}
-body .wrapper .card-wrapper .stopwatch .dot2 {
-  width: 8%;
-  top: -3%;
-  left: 13%;
-}
 body .wrapper .card-wrapper .weather {
   background-image: url(../assets/img/gradient\ weather.jpg);
   background-position: center;
@@ -417,7 +399,6 @@ body .wrapper .card-wrapper .weather-popup {
   background-image: url(../assets/img/gradient\ weather.jpg);
   background-position: center;
   background-size: cover;
-  background-color: red;
   animation: var(--card-anime-weather);
 }
 body .wrapper .card-wrapper .weather-popup .popup-weather-header {
@@ -429,14 +410,20 @@ body .wrapper .card-wrapper .weather-popup .weather-arrow {
   margin-top: 3rem;
 }
 body .wrapper .card-wrapper .weather-popup .input-city-name {
+  width: 70%;
+  font-size: 2rem;
   padding: 0.5rem;
   font-family: "Raleway", sans-serif;
   border: none;
   border-bottom: 2px solid #fdc82f;
   background: none;
-  width: 70%;
   text-align: center;
-  font-size: 2rem;
+}
+body .wrapper .card-wrapper .weather-popup .input-city-name::-moz-placeholder {
+  color: white;
+}
+body .wrapper .card-wrapper .weather-popup .input-city-name::placeholder {
+  color: white;
 }
 body .wrapper .card-wrapper .weather-popup .input-city-name:focus {
   outline: none;
