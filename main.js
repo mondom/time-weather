@@ -394,7 +394,6 @@ const handleWeatherInstrucions = () => {
 	weatherInfo.classList.toggle('active')
 }
 
-
 const setTheButtons = () => {
 	root.style.setProperty('--1bb-height', 'auto')
 	root.style.setProperty('--1bb-flex-direction', 'row')
@@ -424,84 +423,68 @@ const setTheButtons = () => {
 		btn.style.margin = '0.5rem'
 	})
 }
+const secondBtnAnimation = () => {
+	let delaytime = 0
 
-const activateAnimation = () => {
+	showCardBtns.forEach(btn => {
+		setTimeout(() => {
+			root.style.setProperty('--animation-left', 'none')
+			root.style.setProperty('--animation-right', 'none')
+			
+		}, 2000)
+
+		setTimeout(()=>{
+			btn.classList.add('active-btn-animation')
+			btn.style.animationDelay = `.${delaytime}s`
+			delaytime++
+		},2100)
+	})
+}
+
+const activateAnimationOfBtns = () => {
 	root.style.setProperty('--animation-left', 'shift-left 2s .5s 1')
 	root.style.setProperty('--animation-right', 'shift-right 2s .5s 1')
+
+	secondBtnAnimation()
 }
 
 const connectTheDotsWeather = () => {
-	// setTimeout(() => {
-	// 	stopwatchCard.classList.remove('active')
-	// 	timerCard.classList.remove('active')
-	// }, 1000)
-
-	// weatherCard.classList.active('active')
 	if (!buttonBox.classList.contains('done')) {
-		activateAnimation()
+		activateAnimationOfBtns()
 		setTimeout(() => {
 			showWeather()
 			setTheButtons()
 		}, 1500)
-		// setTimeout(showWeather, 1500)
-		// setTimeout(setTheButtons, 1000)
 	} else {
 		openWeatherPopup()
 		showWeather()
+
+		weatherCard.classList.add('hide-card')
 	}
-	// if (timerCard.classList.contains('active')) {
-	// 	root.style.setProperty('--card-anime-timer', 'card-showing .8s forwards')
-	// } else if (stopwatchCard.classList.contains('active') || weatherCard.classList.contains('active')) {
-	// 	root.style.setProperty('--card-anime-timer', 'card-hiding .8s forwards')
-	// }
 }
 const connectTheDotsTimer = () => {
-	// stopwatchCard.classList.remove('active')
-	// weatherCard.classList.remove('active')
-
-	// timerCard.classList.add('active')
-
 	if (!buttonBox.classList.contains('done')) {
-		activateAnimation()
+		activateAnimationOfBtns()
 		setTimeout(() => {
 			showTimer()
 			setTheButtons()
 		}, 1500)
-		// setTimeout(setTheButtons, 1000)
 	} else {
 		setTheButtons()
 		showTimer()
 	}
-
-	// if (timerCard.classList.contains('active')) {
-	// 	root.style.setProperty('--card-anime-timer', 'card-showing .8s forwards')
-	// } else if (stopwatchCard.classList.contains('active') || weatherCard.classList.contains('active')) {
-	// 	root.style.setProperty('--card-anime-timer', 'card-hiding .8s forwards')
-	// }
 }
 const connectTheDotsStopwatch = () => {
-	// stopwatchCard.classList.add('active')
-	// timerCard.classList.remove('active')
-	// weatherCard.classList.remove('active')
-
 	if (!buttonBox.classList.contains('done')) {
-		activateAnimation()
+		activateAnimationOfBtns()
 		setTimeout(() => {
 			showStopwatch()
 			setTheButtons()
 		}, 1500)
-		// setTimeout(showStopwatch, 1500)
-		// setTimeout(setTheButtons, 1000)
 	} else {
 		setTheButtons()
 		showStopwatch()
 	}
-
-	// if (stopwatchCard.classList.contains('active')) {
-	// 	root.style.setProperty('--card-anime-stopwatch', 'card-showing .8s forwards')
-	// } else if (timerCard.classList.contains('active') || weatherCard.classList.contains('active')) {
-	// 	root.style.setProperty('--card-anime-stopwatch', 'card-hiding .8s forwards')
-	// }
 }
 
 showWeatherBtn.addEventListener('click', connectTheDotsWeather)

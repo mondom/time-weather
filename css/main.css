@@ -117,6 +117,9 @@ body .wrapper .instruction .stopwatch-info {
 body .wrapper .instruction .timer-button-info {
   margin-top: 3rem;
 }
+body .wrapper .instruction .weather-info-header {
+  margin-bottom: 5rem;
+}
 body .wrapper .active {
   top: 0;
 }
@@ -451,7 +454,7 @@ body .wrapper .card-wrapper .button-box {
   justify-content: var(--1bb-justify-content);
   margin-top: var(--1bb-margin-top);
 }
-body .wrapper .card-wrapper .button-box .show-card-bth {
+body .wrapper .card-wrapper .button-box .show-card-btn {
   position: relative;
   display: flex;
   align-items: center;
@@ -461,15 +464,19 @@ body .wrapper .card-wrapper .button-box .show-card-bth {
   height: 30px;
   padding: var(--1scb-padding);
   width: var(--1scb-width);
+  transition: 1s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
-body .wrapper .card-wrapper .button-box .show-card-bth .btn-name {
+body .wrapper .card-wrapper .button-box .show-card-btn .btn-name {
   position: relative;
   color: black;
   font-weight: bold;
   font-size: var(--1span-font-size);
   animation: var(--animation-left);
 }
-body .wrapper .card-wrapper .button-box .show-card-bth::before {
+body .wrapper .card-wrapper .button-box .active-btn-animation {
+  animation: showCardBtnAnimation 0.5 1;
+}
+body .wrapper .card-wrapper .button-box .show-card-btn::before {
   content: "";
   position: absolute;
   display: block;
@@ -482,20 +489,20 @@ body .wrapper .card-wrapper .button-box .show-card-bth::before {
   top: var(--1before-top);
   left: var(--1before-left);
 }
-body .wrapper .card-wrapper .button-box .show-card-bth:nth-child(1)::before {
+body .wrapper .card-wrapper .button-box .show-card-btn:nth-child(1)::before {
   animation: var(--animation-right);
 }
-body .wrapper .card-wrapper .button-box .show-card-bth:nth-child(2)::before {
+body .wrapper .card-wrapper .button-box .show-card-btn:nth-child(2)::before {
   animation: var(--animation-right);
 }
-body .wrapper .card-wrapper .button-box .show-card-bth:nth-child(3)::before {
+body .wrapper .card-wrapper .button-box .show-card-btn:nth-child(3)::before {
   animation: var(--animation-right);
 }
-body .wrapper .card-wrapper .button-box .show-card-bth:hover::before {
+body .wrapper .card-wrapper .button-box .show-card-btn:hover::before {
   width: 100%;
   background-color: rgb(252, 185, 0);
 }
-body .wrapper .card-wrapper .button-box .show-card-bth:active {
+body .wrapper .card-wrapper .button-box .show-card-btn:active {
   transform: scale(0.96);
 }
 body .wrapper .card-wrapper .big-button {
@@ -617,29 +624,6 @@ body .wrapper .time-date-box .time {
   margin-right: 3.5rem;
 }
 
-@keyframes bounce-arrow {
-  0% {
-    transform: translateY(0);
-  }
-  20% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-15px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  60% {
-    transform: translateY(-8px);
-  }
-  80% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 @keyframes small-bounce-arrow {
   0% {
     transform: translateY(0);
@@ -663,17 +647,6 @@ body .wrapper .time-date-box .time {
     transform: translateY(0);
   }
 }
-@keyframes resize-before {
-  0% {
-    scale: 1.1;
-  }
-  50% {
-    scale: 1;
-  }
-  100% {
-    scale: 1.1;
-  }
-}
 @keyframes shift-right {
   from {
     left: 0;
@@ -690,19 +663,11 @@ body .wrapper .time-date-box .time {
     left: -500px;
   }
 }
-@keyframes openInstructionLineAnime {
+@keyframes showCardBtnAnimation {
   from {
-    transform: translateX(200%);
+    transform: translateX(-200%);
   }
   to {
     transform: translateX(0);
-  }
-}
-@keyframes closeInstructionLineAnime {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(200%);
   }
 }/*# sourceMappingURL=main.css.map */

@@ -139,6 +139,9 @@ body {
 			.timer-button-info {
 				margin-top: 3rem;
 			}
+			.weather-info-header{
+				margin-bottom: 5rem;
+			}
 		}
 		.active {
 			top: 0;
@@ -571,7 +574,7 @@ body {
 				justify-content: var(--1bb-justify-content);
 				margin-top: var(--1bb-margin-top);
 
-				.show-card-bth {
+				.show-card-btn {
 					position: relative;
 					display: flex;
 					align-items: center;
@@ -581,6 +584,8 @@ body {
 					height: 30px;
 					padding: var(--1scb-padding);
 					width: var(--1scb-width);
+					transition: 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+					
 
 					.btn-name {
 						position: relative;
@@ -590,8 +595,11 @@ body {
 						animation: var(--animation-left);
 					}
 				}
+				.active-btn-animation{
+					animation: showCardBtnAnimation 0.5 1;
+				}
 
-				.show-card-bth::before {
+				.show-card-btn::before {
 					content: '';
 					position: absolute;
 					display: block;
@@ -604,21 +612,21 @@ body {
 					top: var(--1before-top);
 					left: var(--1before-left);
 				}
-				.show-card-bth:nth-child(1)::before {
+				.show-card-btn:nth-child(1)::before {
 					animation: var(--animation-right);
 				}
-				.show-card-bth:nth-child(2)::before {
+				.show-card-btn:nth-child(2)::before {
 					animation: var(--animation-right);
 				}
-				.show-card-bth:nth-child(3)::before {
+				.show-card-btn:nth-child(3)::before {
 					animation: var(--animation-right);
 				}
 
-				.show-card-bth:hover::before {
+				.show-card-btn:hover::before {
 					width: 100%;
 					background-color: rgba(252, 185, 0, 1);
 				}
-				.show-card-bth:active {
+				.show-card-btn:active {
 					transform: scale(0.96);
 				}
 			}
@@ -778,29 +786,29 @@ body {
 // 	}
 // }
 
-@keyframes bounce-arrow {
-	0% {
-		transform: translateY(0);
-	}
-	20% {
-		transform: translateY(0);
-	}
-	40% {
-		transform: translateY(-15px);
-	}
-	50% {
-		transform: translateY(0);
-	}
-	60% {
-		transform: translateY(-8px);
-	}
-	80% {
-		transform: translateY(0);
-	}
-	100% {
-		transform: translateY(0);
-	}
-}
+// @keyframes bounce-arrow {
+// 	0% {
+// 		transform: translateY(0);
+// 	}
+// 	20% {
+// 		transform: translateY(0);
+// 	}
+// 	40% {
+// 		transform: translateY(-15px);
+// 	}
+// 	50% {
+// 		transform: translateY(0);
+// 	}
+// 	60% {
+// 		transform: translateY(-8px);
+// 	}
+// 	80% {
+// 		transform: translateY(0);
+// 	}
+// 	100% {
+// 		transform: translateY(0);
+// 	}
+// }
 @keyframes small-bounce-arrow {
 	0% {
 		transform: translateY(0);
@@ -825,18 +833,18 @@ body {
 	}
 }
 
-@keyframes resize-before {
-	0% {
-		scale: 1.1;
-	}
-	50% {
-		scale: 1;
-	}
+// @keyframes resize-before {
+// 	0% {
+// 		scale: 1.1;
+// 	}
+// 	50% {
+// 		scale: 1;
+// 	}
 
-	100% {
-		scale: 1.1;
-	}
-}
+// 	100% {
+// 		scale: 1.1;
+// 	}
+// }
 
 @keyframes shift-right {
 	from {
@@ -874,19 +882,11 @@ body {
 // 	}
 // }
 
-@keyframes openInstructionLineAnime {
+@keyframes showCardBtnAnimation {
 	from {
-		transform: translateX(200%);
+		transform: translateX(-200%);
 	}
 	to {
 		transform: translateX(0);
-	}
-}
-@keyframes closeInstructionLineAnime {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(200%);
 	}
 }
