@@ -430,12 +430,12 @@ const activateAnimationOfBtns = () => {
 }
 
 const activateCardAnimation = () => {
-	const cardArr = [stopwatchCard, timerCard, weatherPopup]
+	const cardArr = [weatherPopup, stopwatchCard, timerCard]
 
 	cardArr.forEach(card => {
 		setTimeout(() => {
 			card.classList.add('animation-card')
-		},100)
+		}, 200)
 	})
 }
 

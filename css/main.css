@@ -98,7 +98,7 @@ body .wrapper .instruction .bookmark img {
   margin-bottom: -0.6rem;
   margin-left: auto;
   margin-right: auto;
-  animation: small-bounce-arrow 2s infinite;
+  animation: bounce-arrow 2s infinite;
 }
 body .wrapper .instruction .stopwatch-info-header,
 body .wrapper .instruction .timer-info-header {
@@ -120,12 +120,8 @@ body .wrapper .instruction .weather-info-header {
 body .wrapper .active {
   top: 0;
 }
-body .wrapper .stopwatch-instruction {
-  display: none;
-}
-body .wrapper .timer-instruction {
-  display: none;
-}
+body .wrapper .stopwatch-instruction,
+body .wrapper .timer-instruction,
 body .wrapper .weather-instruction {
   display: none;
 }
@@ -170,7 +166,7 @@ body .wrapper .card-wrapper .card {
   margin-top: 5rem;
   width: 90%;
   height: 70%;
-  top: -500px;
+  top: -800px;
   border-radius: 16px;
   box-shadow: 0 0 8px #a0a0a0;
   transition: 2s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -264,6 +260,9 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box {
   flex-wrap: wrap;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0.5rem 0.2rem;
   padding: 0.5rem 1.1rem;
 }
@@ -340,7 +339,7 @@ body .wrapper .card-wrapper .timer {
   background-image: url(../assets/img/timer.jpg);
   background-position: center;
   background-size: cover;
-  animation: var(--card-anime-timer);
+  transition: 1.5s;
 }
 body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
   margin-bottom: 2rem;
@@ -351,13 +350,13 @@ body .wrapper .card-wrapper .stopwatch {
   background-size: cover;
   transform-style: preserve-3d;
   perspective: 300px;
-  transition: 0.8s;
-  animation: var(--card-anime-stopwatch);
+  transition: 1.5s;
 }
 body .wrapper .card-wrapper .weather {
   background-image: url(../assets/img/gradient\ weather.jpg);
   background-position: center;
   background-size: cover;
+  top: 0;
 }
 body .wrapper .card-wrapper .weather .weather-content {
   display: flex;
@@ -397,12 +396,12 @@ body .wrapper .card-wrapper .weather-popup {
   margin-top: 5rem;
   width: 90%;
   height: 70%;
-  top: -500%;
+  top: -800px;
   border-radius: 16px;
   background-image: url(../assets/img/gradient\ weather.jpg);
   background-position: center;
   background-size: cover;
-  transition: 2s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 1.5s;
 }
 body .wrapper .card-wrapper .weather-popup .popup-weather-header {
   margin-top: 2rem;
@@ -441,7 +440,6 @@ body .wrapper .card-wrapper .weather-popup .weather-send-btn:hover {
 }
 body .wrapper .card-wrapper .weather-popup .error-weather-popup {
   font-size: 1.6rem;
-  height: 1.6rem;
 }
 body .wrapper .card-wrapper .animation-card {
   top: 0;
@@ -627,7 +625,101 @@ body .wrapper .time-date-box .time {
   margin-right: 3.5rem;
 }
 
-@keyframes small-bounce-arrow {
+@media (min-width: 414px) {
+  body .wrapper .app-title-box .app-title {
+    font-size: 2.6rem;
+  }
+  body .wrapper .app-title-box .choose {
+    font-size: 1.6rem;
+  }
+  body .wrapper .app-title-box .double-arrow {
+    width: 70px;
+  }
+  body .wrapper .instruction {
+    font-size: 1.8rem;
+  }
+  body .wrapper .instruction .roll-up {
+    padding: 1.2rem;
+    width: 40%;
+    font-size: 2rem;
+  }
+  body .wrapper .instruction .info-header {
+    font-size: 2.2rem;
+  }
+  body .wrapper .instruction .bookmark {
+    height: 7rem;
+    bottom: -5rem;
+  }
+  body .wrapper .instruction .bookmark .bookmark-name {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  body .wrapper .instruction .bookmark img {
+    margin-bottom: 0.5rem;
+  }
+  body .wrapper .card-wrapper .card {
+    margin-top: 7rem;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page {
+    font-size: 2.2rem;
+  }
+  body .wrapper .card-wrapper .card .title-box .title {
+    font-size: 3.5rem;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
+    font-size: 6rem;
+  }
+  body .wrapper .card-wrapper .card .card-box .show-last-time {
+    font-size: 2.2rem;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
+    padding: 2rem;
+  }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn i {
+    font-size: 2.2rem;
+  }
+  body .wrapper .card-wrapper .card .timer-content .event-name {
+    font-size: 2.2rem;
+  }
+  body .wrapper .card-wrapper .card .timer-content .timer-box {
+    margin-top: 4rem;
+  }
+  body .wrapper .card-wrapper .card .timer-content .timer-box .small-box .count-number {
+    font-size: 2.4rem;
+  }
+  body .wrapper .card-wrapper .big-button {
+    font-size: 2.2rem;
+    padding: 0.5rem 0;
+  }
+  body .wrapper .card-wrapper .weather-popup {
+    margin-top: 7rem;
+  }
+  body .wrapper .card-wrapper .weather-popup .popup-weather-header {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+  }
+  body .wrapper .card-wrapper .weather-popup .input-city-name {
+    font-size: 3rem;
+  }
+  body .wrapper .card-wrapper .weather-popup .error-weather-popup {
+    font-size: 2rem;
+  }
+  body .wrapper .card-wrapper .weather .weather-content .city {
+    font-size: 2.4rem;
+  }
+  body .wrapper .card-wrapper .weather .weather-content .weather-box {
+    font-size: 2.2rem;
+    margin-top: 2rem;
+  }
+  body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-headings, body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-info {
+    line-height: 3rem;
+  }
+  body .wrapper .card-wrapper .weather .weather-content .weather-icon {
+    margin-top: 4.5rem;
+    width: 40%;
+  }
+}
+@keyframes bounce-arrow {
   0% {
     transform: translateY(0);
   }

@@ -30,12 +30,6 @@
 	--animation-left: none;
 
 	--animation-right: none;
-
-	// --card-anime-stopwatch: none;
-
-	// --card-anime-timer: none;
-
-	// --card-anime-weather: none;
 }
 
 body {
@@ -52,8 +46,6 @@ body {
 		position: relative;
 		width: 100%;
 		height: 100%;
-		// background-color: #2d0d30;
-		// border-radius: 20px;
 		display: flex;
 		justify-content: center;
 		overflow: hidden;
@@ -104,24 +96,19 @@ body {
 				align-items: flex-end;
 				line-height: 2rem;
 				background-color: #2d0d30;
-				// background-color: red;
 				bottom: -3.4rem;
 				z-index: 10;
-				// left: 50%;
-				// transform: translate(-50%);
 				border-radius: 8px;
-				// padding: 0.4rem;
 				cursor: pointer;
 				.bookmark-name {
 					font-size: 1.6rem;
 				}
 				img {
-					// display: inline-block;
 					width: 4rem;
 					margin-bottom: -0.6rem;
 					margin-left: auto;
 					margin-right: auto;
-					animation: small-bounce-arrow 2s infinite;
+					animation: bounce-arrow 2s infinite;
 				}
 			}
 			.stopwatch-info-header,
@@ -145,12 +132,8 @@ body {
 		.active {
 			top: 0;
 		}
-		.stopwatch-instruction {
-			display: none;
-		}
-		.timer-instruction {
-			display: none;
-		}
+		.stopwatch-instruction,
+		.timer-instruction,
 		.weather-instruction {
 			display: none;
 		}
@@ -188,9 +171,7 @@ body {
 			height: 85%;
 			display: flex;
 			justify-content: center;
-
 			background-color: #f8f0ee;
-
 			z-index: 0;
 			bottom: 4rem;
 
@@ -202,7 +183,7 @@ body {
 				margin-top: 5rem;
 				width: 90%;
 				height: 70%;
-				top: -500px;
+				top: -800px;
 				border-radius: 16px;
 				box-shadow: 0 0 8px $shadow-color;
 				transition: 2s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -300,16 +281,15 @@ body {
 						flex-wrap: wrap;
 
 						.stopwatch-btn {
+							display: flex;
+							justify-content: center;
+							align-items: center;
 							margin: 0.5rem 0.2rem;
 							padding: 0.5rem 1.1rem;
 						}
 						.stopwatch-history {
 							margin-top: 1rem;
 							margin-bottom: 2rem;
-							// border: 3px solid rgb(255, 149, 0);
-							// background-color: white;
-							// font-size: 2rem;
-							// color: black;
 							@include stopwatch-button;
 						}
 
@@ -319,10 +299,6 @@ body {
 							width: 40px;
 							height: 40px;
 							transition: background-color 0.3s;
-							// border: 3px solid rgb(255, 149, 0);
-							// background-color: white;
-							// font-size: 2rem;
-							// color: black;
 							@include stopwatch-button;
 						}
 						.stopwatch-btn:hover,
@@ -335,9 +311,6 @@ body {
 						text-align: center;
 						width: 100%;
 						bottom: 1rem;
-						// .timer-edit {
-
-						// }
 
 						.timer-edit:hover {
 							background-color: rgba(252, 185, 0, 1);
@@ -388,8 +361,8 @@ body {
 				background-image: url(../assets/img/timer.jpg);
 				background-position: center;
 				background-size: cover;
-				animation: var(--card-anime-timer);
-				// animation: card-hiding 2s infinite;
+				transition: 1.5s;
+
 				.timer-btn-box {
 					.timer-edit {
 						margin-bottom: 2rem;
@@ -402,142 +375,111 @@ body {
 				background-size: cover;
 				transform-style: preserve-3d;
 				perspective: 300px;
-				transition: 0.8s;
-				animation: var(--card-anime-stopwatch);
-				
-				// .clock-icon {
-					// 	position: absolute;
-					// 	width: 22%;
-					// 	left: -7%;
-					// 	top: -6%;
-					// }
-					// .dot1,
-					// .dot2 {
-						// 	position: absolute;
-						// }
-						// .dot1 {
-							// 	width: 5%;
-							// 	left: 10%;
-							// 	top: 9%;
-							// }
-							// .dot2 {
-								// 	width: 8%;
-								// 	top: -3%;
-								// 	left: 13%;
-								// }
-							}
-							
-							.weather {
-								background-image: url(../assets/img/gradient\ weather.jpg);
-								background-position: center;
-								background-size: cover;
-								
-								// .yellow-dot{
-									// 	position: absolute;
-									// 	width: 35px;
-									// 	top: 40px;
-									// 	left: -17px;
-									// }
-									
-									.weather-content {
-										display: flex;
-										align-items: center;
-										
-										.city {
-											font-size: 2rem;
-											font-weight: bolder;
-											margin-bottom: 1rem;
-											margin-top: 7px;
-										}
-										
-										.weather-box {
-											display: flex;
-											width: 80%;
-											font-size: 1.8rem;
-											margin-top: 5px;
-											
-											.weather-headings,
-											.weather-info {
-												width: 50%;
-												display: flex;
-												flex-direction: column;
-												align-items: center;
-												justify-content: center;
-												line-height: 2.5rem;
-											}
-										}
-										.weather-icon {
-											margin-top: 3.5rem;
-											width: 30%;
-										}
-									}
-								}
-								.weather-popup {
-									display: none;
-									justify-content: space-around;
-									align-items: center;
-									flex-direction: column;
-									position: relative;
-									margin-top: 5rem;
-									width: 90%;
-									height: 70%;
-									top: -500%;
-									border-radius: 16px;
-									background-image: url(../assets/img/gradient\ weather.jpg);
-									background-position: center;
-									background-size: cover;
-									transition: 2s cubic-bezier(0.65, 0.05, 0.36, 1);
-									// animation: var(--card-anime-weather);
-									
-									.popup-weather-header {
-										margin-top: 2rem;
-										font-size: 2rem;
-									}
-									.weather-arrow {
-										width: 4rem;
-										margin-top: 3rem;
-										// animation: bounce-arrow 2s infinite;
-									}
-									.input-city-name {
-										width: 70%;
-										font-size: 2rem;
-										padding: 0.5rem;
-										font-family: 'Raleway', sans-serif;
-										border: none;
-										border-bottom: 2px solid #fdc82f;
-										background: none;
-										text-align: center;
-									}
-									.input-city-name::placeholder {
-										color: white;
-									}
-									.input-city-name:focus {
-										outline: none;
-										border: 2px solid #fdc82f;
-										border-radius: 8px;
-									}
-									.weather-send-btn {
-										font-family: 'Raleway', sans-serif;
-									}
-									.weather-send-btn:hover {
-										background-color: rgba(252, 185, 0, 1);
-									}
-									.error-weather-popup {
-										font-size: 1.6rem;
-										height: 1.6rem;
-									}
-								}
-								.animation-card {
-									top: 0;
-								}
-								.hide-card {
+				transition: 1.5s;
+			}
+
+			.weather {
+				background-image: url(../assets/img/gradient\ weather.jpg);
+				background-position: center;
+				background-size: cover;
+				top: 0;
+
+				.weather-content {
+					display: flex;
+					align-items: center;
+
+					.city {
+						font-size: 2rem;
+						font-weight: bolder;
+						margin-bottom: 1rem;
+						margin-top: 7px;
+					}
+
+					.weather-box {
+						display: flex;
+						width: 80%;
+						font-size: 1.8rem;
+						margin-top: 5px;
+
+						.weather-headings,
+						.weather-info {
+							width: 50%;
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							line-height: 2.5rem;
+						}
+					}
+					.weather-icon {
+						margin-top: 3.5rem;
+						width: 30%;
+					}
+				}
+			}
+			.weather-popup {
+				display: none;
+				justify-content: space-around;
+				align-items: center;
+				flex-direction: column;
+				position: relative;
+				margin-top: 5rem;
+				width: 90%;
+				height: 70%;
+				top: -800px;
+				border-radius: 16px;
+				background-image: url(../assets/img/gradient\ weather.jpg);
+				background-position: center;
+				background-size: cover;
+				transition: 1.5s;
+
+				.popup-weather-header {
+					margin-top: 2rem;
+					font-size: 2rem;
+				}
+				.weather-arrow {
+					width: 4rem;
+					margin-top: 3rem;
+				}
+				.input-city-name {
+					width: 70%;
+					font-size: 2rem;
+					padding: 0.5rem;
+					font-family: 'Raleway', sans-serif;
+					border: none;
+					border-bottom: 2px solid #fdc82f;
+					background: none;
+					text-align: center;
+				}
+				.input-city-name::placeholder {
+					color: white;
+				}
+				.input-city-name:focus {
+					outline: none;
+					border: 2px solid #fdc82f;
+					border-radius: 8px;
+				}
+				.weather-send-btn {
+					font-family: 'Raleway', sans-serif;
+				}
+				.weather-send-btn:hover {
+					background-color: rgba(252, 185, 0, 1);
+				}
+				.error-weather-popup {
+					font-size: 1.6rem;
+					
+				}
+			}
+			.animation-card {
+				top: 0;
+			}
+			.hide-card {
 				display: none;
 			}
 
 			.button-box {
 				position: absolute;
 				display: flex;
-				// background-color: red;
 				height: var(--1bb-height);
 				flex-direction: var(--1bb-flex-direction);
 				justify-content: var(--1bb-justify-content);
@@ -622,7 +564,6 @@ body {
 			width: 100%;
 			height: 100%;
 			display: none;
-			// display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
@@ -709,7 +650,6 @@ body {
 			bottom: 0;
 			font-size: 1.6rem;
 			background-color: #2d0d30;
-			// background-color: green;
 			color: #fff;
 
 			text-shadow: 0 0 5px rgb(0, 0, 0);
@@ -724,37 +664,126 @@ body {
 	}
 }
 
-@media (min-width: 375px) {
+@media (min-width: 414px) {
+	body {
+		.wrapper {
+			.app-title-box {
+				.app-title {
+					font-size: 2.6rem;
+				}
+				.choose {
+					font-size: 1.6rem;
+				}
+				.double-arrow {
+					width: 70px;
+				}
+			}
+			.instruction {
+				font-size: 1.8rem;
+				.roll-up {
+					padding: 1.2rem;
+					width: 40%;
+
+					font-size: 2rem;
+				}
+				.info-header {
+					font-size: 2.2rem;
+				}
+				.bookmark {
+					height: 7rem;
+					bottom: -5rem;
+					.bookmark-name {
+						font-size: 2.2rem;
+						margin-bottom: 1rem;
+					}
+					img {
+						margin-bottom: 0.5rem;
+					}
+				}
+			}
+			.card-wrapper {
+				.card {
+					margin-top: 7rem;
+					.stopwatch-history-page {
+						font-size: 2.2rem;
+					}
+					.title-box {
+						.title {
+							font-size: 3.5rem;
+						}
+					}
+					.card-box {
+						.stopwatch-clock {
+							font-size: 6rem;
+						}
+						.show-last-time {
+							font-size: 2.2rem;
+						}
+						.stopwatch-btn-box {
+							.stopwatch-btn {
+								padding: 2rem;
+								i {
+									font-size: 2.2rem;
+								}
+							}
+						}
+					}
+					.timer-content {
+						.event-name {
+							font-size: 2.2rem;
+						}
+						.timer-box {
+							margin-top: 4rem;
+							.small-box {
+								.count-number {
+									font-size: 2.4rem;
+								}
+							}
+						}
+					}
+				}
+				.big-button {
+					font-size: 2.2rem;
+					padding: 0.5rem 0;
+				}
+				.weather-popup {
+					margin-top: 7rem;
+					.popup-weather-header {
+						margin-top: 3rem;
+						font-size: 2.5rem;
+					  }
+					  .input-city-name {
+						font-size: 3rem;
+					  }
+					  .error-weather-popup{
+						font-size: 2rem;
+					  }
+				}
+				.weather {
+					.weather-content {
+						.city {
+							font-size: 2.4rem;
+						}
+						.weather-box {
+							
+							font-size: 2.2rem;
+							margin-top: 2rem;
+							.weather-headings, .weather-info {
+								line-height: 3rem;
+							}
+						}
+						.weather-icon {
+							margin-top: 4.5rem;
+							width: 40%;
+						  }
+					}
+				}
+			}
+		}
+	}
 }
 
-// @keyframes red-dot {
-// 	0% {
-// 		opacity: 0;
-// 	}
-// 	17% {
-// 		opacity: 1;
-// 		background-color: $weather-color;
-// 	}
-// 	33% {
-// 		opacity: 0;
-// 	}
-// 	50% {
-// 		opacity: 1;
-// 		background-color: $timer-color;
-// 	}
-// 	66% {
-// 		opacity: 0;
-// 	}
-// 	83% {
-// 		opacity: 1;
-// 		background-color: $stopwatch-color;
-// 	}
-// 	100% {
-// 		opacity: 0;
-// 	}
-// }
-
-@keyframes small-bounce-arrow {
+@keyframes bounce-arrow {
 	0% {
 		transform: translateY(0);
 	}
