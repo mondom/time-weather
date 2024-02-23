@@ -423,29 +423,20 @@ const setTheButtons = () => {
 		btn.style.margin = '0.5rem'
 	})
 }
-const secondBtnAnimation = () => {
-	let delaytime = 0
-
-	showCardBtns.forEach(btn => {
-		setTimeout(() => {
-			root.style.setProperty('--animation-left', 'none')
-			root.style.setProperty('--animation-right', 'none')
-			
-		}, 2000)
-
-		setTimeout(()=>{
-			btn.classList.add('active-btn-animation')
-			btn.style.animationDelay = `.${delaytime}s`
-			delaytime++
-		},2100)
-	})
-}
 
 const activateAnimationOfBtns = () => {
-	root.style.setProperty('--animation-left', 'shift-left 2s .5s 1')
-	root.style.setProperty('--animation-right', 'shift-right 2s .5s 1')
+	root.style.setProperty('--animation-left', 'shift-left 2.5s .5s ease')
+	root.style.setProperty('--animation-right', 'shift-right 2.5s .5s ease')
+}
 
-	secondBtnAnimation()
+const activateCardAnimation = () => {
+	const cardArr = [stopwatchCard, timerCard, weatherPopup]
+
+	cardArr.forEach(card => {
+		setTimeout(() => {
+			card.classList.add('animation-card')
+		},100)
+	})
 }
 
 const connectTheDotsWeather = () => {
@@ -454,6 +445,7 @@ const connectTheDotsWeather = () => {
 		setTimeout(() => {
 			showWeather()
 			setTheButtons()
+			activateCardAnimation()
 		}, 1500)
 	} else {
 		openWeatherPopup()
@@ -468,6 +460,7 @@ const connectTheDotsTimer = () => {
 		setTimeout(() => {
 			showTimer()
 			setTheButtons()
+			activateCardAnimation()
 		}, 1500)
 	} else {
 		setTheButtons()
@@ -480,6 +473,7 @@ const connectTheDotsStopwatch = () => {
 		setTimeout(() => {
 			showStopwatch()
 			setTheButtons()
+			activateCardAnimation()
 		}, 1500)
 	} else {
 		setTheButtons()

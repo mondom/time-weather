@@ -31,11 +31,11 @@
 
 	--animation-right: none;
 
-	--card-anime-stopwatch: none;
+	// --card-anime-stopwatch: none;
 
-	--card-anime-timer: none;
+	// --card-anime-timer: none;
 
-	--card-anime-weather: none;
+	// --card-anime-weather: none;
 }
 
 body {
@@ -71,29 +71,28 @@ body {
 			padding: 4rem;
 			text-align: center;
 			font-size: 1.6rem;
-			transition: .5s cubic-bezier(0.65, 0.05, 0.36, 1);
-			
+			transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+
 			.roll-up {
 				padding: 0.5rem;
 				width: 40%;
 				margin-top: 5rem;
 				border-radius: 8px;
 				font-size: 1.4rem;
-				transition: background-color .3s;
+				transition: background-color 0.3s;
 				cursor: pointer;
 			}
-			.roll-up:hover{
-				background-color: #fdc82f;;
+			.roll-up:hover {
+				background-color: #fdc82f;
 			}
-			
+
 			p {
 				line-height: 3rem;
 			}
 			.open-instruction-line-anime {
 				animation: openInstructionLineAnime 1s none;
-				
 			}
-			.close-instruction-line-anime{
+			.close-instruction-line-anime {
 				animation: closeInstructionLineAnime 1s none;
 			}
 			.bookmark {
@@ -139,7 +138,7 @@ body {
 			.timer-button-info {
 				margin-top: 3rem;
 			}
-			.weather-info-header{
+			.weather-info-header {
 				margin-bottom: 5rem;
 			}
 		}
@@ -189,45 +188,11 @@ body {
 			height: 85%;
 			display: flex;
 			justify-content: center;
-			// align-items: center;
+
 			background-color: #f8f0ee;
-			// background-color: red;
+
 			z-index: 0;
 			bottom: 4rem;
-
-			// .app-title-box {
-			// 	position: relative;
-			// 	border-radius: 20px;
-			// 	background-color: #fafafa;
-
-			// 	// .app-title {
-			// 	// 	font-size: 3.5rem;
-			// 	// 	font-weight: lighter;
-			// 	// 	letter-spacing: 1px;
-
-			// 	// 	.time-word {
-			// 	// 		position: relative;
-			// 	// 		.color-dot,
-			// 	// 		.white-dot {
-			// 	// 			position: absolute;
-			// 	// 			width: 5px;
-			// 	// 			height: 5px;
-
-			// 	// 			border-radius: 50%;
-			// 	// 			top: 33%;
-			// 	// 			right: 55%;
-			// 	// 			z-index: 1;
-			// 	// 		}
-			// 	// 		.color-dot {
-			// 	// 			animation: red-dot 5s infinite;
-			// 	// 		}
-			// 	// 		.white-dot {
-			// 	// 			background-color: #fff;
-			// 	// 			z-index: 0;
-			// 	// 		}
-			// 	// 	}
-			// 	// }
-			// }
 
 			.card {
 				position: relative;
@@ -235,13 +200,12 @@ body {
 				align-items: center;
 				flex-direction: column;
 				margin-top: 5rem;
-
 				width: 90%;
 				height: 70%;
+				top: -500px;
 				border-radius: 16px;
 				box-shadow: 0 0 8px $shadow-color;
-
-				// overflow: hidden;
+				transition: 2s cubic-bezier(0.65, 0.05, 0.36, 1);
 
 				.stopwatch-page {
 					position: absolute;
@@ -440,128 +404,133 @@ body {
 				perspective: 300px;
 				transition: 0.8s;
 				animation: var(--card-anime-stopwatch);
-
+				
 				// .clock-icon {
-				// 	position: absolute;
-				// 	width: 22%;
-				// 	left: -7%;
-				// 	top: -6%;
-				// }
-				// .dot1,
-				// .dot2 {
-				// 	position: absolute;
-				// }
-				// .dot1 {
-				// 	width: 5%;
-				// 	left: 10%;
-				// 	top: 9%;
-				// }
-				// .dot2 {
-				// 	width: 8%;
-				// 	top: -3%;
-				// 	left: 13%;
-				// }
-			}
-
-			.weather {
-				background-image: url(../assets/img/gradient\ weather.jpg);
-				background-position: center;
-				background-size: cover;
-
-				// .yellow-dot{
-				// 	position: absolute;
-				// 	width: 35px;
-				// 	top: 40px;
-				// 	left: -17px;
-				// }
-
-				.weather-content {
-					display: flex;
-					align-items: center;
-
-					.city {
-						font-size: 2rem;
-						font-weight: bolder;
-						margin-bottom: 1rem;
-						margin-top: 7px;
-					}
-
-					.weather-box {
-						display: flex;
-						width: 80%;
-						font-size: 1.8rem;
-						margin-top: 5px;
-
-						.weather-headings,
-						.weather-info {
-							width: 50%;
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-							justify-content: center;
-							line-height: 2.5rem;
-						}
-					}
-					.weather-icon {
-						margin-top: 3.5rem;
-						width: 30%;
-					}
-				}
-			}
-			.weather-popup {
-				display: none;
-				justify-content: space-around;
-				align-items: center;
-				flex-direction: column;
-				position: relative;
-				margin-top: 5rem;
-				width: 90%;
-				height: 70%;
-				border-radius: 16px;
-				background-image: url(../assets/img/gradient\ weather.jpg);
-				background-position: center;
-				background-size: cover;
-				animation: var(--card-anime-weather);
-
-				.popup-weather-header {
-					margin-top: 2rem;
-					font-size: 2rem;
-				}
-				.weather-arrow {
-					width: 4rem;
-					margin-top: 3rem;
-					// animation: bounce-arrow 2s infinite;
-				}
-				.input-city-name {
-					width: 70%;
-					font-size: 2rem;
-					padding: 0.5rem;
-					font-family: 'Raleway', sans-serif;
-					border: none;
-					border-bottom: 2px solid #fdc82f;
-					background: none;
-					text-align: center;
-				}
-				.input-city-name::placeholder{
-					color:white;
-				}
-				.input-city-name:focus {
-					outline: none;
-					border: 2px solid #fdc82f;
-					border-radius: 8px;
-				}
-				.weather-send-btn {
-					font-family: 'Raleway', sans-serif;
-				}
-				.weather-send-btn:hover {
-					background-color: rgba(252, 185, 0, 1);
-				}
-				.error-weather-popup {
-					font-size: 1.6rem;
-					height: 1.6rem;
-				}
-			}
-			.hide-card {
+					// 	position: absolute;
+					// 	width: 22%;
+					// 	left: -7%;
+					// 	top: -6%;
+					// }
+					// .dot1,
+					// .dot2 {
+						// 	position: absolute;
+						// }
+						// .dot1 {
+							// 	width: 5%;
+							// 	left: 10%;
+							// 	top: 9%;
+							// }
+							// .dot2 {
+								// 	width: 8%;
+								// 	top: -3%;
+								// 	left: 13%;
+								// }
+							}
+							
+							.weather {
+								background-image: url(../assets/img/gradient\ weather.jpg);
+								background-position: center;
+								background-size: cover;
+								
+								// .yellow-dot{
+									// 	position: absolute;
+									// 	width: 35px;
+									// 	top: 40px;
+									// 	left: -17px;
+									// }
+									
+									.weather-content {
+										display: flex;
+										align-items: center;
+										
+										.city {
+											font-size: 2rem;
+											font-weight: bolder;
+											margin-bottom: 1rem;
+											margin-top: 7px;
+										}
+										
+										.weather-box {
+											display: flex;
+											width: 80%;
+											font-size: 1.8rem;
+											margin-top: 5px;
+											
+											.weather-headings,
+											.weather-info {
+												width: 50%;
+												display: flex;
+												flex-direction: column;
+												align-items: center;
+												justify-content: center;
+												line-height: 2.5rem;
+											}
+										}
+										.weather-icon {
+											margin-top: 3.5rem;
+											width: 30%;
+										}
+									}
+								}
+								.weather-popup {
+									display: none;
+									justify-content: space-around;
+									align-items: center;
+									flex-direction: column;
+									position: relative;
+									margin-top: 5rem;
+									width: 90%;
+									height: 70%;
+									top: -500%;
+									border-radius: 16px;
+									background-image: url(../assets/img/gradient\ weather.jpg);
+									background-position: center;
+									background-size: cover;
+									transition: 2s cubic-bezier(0.65, 0.05, 0.36, 1);
+									// animation: var(--card-anime-weather);
+									
+									.popup-weather-header {
+										margin-top: 2rem;
+										font-size: 2rem;
+									}
+									.weather-arrow {
+										width: 4rem;
+										margin-top: 3rem;
+										// animation: bounce-arrow 2s infinite;
+									}
+									.input-city-name {
+										width: 70%;
+										font-size: 2rem;
+										padding: 0.5rem;
+										font-family: 'Raleway', sans-serif;
+										border: none;
+										border-bottom: 2px solid #fdc82f;
+										background: none;
+										text-align: center;
+									}
+									.input-city-name::placeholder {
+										color: white;
+									}
+									.input-city-name:focus {
+										outline: none;
+										border: 2px solid #fdc82f;
+										border-radius: 8px;
+									}
+									.weather-send-btn {
+										font-family: 'Raleway', sans-serif;
+									}
+									.weather-send-btn:hover {
+										background-color: rgba(252, 185, 0, 1);
+									}
+									.error-weather-popup {
+										font-size: 1.6rem;
+										height: 1.6rem;
+									}
+								}
+								.animation-card {
+									top: 0;
+								}
+								.hide-card {
 				display: none;
 			}
 
@@ -585,7 +554,6 @@ body {
 					padding: var(--1scb-padding);
 					width: var(--1scb-width);
 					transition: 1s cubic-bezier(0.65, 0.05, 0.36, 1);
-					
 
 					.btn-name {
 						position: relative;
@@ -595,8 +563,8 @@ body {
 						animation: var(--animation-left);
 					}
 				}
-				.active-btn-animation{
-					animation: showCardBtnAnimation 0.5 1;
+				.active-btn-animation {
+					animation: showCardBtnAnimation 0.5 ease;
 				}
 
 				.show-card-btn::before {
@@ -786,29 +754,6 @@ body {
 // 	}
 // }
 
-// @keyframes bounce-arrow {
-// 	0% {
-// 		transform: translateY(0);
-// 	}
-// 	20% {
-// 		transform: translateY(0);
-// 	}
-// 	40% {
-// 		transform: translateY(-15px);
-// 	}
-// 	50% {
-// 		transform: translateY(0);
-// 	}
-// 	60% {
-// 		transform: translateY(-8px);
-// 	}
-// 	80% {
-// 		transform: translateY(0);
-// 	}
-// 	100% {
-// 		transform: translateY(0);
-// 	}
-// }
 @keyframes small-bounce-arrow {
 	0% {
 		transform: translateY(0);
@@ -833,60 +778,46 @@ body {
 	}
 }
 
-// @keyframes resize-before {
-// 	0% {
-// 		scale: 1.1;
-// 	}
-// 	50% {
-// 		scale: 1;
-// 	}
-
-// 	100% {
-// 		scale: 1.1;
-// 	}
-// }
-
 @keyframes shift-right {
-	from {
+	0% {
 		left: 0;
 	}
-	to {
+	40% {
 		left: 500px;
+	}
+	60% {
+		left: 500px;
+	}
+	70% {
+		left: 500px;
+	}
+	100% {
+		left: 0;
 	}
 }
 @keyframes shift-left {
-	from {
+	0% {
 		left: 0;
 	}
-	to {
+	40% {
 		left: -500px;
+	}
+	60% {
+		left: -500px;
+	}
+	70% {
+		left: -500px;
+	}
+	100% {
+		left: 0;
 	}
 }
 
-// @keyframes card-showing {
-// 	0% {
-// 		left: -700px;
-// 	}
-
-// 	100% {
-// 		left: 0;
-// 	}
-// }
-// @keyframes card-hiding {
-// 	0% {
-// 		right: 0;
-// 	}
-
-// 	100% {
-// 		right: -700px;
-// 	}
-// }
-
-@keyframes showCardBtnAnimation {
-	from {
-		transform: translateX(-200%);
+@keyframes showCard {
+	0% {
+		transform: translateY(-200%);
 	}
-	to {
-		transform: translateX(0);
+	100% {
+		transform: translateY(0);
 	}
 }

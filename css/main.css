@@ -19,9 +19,6 @@
   --1before-left: 0;
   --animation-left: none;
   --animation-right: none;
-  --card-anime-stopwatch: none;
-  --card-anime-timer: none;
-  --card-anime-weather: none;
 }
 
 body {
@@ -173,8 +170,10 @@ body .wrapper .card-wrapper .card {
   margin-top: 5rem;
   width: 90%;
   height: 70%;
+  top: -500px;
   border-radius: 16px;
   box-shadow: 0 0 8px #a0a0a0;
+  transition: 2s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 body .wrapper .card-wrapper .card .stopwatch-page {
   position: absolute;
@@ -398,11 +397,12 @@ body .wrapper .card-wrapper .weather-popup {
   margin-top: 5rem;
   width: 90%;
   height: 70%;
+  top: -500%;
   border-radius: 16px;
   background-image: url(../assets/img/gradient\ weather.jpg);
   background-position: center;
   background-size: cover;
-  animation: var(--card-anime-weather);
+  transition: 2s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 body .wrapper .card-wrapper .weather-popup .popup-weather-header {
   margin-top: 2rem;
@@ -443,6 +443,9 @@ body .wrapper .card-wrapper .weather-popup .error-weather-popup {
   font-size: 1.6rem;
   height: 1.6rem;
 }
+body .wrapper .card-wrapper .animation-card {
+  top: 0;
+}
 body .wrapper .card-wrapper .hide-card {
   display: none;
 }
@@ -474,7 +477,7 @@ body .wrapper .card-wrapper .button-box .show-card-btn .btn-name {
   animation: var(--animation-left);
 }
 body .wrapper .card-wrapper .button-box .active-btn-animation {
-  animation: showCardBtnAnimation 0.5 1;
+  animation: showCardBtnAnimation 0.5 ease;
 }
 body .wrapper .card-wrapper .button-box .show-card-btn::before {
   content: "";
@@ -648,26 +651,44 @@ body .wrapper .time-date-box .time {
   }
 }
 @keyframes shift-right {
-  from {
+  0% {
     left: 0;
   }
-  to {
+  40% {
     left: 500px;
+  }
+  60% {
+    left: 500px;
+  }
+  70% {
+    left: 500px;
+  }
+  100% {
+    left: 0;
   }
 }
 @keyframes shift-left {
-  from {
+  0% {
     left: 0;
   }
-  to {
+  40% {
     left: -500px;
   }
-}
-@keyframes showCardBtnAnimation {
-  from {
-    transform: translateX(-200%);
+  60% {
+    left: -500px;
   }
-  to {
-    transform: translateX(0);
+  70% {
+    left: -500px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes showCard {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }/*# sourceMappingURL=main.css.map */
