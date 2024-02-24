@@ -40,7 +40,7 @@ body .wrapper .instruction {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #2d0d30;
+  background-color: rgba(45, 13, 48, 0.9);
   z-index: 10;
   justify-content: center;
   align-items: center;
@@ -202,6 +202,11 @@ body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p {
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
   position: absolute;
   bottom: 3rem;
+  border: 3px solid transparent;
+  background-color: white;
+  font-size: 2rem;
+  color: black;
+  box-shadow: 0 0 8px #2d0d30;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history:hover {
   background-color: rgb(252, 185, 0);
@@ -261,9 +266,10 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
   padding: 0.5rem 1.1rem;
   font-size: 2rem;
   border-radius: 50%;
-  border: 3px solid rgb(255, 149, 0);
+  border: 3px solid transparent;
   background-color: white;
   color: black;
+  box-shadow: 0 0 8px #2d0d30;
   transition: background-color 0.3s;
   cursor: pointer;
 }
@@ -274,6 +280,11 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-histor
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
   margin-top: 1rem;
   margin-bottom: 2rem;
+  border: 3px solid transparent;
+  background-color: white;
+  font-size: 2rem;
+  color: black;
+  box-shadow: 0 0 8px #2d0d30;
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   position: absolute;
@@ -328,7 +339,7 @@ body .wrapper .card-wrapper .timer {
   transition: 1.5s;
 }
 body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 body .wrapper .card-wrapper .stopwatch {
   background-image: url(../assets/img/violet.jpg);
@@ -436,7 +447,7 @@ body .wrapper .card-wrapper .button-box {
   height: 70%;
   flex-direction: column;
   justify-content: space-around;
-  margin-top: 35%;
+  margin-top: 11rem;
 }
 body .wrapper .card-wrapper .button-box .show-card-btn {
   position: relative;
@@ -500,7 +511,7 @@ body .wrapper .card-wrapper .button-box .show-card-btn:active {
   transform: scale(0.96);
 }
 body .wrapper .card-wrapper .button-box-done {
-  height: auto;
+  height: 10%;
   flex-direction: row;
   justify-content: center;
   margin-top: 0;
@@ -532,7 +543,6 @@ body .wrapper .timer-popup {
   flex-direction: column;
   z-index: 10;
   background-color: rgba(45, 13, 48, 0.9);
-  border-radius: 20px;
   color: rgb(249, 246, 246);
 }
 body .wrapper .timer-popup .popup-timer-header {
@@ -621,10 +631,12 @@ body .wrapper .time-date-box .time {
   margin-right: 3.5rem;
 }
 
-@media (min-width: 414px) {
-  body .wrapper .mini-font {
-    font-size: 2rem;
+@media (min-width: 375px) {
+  body .wrapper .card-wrapper .button-box {
+    margin-top: 12rem;
   }
+}
+@media (min-width: 414px) {
   body .wrapper .app-title-box .app-title {
     font-size: 2.6rem;
   }
@@ -718,6 +730,9 @@ body .wrapper .time-date-box .time {
     margin-top: 4.5rem;
     width: 40%;
   }
+  body .wrapper .card-wrapper .button-box {
+    margin-top: 15rem;
+  }
   body .wrapper .card-wrapper .button-box .show-card-btn .btn-name {
     font-size: 3rem;
   }
@@ -745,6 +760,40 @@ body .wrapper .time-date-box .time {
   }
   body .wrapper .time-date-box {
     font-size: 2rem;
+  }
+}
+@media (min-width: 530px) {
+  body .wrapper {
+    max-width: 700px;
+    background-color: #2d0d30;
+    border-radius: 20px;
+    border: 10px solid #2d0d30;
+  }
+  body .wrapper .card-wrapper .card {
+    width: 70%;
+    margin-top: 7rem;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
+    bottom: 6rem;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
+    font-size: 2.5rem;
+    margin-top: 10rem;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p {
+    margin-bottom: 2rem;
+  }
+  body .wrapper .card-wrapper .weather-popup {
+    width: 70%;
+  }
+  body .wrapper .card-wrapper .button-box {
+    margin-top: 28%;
+  }
+  body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
+    margin-bottom: 10rem;
+  }
+  body .wrapper .time-date-box {
+    font-size: 2.5rem;
   }
 }
 @keyframes bounce-arrow {
@@ -775,13 +824,13 @@ body .wrapper .time-date-box .time {
     left: 0;
   }
   40% {
-    left: 500px;
+    left: 650px;
   }
   60% {
-    left: 500px;
+    left: 650px;
   }
   70% {
-    left: 500px;
+    left: 650px;
   }
   100% {
     left: 0;
@@ -792,13 +841,13 @@ body .wrapper .time-date-box .time {
     left: 0;
   }
   40% {
-    left: -500px;
+    left: -650px;
   }
   60% {
-    left: -500px;
+    left: -650px;
   }
   70% {
-    left: -500px;
+    left: -650px;
   }
   100% {
     left: 0;

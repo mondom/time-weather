@@ -10,7 +10,11 @@
 }
 
 @mixin stopwatch-button {
-
+	border: 3px solid transparent;
+	background-color: white;
+	font-size: 2rem;
+	color: black;
+	box-shadow: 0 0 8px #2d0d30;
 }
 
 // @mixin start-button-box {
