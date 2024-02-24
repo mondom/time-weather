@@ -8,18 +8,18 @@
 }
 :root {
 	font-size: 62.5%;
-	// button-box
-	--1bb-height: 70%;
-	--1bb-flex-direction: column;
-	--1bb-justify-content: space-around;
-	--1bb-margin-top: 35%;
+	// // button-box
+	// --1bb-height: 70%;
+	// --1bb-flex-direction: column;
+	// --1bb-justify-content: space-around;
+	// --1bb-margin-top: 35%;
 
-	// show-card-btn
-	--1scb-padding: 3rem 2rem;
-	--1scb-width: fit-content;
+	// // show-card-btn
+	// --1scb-padding: 3rem 2rem;
+	// --1scb-width: fit-content;
 
-	// span
-	--1span-font-size: 2rem;
+	// // span
+	// --1span-font-size: 2rem;
 
 	// before
 	--1before-width: 42px;
@@ -49,6 +49,9 @@ body {
 		display: flex;
 		justify-content: center;
 		overflow: hidden;
+		.mini-font{
+			font-size: 1.6;
+		}
 		.instruction {
 			position: relative;
 			width: 100%;
@@ -125,7 +128,7 @@ body {
 			.timer-button-info {
 				margin-top: 3rem;
 			}
-			.weather-info-header {
+			.weather-instruction-header {
 				margin-bottom: 5rem;
 			}
 		}
@@ -284,26 +287,26 @@ body {
 							display: flex;
 							justify-content: center;
 							align-items: center;
+							width: 40px;
+							height: 40px;
 							margin: 0.5rem 0.2rem;
 							padding: 0.5rem 1.1rem;
+							font-size: 2rem;
+							border-radius: 50%;
+							border: 3px solid rgb(255, 149, 0);
+							background-color: white;
+							color: black;
+							transition: background-color 0.3s;
+							cursor: pointer;
+						}
+						.stopwatch-btn:hover,
+						.stopwatch-history:hover {
+							background-color: rgba(252, 185, 0, 1);
 						}
 						.stopwatch-history {
 							margin-top: 1rem;
 							margin-bottom: 2rem;
 							@include stopwatch-button;
-						}
-
-						.stopwatch-btn {
-							border-radius: 50%;
-							cursor: pointer;
-							width: 40px;
-							height: 40px;
-							transition: background-color 0.3s;
-							@include stopwatch-button;
-						}
-						.stopwatch-btn:hover,
-						.stopwatch-history:hover {
-							background-color: rgba(252, 185, 0, 1);
 						}
 					}
 					.timer-btn-box {
@@ -465,10 +468,7 @@ body {
 				.weather-send-btn:hover {
 					background-color: rgba(252, 185, 0, 1);
 				}
-				.error-weather-popup {
-					font-size: 1.6rem;
-					
-				}
+				
 			}
 			.animation-card {
 				top: 0;
@@ -480,10 +480,10 @@ body {
 			.button-box {
 				position: absolute;
 				display: flex;
-				height: var(--1bb-height);
-				flex-direction: var(--1bb-flex-direction);
-				justify-content: var(--1bb-justify-content);
-				margin-top: var(--1bb-margin-top);
+				height: 70%;
+				flex-direction: column;
+				justify-content: space-around;
+				margin-top: 35%;
 
 				.show-card-btn {
 					position: relative;
@@ -493,17 +493,26 @@ body {
 					transition: all 0.2s ease;
 					text-decoration: none;
 					height: 30px;
-					padding: var(--1scb-padding);
-					width: var(--1scb-width);
+					padding: 3rem 2rem;
+					width: fit-content;
 					transition: 1s cubic-bezier(0.65, 0.05, 0.36, 1);
 
 					.btn-name {
 						position: relative;
 						color: black;
 						font-weight: bold;
-						font-size: var(--1span-font-size);
+						font-size: 2rem;
 						animation: var(--animation-left);
 					}
+					.btn-name-done {
+						font-size: 1.6rem;
+					}
+				}
+				.show-card-btn-done {
+					padding: 1.5rem 1rem;
+					width: auto;
+					justify-content: center;
+					margin: 0.5rem;
 				}
 				.active-btn-animation {
 					animation: showCardBtnAnimation 0.5 ease;
@@ -539,6 +548,12 @@ body {
 				.show-card-btn:active {
 					transform: scale(0.96);
 				}
+			}
+			.button-box-done {
+				height: auto;
+				flex-direction: row;
+				justify-content: center;
+				margin-top: 0;
 			}
 
 			.big-button {
@@ -601,11 +616,7 @@ body {
 				display: flex;
 				align-items: center;
 				flex-direction: column;
-				.label-box {
-					.popup-label {
-						font-size: 1.6rem;
-					}
-				}
+				
 				.label-box,
 				.input-box {
 					width: 100%;
@@ -667,6 +678,9 @@ body {
 @media (min-width: 414px) {
 	body {
 		.wrapper {
+			.mini-font{
+				font-size: 2rem;
+			}
 			.app-title-box {
 				.app-title {
 					font-size: 2.6rem;
@@ -683,7 +697,6 @@ body {
 				.roll-up {
 					padding: 1.2rem;
 					width: 40%;
-
 					font-size: 2rem;
 				}
 				.info-header {
@@ -751,13 +764,13 @@ body {
 					.popup-weather-header {
 						margin-top: 3rem;
 						font-size: 2.5rem;
-					  }
-					  .input-city-name {
+					}
+					.input-city-name {
 						font-size: 3rem;
-					  }
-					  .error-weather-popup{
+					}
+					.error-weather-popup {
 						font-size: 2rem;
-					  }
+					}
 				}
 				.weather {
 					.weather-content {
@@ -765,19 +778,59 @@ body {
 							font-size: 2.4rem;
 						}
 						.weather-box {
-							
 							font-size: 2.2rem;
 							margin-top: 2rem;
-							.weather-headings, .weather-info {
+							.weather-headings,
+							.weather-info {
 								line-height: 3rem;
 							}
 						}
 						.weather-icon {
 							margin-top: 4.5rem;
 							width: 40%;
-						  }
+						}
 					}
 				}
+				.button-box {
+					.show-card-btn {
+						.btn-name {
+							font-size: 3rem;
+						}
+						.btn-name-done {
+							font-size: 2.2rem;
+						}
+					}
+				}
+			}
+			.timer-popup {
+				.popup-input-event-name {
+					font-size: 2.2rem;
+					font-weight: bold;
+				}
+				.popup-date-box {
+					.label-box {
+						.popup-label {
+							font-size: 2rem;
+						}
+					}
+					.input-box {
+						input {
+							font-size: 2.2rem;
+							font-weight: bold;
+						}
+					}
+				}
+				.timer-save {
+					margin-top: 6rem;
+					font-size: 2.5rem;
+				}
+				.error {
+					margin-top: 3rem;
+					font-size: 2.5rem;
+				}
+			}
+			.time-date-box {
+				font-size: 2rem;
 			}
 		}
 	}

@@ -6,13 +6,6 @@
 
 :root {
   font-size: 62.5%;
-  --1bb-height: 70%;
-  --1bb-flex-direction: column;
-  --1bb-justify-content: space-around;
-  --1bb-margin-top: 35%;
-  --1scb-padding: 3rem 2rem;
-  --1scb-width: fit-content;
-  --1span-font-size: 2rem;
   --1before-width: 42px;
   --1before-height: 42px;
   --1before-top: 16%;
@@ -39,6 +32,9 @@ body .wrapper {
   display: flex;
   justify-content: center;
   overflow: hidden;
+}
+body .wrapper .mini-font {
+  font-size: 1.6;
 }
 body .wrapper .instruction {
   position: relative;
@@ -114,7 +110,7 @@ body .wrapper .instruction .stopwatch-info {
 body .wrapper .instruction .timer-button-info {
   margin-top: 3rem;
 }
-body .wrapper .instruction .weather-info-header {
+body .wrapper .instruction .weather-instruction-header {
   margin-bottom: 5rem;
 }
 body .wrapper .active {
@@ -206,10 +202,6 @@ body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p {
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
   position: absolute;
   bottom: 3rem;
-  border: 3px solid rgb(255, 149, 0);
-  background-color: white;
-  font-size: 2rem;
-  color: black;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history:hover {
   background-color: rgb(252, 185, 0);
@@ -263,31 +255,25 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem 0.2rem;
-  padding: 0.5rem 1.1rem;
-}
-body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  border: 3px solid rgb(255, 149, 0);
-  background-color: white;
-  font-size: 2rem;
-  color: black;
-}
-body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
-  border-radius: 50%;
-  cursor: pointer;
   width: 40px;
   height: 40px;
-  transition: background-color 0.3s;
+  margin: 0.5rem 0.2rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 2rem;
+  border-radius: 50%;
   border: 3px solid rgb(255, 149, 0);
   background-color: white;
-  font-size: 2rem;
   color: black;
+  transition: background-color 0.3s;
+  cursor: pointer;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn:hover,
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history:hover {
   background-color: rgb(252, 185, 0);
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   position: absolute;
@@ -438,9 +424,6 @@ body .wrapper .card-wrapper .weather-popup .weather-send-btn {
 body .wrapper .card-wrapper .weather-popup .weather-send-btn:hover {
   background-color: rgb(252, 185, 0);
 }
-body .wrapper .card-wrapper .weather-popup .error-weather-popup {
-  font-size: 1.6rem;
-}
 body .wrapper .card-wrapper .animation-card {
   top: 0;
 }
@@ -450,10 +433,10 @@ body .wrapper .card-wrapper .hide-card {
 body .wrapper .card-wrapper .button-box {
   position: absolute;
   display: flex;
-  height: var(--1bb-height);
-  flex-direction: var(--1bb-flex-direction);
-  justify-content: var(--1bb-justify-content);
-  margin-top: var(--1bb-margin-top);
+  height: 70%;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 35%;
 }
 body .wrapper .card-wrapper .button-box .show-card-btn {
   position: relative;
@@ -463,16 +446,26 @@ body .wrapper .card-wrapper .button-box .show-card-btn {
   transition: all 0.2s ease;
   text-decoration: none;
   height: 30px;
-  padding: var(--1scb-padding);
-  width: var(--1scb-width);
+  padding: 3rem 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
   transition: 1s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 body .wrapper .card-wrapper .button-box .show-card-btn .btn-name {
   position: relative;
   color: black;
   font-weight: bold;
-  font-size: var(--1span-font-size);
+  font-size: 2rem;
   animation: var(--animation-left);
+}
+body .wrapper .card-wrapper .button-box .show-card-btn .btn-name-done {
+  font-size: 1.6rem;
+}
+body .wrapper .card-wrapper .button-box .show-card-btn-done {
+  padding: 1.5rem 1rem;
+  width: auto;
+  justify-content: center;
+  margin: 0.5rem;
 }
 body .wrapper .card-wrapper .button-box .active-btn-animation {
   animation: showCardBtnAnimation 0.5 ease;
@@ -505,6 +498,12 @@ body .wrapper .card-wrapper .button-box .show-card-btn:hover::before {
 }
 body .wrapper .card-wrapper .button-box .show-card-btn:active {
   transform: scale(0.96);
+}
+body .wrapper .card-wrapper .button-box-done {
+  height: auto;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0;
 }
 body .wrapper .card-wrapper .big-button {
   width: 60%;
@@ -563,9 +562,6 @@ body .wrapper .timer-popup .popup-date-box {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-body .wrapper .timer-popup .popup-date-box .label-box .popup-label {
-  font-size: 1.6rem;
 }
 body .wrapper .timer-popup .popup-date-box .label-box,
 body .wrapper .timer-popup .popup-date-box .input-box {
@@ -626,6 +622,9 @@ body .wrapper .time-date-box .time {
 }
 
 @media (min-width: 414px) {
+  body .wrapper .mini-font {
+    font-size: 2rem;
+  }
   body .wrapper .app-title-box .app-title {
     font-size: 2.6rem;
   }
@@ -711,12 +710,41 @@ body .wrapper .time-date-box .time {
     font-size: 2.2rem;
     margin-top: 2rem;
   }
-  body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-headings, body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-info {
+  body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-headings,
+  body .wrapper .card-wrapper .weather .weather-content .weather-box .weather-info {
     line-height: 3rem;
   }
   body .wrapper .card-wrapper .weather .weather-content .weather-icon {
     margin-top: 4.5rem;
     width: 40%;
+  }
+  body .wrapper .card-wrapper .button-box .show-card-btn .btn-name {
+    font-size: 3rem;
+  }
+  body .wrapper .card-wrapper .button-box .show-card-btn .btn-name-done {
+    font-size: 2.2rem;
+  }
+  body .wrapper .timer-popup .popup-input-event-name {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+  body .wrapper .timer-popup .popup-date-box .label-box .popup-label {
+    font-size: 2rem;
+  }
+  body .wrapper .timer-popup .popup-date-box .input-box input {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+  body .wrapper .timer-popup .timer-save {
+    margin-top: 6rem;
+    font-size: 2.5rem;
+  }
+  body .wrapper .timer-popup .error {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+  }
+  body .wrapper .time-date-box {
+    font-size: 2rem;
   }
 }
 @keyframes bounce-arrow {

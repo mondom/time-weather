@@ -372,7 +372,7 @@ const showWeather = () => {
 
 const buttonBox = document.querySelector('.button-box')
 const showCardBtns = document.querySelectorAll('.show-card-btn')
-const span = document.querySelector('.btn-name')
+const spans = document.querySelectorAll('.btn-name')
 const cardWrapper = document.querySelector('.card-wrapper')
 const weatherBookmark = document.querySelector('.weather-bookmark')
 const timerBookmark = document.querySelector('.timer-bookmark')
@@ -395,15 +395,25 @@ const handleWeatherInstrucions = () => {
 }
 
 const setTheButtons = () => {
-	root.style.setProperty('--1bb-height', 'auto')
-	root.style.setProperty('--1bb-flex-direction', 'row')
-	root.style.setProperty('--1bb-justify-content', 'center')
-	root.style.setProperty('--1bb-margin-top', '0')
+	// root.style.setProperty('--1bb-height', 'auto')
+	// root.style.setProperty('--1bb-flex-direction', 'row')
+	// root.style.setProperty('--1bb-justify-content', 'center')
+	// root.style.setProperty('--1bb-margin-top', '0')
 
-	root.style.setProperty('--1scb-padding', '1.5rem 1rem')
-	root.style.setProperty('--1scb-width', 'auto')
+	buttonBox.classList.add('button-box-done')
 
-	root.style.setProperty('--1span-font-size', '1.6rem')
+	// root.style.setProperty('--1scb-padding', '1.5rem 1rem')
+	// root.style.setProperty('--1scb-width', 'auto')
+
+	showCardBtns.forEach(btn => {
+		btn.classList.add('show-card-btn-done')
+	})
+
+	// root.style.setProperty('--1span-font-size', '1.6rem')
+
+	spans.forEach(span => {
+		span.classList.add('btn-name-done')
+	})
 
 	root.style.setProperty('--1before-width', '32px')
 	root.style.setProperty('--1before-height', '32px')
@@ -418,10 +428,10 @@ const setTheButtons = () => {
 	cardWrapper.style.height = '95%'
 	cardWrapper.style.bottom = 'auto'
 
-	showCardBtns.forEach(btn => {
-		btn.style.justifyContent = 'center'
-		btn.style.margin = '0.5rem'
-	})
+	// showCardBtns.forEach(btn => {
+	// 	btn.style.justifyContent = 'center'
+	// 	btn.style.margin = '0.5rem'
+	// })
 }
 
 const activateAnimationOfBtns = () => {
@@ -492,3 +502,6 @@ weatherBookmark.addEventListener('click', handleWeatherInstrucions)
 stopwatchRollUpBtn.addEventListener('click', handleStopwatchInstrucions)
 timerRollUpBtn.addEventListener('click', handleTimerInstrucions)
 weatherRollUpBtn.addEventListener('click', handleWeatherInstrucions)
+
+const screenWidth = window.innerWidth;
+console.log(screenWidth);

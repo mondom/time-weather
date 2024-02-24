@@ -28,16 +28,17 @@
 
         <div class="instruction stopwatch-instruction">
             
-            <h3 class="stopwatch-info-header info-header">stopwatch to measure short time intervals</h3>
+            <h3 class="stopwatch-info-header info-header ">stopwatch to measure short time intervals</h3>
             <p class="stopwatch-button-info"><i class="fa-solid fa-play"></i> - start</p>
             <p class="stopwatch-button-info"><i class="fa-solid fa-pause"></i> - pause</p>
             <p class="stopwatch-button-info"><i class="fa-solid fa-stop"></i> - stop and save time</p>
             <p class="stopwatch-button-info"><i class="fa-solid fa-xmark"></i> - clear countdown and history</p>
             <p class="stopwatch-button-info"><span>history</span> - show history of times</p>
             <p class="stopwatch-info">the application saves the last 8 times</p>
-            <button class="stopwatch-roll-up roll-up">roll up</button>
+            <button class="stopwatch-roll-up roll-up
+        ">roll up</button>
             <div class="bookmark stopwatch-bookmark">
-                <img src="./assets/icon/arrow-instructions.png" alt="down-arrow"><p class="bookmark-name">info</p><img src="./assets/icon/arrow-instructions.png" alt="down-arrow">
+                <img src="./assets/icon/arrow-instructions.png" alt="down-arrow"><p class="bookmark-name ">info</p><img src="./assets/icon/arrow-instructions.png" alt="down-arrow">
             </div>
         </div>
         <div class="instruction timer-instruction">
@@ -46,13 +47,13 @@
             <p class="timer-button-info"><span>edit</span> - edit your event</p>
             <button class="timer-roll-up roll-up">roll up</button>
             <div class="bookmark timer-bookmark">
-                <img src="./assets/icon/arrow-instructions.png" alt="down-arrow"><p class="bookmark-name">info</p><img src="./assets/icon/arrow-instructions.png" alt="down-arrow">
+                <img src="./assets/icon/arrow-instructions.png" alt="down-arrow"><p class="bookmark-name ">info</p><img src="./assets/icon/arrow-instructions.png" alt="down-arrow">
             </div>
         </div>
         <div class="instruction weather-instruction">
-            <h3 class="weather-info-header info-header">app showing the current weather in any city in the world</h3>
-            <p class="weather-info">the name of the city should be written in English</p>
-            <button class="weather-roll-up roll-up">roll up</button>
+            <h3 class="weather-instruction-header info-header small font">app showing the current weather in any city in the world</h3>
+            <p class="weather-instruction">the name of the city should be written in English</p>
+            <button class="weather-roll-up roll-up mini font">roll up</button>
             <div class="bookmark weather-bookmark">
                 <img src="./assets/icon/arrow-instructions.png" alt="down-arrow"><p class="bookmark-name">info</p><img src="./assets/icon/arrow-instructions.png" alt="down-arrow">
             </div>
@@ -103,16 +104,16 @@
                         <p class="stopwatch-clock">0:00</p>
                         <p class="show-last-time"></p>
                         <div class="stopwatch-btn-box ">
-                            <button class="stopwatch-start stopwatch-btn"><i class="fa-solid fa-play"></i></button>
-                            <button class="stopwatch-pause stopwatch-btn"><i class="fa-solid fa-pause"></i></button>
-                            <button class="stopwatch-stop stopwatch-btn"><i class="fa-solid fa-stop"></i></button>
+                            <button class="stopwatch-start stopwatch-btn"><i class="fa-solid fa-play "></i></button>
+                            <button class="stopwatch-pause stopwatch-btn"><i class="fa-solid fa-pause "></i></button>
+                            <button class="stopwatch-stop stopwatch-btn"><i class="fa-solid fa-stop "></i></button>
                             <button class="stopwatch-reset stopwatch-btn"><i class="fa-solid fa-xmark"></i></button>
                             <button class="stopwatch-history big-button">history</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="stopwatch-history-page">
+                <div class="stopwatch-history-page ">
                     <ul class="history-of-times">
 
                     </ul>
@@ -129,28 +130,28 @@
                 <div class="timer-content card-box">
 
 
-                    <h3 class="event-name"></h3>
+                    <h3 class="event-name "></h3>
 
 
                     <div class="timer-box">
                         <div class="timer-days small-box">
-                            <p class="countdown-days count-number"></p>
+                            <p class="countdown-days count-number "></p>
                             <hr>
                             <p class="days-title time-name">days</p>
                         </div>
 
                         <div class="timer-hours small-box">
-                            <p class="countdown-hours count-number"></p>
+                            <p class="countdown-hours count-number "></p>
                             <hr>
                             <p class="hours-title time-name">hours</p>
                         </div>
                         <div class="timer-minutes small-box">
-                            <p class="countdown-minutes count-number"></p>
+                            <p class="countdown-minutes count-number "></p>
                             <hr>
                             <p class="minutes-title time-name">min</p>
                         </div>
                         <div class="timer-seconds small-box">
-                            <p class="countdown-seconds count-number"></p>
+                            <p class="countdown-seconds count-number "></p>
                             <hr>
                             <p class="seconds-title time-name">sec</p>
                         </div>
@@ -160,41 +161,36 @@
 
                     <div class="timer-btn-box">
 
-                        <button class="timer-edit big-button" onclick="resetInputsValue()">edit</button>
+                        <button class="timer-edit big-button " onclick="resetInputsValue()">edit</button>
                     </div>
                 </div>
             </div>
 
             <div class="weather-popup">
 
-                <h3 class="popup-weather-header">Enter city name</h3>
+                <h3 class="popup-weather-header ">Enter city name</h3>
                 <img class="weather-arrow" src="./assets/icon/down-arrow.png" alt="arrow">
-                <input type="text" id="weather-city" class="input-city-name" maxlength="40" placeholder="enter city">
+                <input type="text" id="weather-city" class="input-city-name " maxlength="40" placeholder="enter city">
                 <p class="error-weather-popup"></p>
-                <button class="weather-send-btn big-button">Send</button>
+                <button class="weather-send-btn big-button ">Send</button>
 
             </div>
-
             <div class="weather card hide-card">
-                <!-- <img class="yellow-dot" src="./assets/icon/record_8114034.png" alt="yellow-dot"> -->
 
                 <div class="weather-title-box title-box">
                     <h2 class="title weather-title">weather</h2>
                 </div>
                 <div class="weather-content card-box">
 
+                    <p class="city ">Weather in <span class="name-of-city"></span></p>
 
-
-                    <p class="city">Weather in <span class="name-of-city"></span></p>
-
-
-                    <div class="weather-box">
+                    <div class="weather-box ">
                         <div class="weather-headings">
                             <p class="ph-weather">Weather:</p>
                             <p class="temperature">Temperature:</p>
                         </div>
 
-                        <div class="weather-info">
+                        <div class="weather-info ">
                             <p class="current-weather"></p>
                             <p class="current-temperature"></p>
                         </div>
@@ -207,11 +203,11 @@
             <div class="button-box">
 
                 <a href="#" class="show-stopwatch-btn show-card-btn" onclick="quickHideHistory()">
-                    <span class="btn-name">stopwatch</span>
+                    <span class="btn-name ">stopwatch</span>
                     <a href="#" class="show-timer-btn show-card-btn">
-                        <span class="btn-name">timer</span>
+                        <span class="btn-name ">timer</span>
                         <a href="#" class="show-weather-btn show-card-btn">
-                            <span class="btn-name">weather</span>
+                            <span class="btn-name ">weather</span>
 
                         </a>
 

@@ -38,40 +38,63 @@
 // }
 
 :root {
-	// button-box
-	--1bb-height: 80%;
-	--1bb-flex-direction: column;
-	--1bb-justify-content: space-around;
-	--1bb-margin-top: 10%;
+		// button-box
+		--1bb-height: 70%; => auto
+		--1bb-flex-direction: column; => row
+		--1bb-justify-content: space-around; => center
+		--1bb-margin-top: 35%; => 0
+	
+		// show-card-btn
+		--1scb-padding: 3rem 2rem; => '1.5rem 1rem'
+		--1scb-width: fit-content; => 'auto'
+		btn.style.justifyContent = 'center'
+		btn.style.margin = '0.5rem'
+	
+		// span
+		--1span-font-size: 2rem; => 1.6rem
+	
+		// before
+		--1before-width: 42px; => 32px
+		--1before-height: 42px; => 32px
+		--1before-top: 16%; => -3%
+		--1before-left: 0; => -1px
+	
+		--animation-left: none;
+	
+		--animation-right: none;
 
-	--2bb-height: auto;
-	--2bb-flex-direction: row;
-	--2bb-justify-content: center;
-	--2bb-margin-top: 0;
+		buttonBox.style.bottom = '4rem'
+		buttonBox.style.width = '100%'
+		buttonBox.style.padding = '0.7rem'
+		buttonBox.classList.add('done')
 
-	// show-card-btn
-	--1scb-padding: 3rem 2rem;
-	--1scb-width: fit-content;
-
-	--2scb-padding: 1.5rem 1rem;
-	--2scb-width: auto;
-
-	// span
-	--1span-font-size: 3rem;
-
-	--2span-font-size: 1.6rem;
-
-	// before
-	--1before-width: 52px;
-	--1before-height: 52px;
-	--1before-top: 6%;
-	--1before-left: 0;
-
-	--2before-width: 32px;
-	--2before-height: 32px;
-	--2before-top: -3%;
-	--2before-left: -1px;
+		cardWrapper.style.height = '95%'
+		cardWrapper.style.bottom = 'auto'
+		
 }
+
+// root.style.setProperty('--1bb-height', 'auto')
+// 	root.style.setProperty('--1bb-flex-direction', 'row')
+// 	root.style.setProperty('--1bb-justify-content', 'center')
+// 	root.style.setProperty('--1bb-margin-top', '0')
+
+// 	root.style.setProperty('--1scb-padding', '1.5rem 1rem')
+// 	root.style.setProperty('--1scb-width', 'auto')
+
+// 	root.style.setProperty('--1span-font-size', '1.6rem')
+
+// 	root.style.setProperty('--1before-width', '32px')
+// 	root.style.setProperty('--1before-height', '32px')
+// 	root.style.setProperty('--1before-top', '-3%')
+// 	root.style.setProperty('--1before-left', '-1px')
+
+// 	buttonBox.style.bottom = '4rem'
+// 	buttonBox.style.width = '100%'
+// 	buttonBox.style.padding = '0.7rem'
+// 	buttonBox.classList.add('done')
+
+// 	cardWrapper.style.height = '95%'
+// 	cardWrapper.style.bottom = 'auto'
 
 // dopisać w js
 
@@ -114,3 +137,31 @@
 // 	&--active {
 // 		transform: translateX(0);
 // 	}}
+
+font-size: 2rem;   mini-font  wrapper
+.roll-up 
+.error-weather-popup 
+.popup-label
+.time-date-box 
+
+font-size: 2.2rem;  small-font
+.info-header
+.bookmark-name
+.stopwatch-history-page
+.show-last-time
+.stopwatch-btn i 
+.event-name 
+.big-button
+.weather-box
+.popup-input-event-name 
+.input-box input
+
+font-size: 2.4rem;  medium-font
+.count-number
+.popup-weather-header								
+.city 
+
+font-size: 3rem;  large-font
+.btn-name
+.weather-info
+.input-city-name 
