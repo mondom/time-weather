@@ -208,7 +208,6 @@ timerEditBtn.addEventListener('click', showPopup)
 timerSaveBtn.addEventListener('click', dataUpdate)
 
 setInterval(getTime, 1000)
-// dataUpdate()
 
 //weather card
 
@@ -405,21 +404,11 @@ const handleWeatherInstrucions = () => {
 }
 
 const setTheButtons = () => {
-	// root.style.setProperty('--1bb-height', 'auto')
-	// root.style.setProperty('--1bb-flex-direction', 'row')
-	// root.style.setProperty('--1bb-justify-content', 'center')
-	// root.style.setProperty('--1bb-margin-top', '0')
-
 	buttonBox.classList.add('button-box-done')
-
-	// root.style.setProperty('--1scb-padding', '1.5rem 1rem')
-	// root.style.setProperty('--1scb-width', 'auto')
 
 	showCardBtns.forEach(btn => {
 		btn.classList.add('show-card-btn-done')
 	})
-
-	// root.style.setProperty('--1span-font-size', '1.6rem')
 
 	spans.forEach(span => {
 		span.classList.add('btn-name-done')
@@ -438,10 +427,6 @@ const setTheButtons = () => {
 	cardWrapper.style.height = '95%'
 	cardWrapper.style.bottom = 'auto'
 
-	// showCardBtns.forEach(btn => {
-	// 	btn.style.justifyContent = 'center'
-	// 	btn.style.margin = '0.5rem'
-	// })
 }
 
 const activateAnimationOfBtns = () => {
@@ -513,5 +498,5 @@ stopwatchRollUpBtn.addEventListener('click', handleStopwatchInstrucions)
 timerRollUpBtn.addEventListener('click', handleTimerInstrucions)
 weatherRollUpBtn.addEventListener('click', handleWeatherInstrucions)
 
-const screenWidth = window.innerWidth;
-console.log(screenWidth);
+const screenWidth = window.innerWidth
+console.log(screenWidth)

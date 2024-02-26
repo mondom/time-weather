@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Raleway", sans-serif;
-  color: #1c353e;
+  color: black;
   background-color: #f4f4f4;
   height: 100vh;
   overflow: hidden;
@@ -57,6 +57,8 @@ body .wrapper .instruction .roll-up {
   margin-top: 5rem;
   border-radius: 8px;
   font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
   transition: background-color 0.3s;
   cursor: pointer;
 }
@@ -593,7 +595,7 @@ body .wrapper .timer-popup .timer-save {
   font-size: 20px;
   font-family: "Raleway", sans-serif;
   padding: 5px 12px;
-  box-shadow: 0 0 4px #e9c46a;
+  box-shadow: 0 0 4px black;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -771,7 +773,7 @@ body .wrapper .time-date-box .time {
   }
   body .wrapper .card-wrapper .card {
     width: 70%;
-    margin-top: 7rem;
+    margin-top: 10rem;
   }
   body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
     bottom: 6rem;
@@ -785,6 +787,7 @@ body .wrapper .time-date-box .time {
   }
   body .wrapper .card-wrapper .weather-popup {
     width: 70%;
+    margin-top: 10rem;
   }
   body .wrapper .card-wrapper .button-box {
     margin-top: 28%;
