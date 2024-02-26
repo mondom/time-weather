@@ -72,11 +72,11 @@
                     <label for="popup-timer-year" class="popup-label">year</label>
                 </div>
 
-                <div class="input-box"> <input type="number" id="popup-timer-day" value="1" min="1" max="31"
+                <div class="input-box"> <input type="number" id="popup-timer-day" value="1" min="1" max="31" oninput="blockDayToTwo()"
                         class="popup-input-day">
-                    <input type="number" id="popup-timer-month" value="1" min="1" max="12" class="popup-input-month">
+                    <input type="number" id="popup-timer-month" value="1" min="1" max="12" class="popup-input-month" oninput="blockMonthToTwo()">
                     <input type="number" id="popup-timer-year" value="2030" min="2023" max="9999"
-                        class="popup-input-year">
+                        class="popup-input-year" oninput="blockYearToTwo()">
                 </div>
 
             </div>

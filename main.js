@@ -194,6 +194,16 @@ const resetInputsValue = () => {
 	popupInputYear.value = ''
 }
 
+const blockDayToTwo = () => {
+	popupInputDay.value = popupInputDay.value.slice(0, 2)
+}
+const blockMonthToTwo = () => {
+	popupInputMonth.value = popupInputMonth.value.slice(0, 2)
+}
+const blockYearToTwo = () => {
+	popupInputYear.value = popupInputYear.value.slice(0, 4)
+}
+
 timerEditBtn.addEventListener('click', showPopup)
 timerSaveBtn.addEventListener('click', dataUpdate)
 

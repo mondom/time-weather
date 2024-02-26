@@ -792,6 +792,13 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
     margin-bottom: 10rem;
   }
+  body .wrapper .card-wrapper .weather .weather-content .weather-box {
+    margin-top: 4rem;
+  }
+  body .wrapper .card-wrapper .weather .weather-content .weather-icon {
+    margin-top: 10rem;
+    width: 40%;
+  }
   body .wrapper .time-date-box {
     font-size: 2.5rem;
   }

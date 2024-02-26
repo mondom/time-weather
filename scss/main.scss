@@ -188,7 +188,7 @@ body {
 				height: 70%;
 				top: -800px;
 				border-radius: 16px;
-				box-shadow: 0 0 8px $shadow-color;
+				box-shadow: 0 0 8px #a0a0a0;
 				transition: 2s cubic-bezier(0.65, 0.05, 0.36, 1);
 
 				.stopwatch-page {
@@ -226,7 +226,11 @@ body {
 					.stopwatch-close-history {
 						position: absolute;
 						bottom: 3rem;
-						@include stopwatch-button;
+						border: 3px solid transparent;
+						background-color: white;
+						font-size: 2rem;
+						color: black;
+						box-shadow: 0 0 8px #2d0d30;
 					}
 					.stopwatch-close-history:hover {
 						background-color: rgba(252, 185, 0, 1);
@@ -307,7 +311,11 @@ body {
 						.stopwatch-history {
 							margin-top: 1rem;
 							margin-bottom: 2rem;
-							@include stopwatch-button;
+							border: 3px solid transparent;
+							background-color: white;
+							font-size: 2rem;
+							color: black;
+							box-shadow: 0 0 8px #2d0d30;
 						}
 					}
 					.timer-btn-box {
@@ -585,7 +593,7 @@ body {
 			flex-direction: column;
 			z-index: 10;
 			background-color: rgba(#2d0d30, $alpha: 0.9);
-			
+
 			color: rgb(249, 246, 246);
 			.popup-timer-header {
 				margin: 2rem;
@@ -691,7 +699,6 @@ body {
 @media (min-width: 414px) {
 	body {
 		.wrapper {
-			
 			.app-title-box {
 				.app-title {
 					font-size: 2.6rem;
@@ -854,45 +861,49 @@ body {
 			background-color: #2d0d30;
 			border-radius: 20px;
 			border: 10px solid #2d0d30;
-			
+
 			.card-wrapper {
 				.card {
 					width: 70%;
 					margin-top: 7rem;
-					
-					
+
 					.stopwatch-history-page {
 						.stopwatch-close-history {
-							
 							bottom: 6rem;
-							
-						  }
+						}
 						.history-of-times {
 							font-size: 2.5rem;
 							margin-top: 10rem;
-							p{
+							p {
 								margin-bottom: 2rem;
 							}
-						  }
+						}
 					}
 				}
-				
+
 				.weather-popup {
 					width: 70%;
-				
-					
-					
 				}
-			
+
 				.button-box {
 					margin-top: 28%;
-				
 				}
 				.timer .timer-btn-box .timer-edit {
 					margin-bottom: 10rem;
 				}
+				.weather {
+					.weather-content {
+						.weather-box {
+							margin-top: 4rem;
+						}
+						.weather-icon {
+							margin-top: 10rem;
+							width: 40%;
+						}
+					}
+				}
 			}
-		
+
 			.time-date-box {
 				font-size: 2.5rem;
 			}
