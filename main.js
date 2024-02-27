@@ -68,11 +68,12 @@ const stopCount = () => {
 }
 
 const showHistory = () => {
-	stopwatchCard.style.transform = 'rotateY(180deg)'
-	setTimeout(() => {
-		stopwatchPage.style.opacity = '0'
-		stopwatchHistoryPage.style.opacity = '1'
-	}, 200)
+	stopwatchPage.style.opacity = '0'
+	stopwatchPage.style.transform = 'rotateY(-180deg)'
+	stopwatchPage.style.zIndex = '-1'
+	stopwatchHistoryPage.style.transform = 'rotateY(0)'
+	stopwatchHistoryPage.style.opacity = '1'
+	stopwatchHistoryPage.style.zIndex = '1'
 
 	let number = 1
 	arrOfTimes.forEach(el => {
@@ -84,12 +85,12 @@ const showHistory = () => {
 }
 
 const hideHistory = () => {
-	stopwatchCard.style.transform = 'rotateY(0)'
-
-	setTimeout(() => {
-		stopwatchPage.style.opacity = '1'
-		stopwatchHistoryPage.style.opacity = '0'
-	}, 200)
+	stopwatchPage.style.opacity = '1'
+	stopwatchPage.style.zIndex = '1'
+	stopwatchPage.style.transform = 'rotateY(0)'
+	stopwatchHistoryPage.style.transform = 'rotateY(-180deg)'
+	stopwatchHistoryPage.style.opacity = '0'
+	stopwatchHistoryPage.style.zIndex = '-1'
 
 	historyList.textContent = ''
 }
@@ -426,7 +427,6 @@ const setTheButtons = () => {
 
 	cardWrapper.style.height = '95%'
 	cardWrapper.style.bottom = 'auto'
-
 }
 
 const activateAnimationOfBtns = () => {
