@@ -35,9 +35,12 @@ body {
 		height: 98%;
 		display: flex;
 		justify-content: center;
-		// background-color: black;
+		background-image: url(../assets/img/background.jpg);
+		background-position: center;
+		background-size: cover;
 		border-radius: 20px;
-		border: 0.5rem solid black;
+		// border: 0.5rem solid black;
+		box-shadow: 0 0 10px black;
 		overflow: hidden;
 		margin: 0.5rem;
 		.mini-font {
@@ -91,7 +94,7 @@ body {
 				justify-content: center;
 				align-items: flex-end;
 				line-height: 2rem;
-				background-color: black;
+				background-color: rgba(0, 0, 0, 0.9);
 				bottom: -3.4rem;
 				z-index: 10;
 				border-radius: 8px;
@@ -527,7 +530,8 @@ body {
 					position: absolute;
 					display: block;
 					border-radius: 28px;
-					background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(255, 255, 255, 0.75));
+					background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(96, 96, 96, 0.75));
+					box-shadow: 0 0 6px black;
 					z-index: -1;
 					transition: all 0.3s ease;
 					width: var(--1before-width);
@@ -548,9 +552,8 @@ body {
 				.show-card-btn:hover::before {
 					width: 100%;
 					// background-color: black;
-					
 				}
-	
+
 				.show-card-btn:active {
 					transform: scale(0.96);
 				}
@@ -675,6 +678,7 @@ body {
 			align-items: center;
 			bottom: 0;
 			font-size: 1.5rem;
+			font-weight: bold;
 			// background-color: #2d0d30;
 			color: black;
 
@@ -870,7 +874,7 @@ body {
 			max-width: 500px;
 			height: 700px;
 
-			border: 10px solid #2d0d30;
+			// border: 10px solid #2d0d30;
 
 			.card-wrapper {
 				.card {

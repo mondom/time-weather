@@ -344,6 +344,7 @@ const weatherInfo = document.querySelector('.weather-instruction')
 
 const showStopwatch = () => {
 	stopwatchCard.classList.remove('hide-card')
+	stopwatchPage.style.transform = 'rotateY(0)'
 	stopwatchInfo.style.display = 'flex'
 	timerInfo.style.display = 'none'
 	weatherInfo.style.display = 'none'
