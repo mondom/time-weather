@@ -343,7 +343,7 @@ body .wrapper .card-wrapper .timer {
   background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/calendar.jpg);
   background-position: center;
   background-size: cover;
-  transition: 1.5s;
+  transition: top 1.5s;
 }
 body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
   margin-bottom: 3rem;
@@ -351,6 +351,7 @@ body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
 body .wrapper .card-wrapper .stopwatch {
   perspective: 1000px;
   z-index: -1;
+  transition: top 1.5s;
 }
 body .wrapper .card-wrapper .weather {
   background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/weather.jpg);
@@ -401,7 +402,7 @@ body .wrapper .card-wrapper .weather-popup {
   background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/weather.jpg);
   background-position: center;
   background-size: cover;
-  transition: 1.5s;
+  transition: top 1.5s;
 }
 body .wrapper .card-wrapper .weather-popup .popup-weather-header {
   margin-top: 2rem;
@@ -457,7 +458,6 @@ body .wrapper .card-wrapper .button-box .show-card-btn {
   display: flex;
   align-items: center;
   margin: 0.5rem;
-  transition: all 0.2s ease;
   text-decoration: none;
   height: 30px;
   padding: 3rem 2rem;
@@ -525,13 +525,12 @@ body .wrapper .card-wrapper .big-button {
   padding: 0.4rem 0;
   letter-spacing: 2px;
   font-family: "Raleway", sans-serif;
-  transition: color 0.3s;
   border-radius: 5px;
   border: 2px solid transparent;
   font-weight: bold;
   cursor: pointer;
   background-color: white;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 body .wrapper .card-wrapper .big-button:hover {
   background-color: rgb(252, 185, 0);
@@ -801,7 +800,7 @@ body .wrapper .time-date-box .time {
     margin-top: 4rem;
   }
   body .wrapper .card-wrapper .weather .weather-content .weather-icon {
-    margin-top: 10rem;
+    margin-top: 4rem;
     width: 40%;
   }
   body .wrapper .time-date-box {

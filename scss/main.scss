@@ -215,7 +215,6 @@ body {
 					background-image: $gradient, url(../assets/img/time.jpg);
 					background-position: center;
 					background-size: cover;
-
 					transition: 1s;
 
 					.history-of-times {
@@ -375,7 +374,7 @@ body {
 				background-image: $gradient, url(../assets/img/calendar.jpg);
 				background-position: center;
 				background-size: cover;
-				transition: 1.5s;
+				transition: top 1.5s;
 
 				.timer-btn-box {
 					.timer-edit {
@@ -386,6 +385,7 @@ body {
 			.stopwatch {
 				perspective: 1000px;
 				z-index: -1;
+				transition: top 1.5s;
 			}
 
 			.weather {
@@ -441,7 +441,7 @@ body {
 				background-image: $gradient, url(../assets/img/weather.jpg);
 				background-position: center;
 				background-size: cover;
-				transition: 1.5s;
+				transition: top 1.5s;
 
 				.popup-weather-header {
 					margin-top: 2rem;
@@ -497,7 +497,7 @@ body {
 					display: flex;
 					align-items: center;
 					margin: 0.5rem;
-					transition: all 0.2s ease;
+					// transition: all 0.2s ease;
 					text-decoration: none;
 					height: 30px;
 					padding: 3rem 2rem;
@@ -571,13 +571,13 @@ body {
 				padding: 0.4rem 0;
 				letter-spacing: 2px;
 				font-family: 'Raleway', sans-serif;
-				transition: color 0.3s;
+
 				border-radius: 5px;
 				border: 2px solid transparent;
 				font-weight: bold;
 				cursor: pointer;
 				background-color: white;
-				transition: background-color 0.3s;
+				transition: background-color 0.3s, color 0.3s;
 			}
 			.big-button:hover {
 				background-color: rgba(252, 185, 0, 1);
@@ -912,7 +912,7 @@ body {
 							margin-top: 4rem;
 						}
 						.weather-icon {
-							margin-top: 10rem;
+							margin-top: 4rem;
 							width: 40%;
 						}
 					}
