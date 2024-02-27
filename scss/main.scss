@@ -1,3 +1,5 @@
+@import './colors';
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -33,9 +35,9 @@ body {
 		height: 98%;
 		display: flex;
 		justify-content: center;
-		background-color: #2d0d30;
+		// background-color: black;
 		border-radius: 20px;
-		border: 0.5rem solid #2d0d30;
+		border: 0.5rem solid black;
 		overflow: hidden;
 		margin: 0.5rem;
 		.mini-font {
@@ -45,7 +47,7 @@ body {
 			position: relative;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(45, 13, 48, 0.9);
+			background-color: rgba(0, 0, 0, 0.9);
 			z-index: 10;
 			justify-content: center;
 			align-items: center;
@@ -89,7 +91,7 @@ body {
 				justify-content: center;
 				align-items: flex-end;
 				line-height: 2rem;
-				background-color: #2d0d30;
+				background-color: black;
 				bottom: -3.4rem;
 				z-index: 10;
 				border-radius: 8px;
@@ -136,13 +138,14 @@ body {
 			width: 100%;
 			height: 25%;
 			z-index: 1;
-			color: white;
-			background-color: #2d0d30;
+			color: black;
+			// background: none;
 			display: flex;
 			// display: none;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+			// box-shadow: 0 0 10px black;
 			// animation: opacity-off 1s forwards;
 			.app-title {
 				font-size: 2.3rem;
@@ -165,7 +168,7 @@ body {
 			height: 85%;
 			display: flex;
 			justify-content: center;
-			background-color: #f8f0ee;
+
 			z-index: 0;
 			bottom: 4rem;
 
@@ -188,7 +191,7 @@ body {
 					flex-direction: column;
 					width: 100%;
 					height: 100%;
-					background-image: url(../assets/img/violet.jpg);
+					background-image: $gradient, url(../assets/img/time.jpg);
 					background-position: center;
 					background-size: cover;
 					border-radius: 16px;
@@ -206,7 +209,7 @@ body {
 					right: 0;
 					font-size: 1.8rem;
 					border-radius: 16px;
-					background-image: url(../assets/img/violet.jpg);
+					background-image: $gradient, url(../assets/img/time.jpg);
 					background-position: center;
 					background-size: cover;
 
@@ -245,7 +248,8 @@ body {
 						left: 50%;
 						transform: translate(-50%, -50%);
 						color: #fafafa;
-						font-size: 3rem;
+						font-family: 'Dancing Script', cursive;
+						font-size: 4rem;
 						letter-spacing: 0.1rem;
 					}
 				}
@@ -264,7 +268,7 @@ body {
 
 					.stopwatch-clock {
 						margin-top: 1.7rem;
-						font-size: 4rem;
+						font-size: 4.5rem;
 					}
 					.show-last-time {
 						font-size: 1.8rem;
@@ -365,7 +369,7 @@ body {
 				}
 			}
 			.timer {
-				background-image: url(../assets/img/timer.jpg);
+				background-image: $gradient, url(../assets/img/calendar.jpg);
 				background-position: center;
 				background-size: cover;
 				transition: 1.5s;
@@ -382,7 +386,7 @@ body {
 			}
 
 			.weather {
-				background-image: url(../assets/img/gradient\ weather.jpg);
+				background-image: $gradient, url(../assets/img/weather.jpg);
 				background-position: center;
 				background-size: cover;
 				top: 0;
@@ -431,7 +435,7 @@ body {
 				height: 70%;
 				top: -800px;
 				border-radius: 16px;
-				background-image: url(../assets/img/gradient\ weather.jpg);
+				background-image: $gradient, url(../assets/img/weather.jpg);
 				background-position: center;
 				background-size: cover;
 				transition: 1.5s;
@@ -523,7 +527,7 @@ body {
 					position: absolute;
 					display: block;
 					border-radius: 28px;
-					background-color: rgba(252, 185, 0, 0.5);
+					background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(255, 255, 255, 0.75));
 					z-index: -1;
 					transition: all 0.3s ease;
 					width: var(--1before-width);
@@ -543,8 +547,10 @@ body {
 
 				.show-card-btn:hover::before {
 					width: 100%;
-					background-color: rgba(252, 185, 0, 1);
+					// background-color: black;
+					
 				}
+	
 				.show-card-btn:active {
 					transform: scale(0.96);
 				}
@@ -583,7 +589,7 @@ body {
 			align-items: center;
 			flex-direction: column;
 			z-index: 10;
-			background-color: rgba(#2d0d30, $alpha: 0.9);
+			background-color: rgba(0, 0, 0, 0.7);
 
 			color: rgb(249, 246, 246);
 			.popup-timer-header {
@@ -668,17 +674,16 @@ body {
 			justify-content: center;
 			align-items: center;
 			bottom: 0;
-			font-size: 1.6rem;
-			background-color: #2d0d30;
-			color: #fff;
+			font-size: 1.5rem;
+			// background-color: #2d0d30;
+			color: black;
 
-			text-shadow: 0 0 5px rgb(0, 0, 0);
 			.clock-name,
 			.date-name {
 				margin-right: 1rem;
 			}
 			.time {
-				margin-right: 3.5rem;
+				margin-right: 2rem;
 			}
 		}
 	}

@@ -30,9 +30,8 @@ body .wrapper {
   height: 98%;
   display: flex;
   justify-content: center;
-  background-color: #2d0d30;
   border-radius: 20px;
-  border: 0.5rem solid #2d0d30;
+  border: 0.5rem solid black;
   overflow: hidden;
   margin: 0.5rem;
 }
@@ -43,7 +42,7 @@ body .wrapper .instruction {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: rgba(45, 13, 48, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 10;
   justify-content: center;
   align-items: center;
@@ -85,7 +84,7 @@ body .wrapper .instruction .bookmark {
   justify-content: center;
   align-items: flex-end;
   line-height: 2rem;
-  background-color: #2d0d30;
+  background-color: black;
   bottom: -3.4rem;
   z-index: 10;
   border-radius: 8px;
@@ -130,8 +129,7 @@ body .wrapper .app-title-box {
   width: 100%;
   height: 25%;
   z-index: 1;
-  color: white;
-  background-color: #2d0d30;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +153,6 @@ body .wrapper .card-wrapper {
   height: 85%;
   display: flex;
   justify-content: center;
-  background-color: #f8f0ee;
   z-index: 0;
   bottom: 4rem;
 }
@@ -177,7 +174,7 @@ body .wrapper .card-wrapper .card .stopwatch-page {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-image: url(../assets/img/violet.jpg);
+  background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/time.jpg);
   background-position: center;
   background-size: cover;
   border-radius: 16px;
@@ -194,7 +191,7 @@ body .wrapper .card-wrapper .card .stopwatch-history-page {
   right: 0;
   font-size: 1.8rem;
   border-radius: 16px;
-  background-image: url(../assets/img/violet.jpg);
+  background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/time.jpg);
   background-position: center;
   background-size: cover;
   transition: 1s;
@@ -229,7 +226,8 @@ body .wrapper .card-wrapper .card .title-box .title {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fafafa;
-  font-size: 3rem;
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
   letter-spacing: 0.1rem;
 }
 body .wrapper .card-wrapper .card .card-box {
@@ -244,7 +242,7 @@ body .wrapper .card-wrapper .card .card-box {
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-clock {
   margin-top: 1.7rem;
-  font-size: 4rem;
+  font-size: 4.5rem;
 }
 body .wrapper .card-wrapper .card .card-box .show-last-time {
   font-size: 1.8rem;
@@ -339,7 +337,7 @@ body .wrapper .card-wrapper .card .timer-content .timer-box .small-box hr {
   margin: 0.5rem auto;
 }
 body .wrapper .card-wrapper .timer {
-  background-image: url(../assets/img/timer.jpg);
+  background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/calendar.jpg);
   background-position: center;
   background-size: cover;
   transition: 1.5s;
@@ -352,7 +350,7 @@ body .wrapper .card-wrapper .stopwatch {
   z-index: -1;
 }
 body .wrapper .card-wrapper .weather {
-  background-image: url(../assets/img/gradient\ weather.jpg);
+  background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/weather.jpg);
   background-position: center;
   background-size: cover;
   top: 0;
@@ -397,7 +395,7 @@ body .wrapper .card-wrapper .weather-popup {
   height: 70%;
   top: -800px;
   border-radius: 16px;
-  background-image: url(../assets/img/gradient\ weather.jpg);
+  background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/weather.jpg);
   background-position: center;
   background-size: cover;
   transition: 1.5s;
@@ -488,7 +486,7 @@ body .wrapper .card-wrapper .button-box .show-card-btn::before {
   position: absolute;
   display: block;
   border-radius: 28px;
-  background-color: rgba(252, 185, 0, 0.5);
+  background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(255, 255, 255, 0.75));
   z-index: -1;
   transition: all 0.3s ease;
   width: var(--1before-width);
@@ -507,7 +505,6 @@ body .wrapper .card-wrapper .button-box .show-card-btn:nth-child(3)::before {
 }
 body .wrapper .card-wrapper .button-box .show-card-btn:hover::before {
   width: 100%;
-  background-color: rgb(252, 185, 0);
 }
 body .wrapper .card-wrapper .button-box .show-card-btn:active {
   transform: scale(0.96);
@@ -544,7 +541,7 @@ body .wrapper .timer-popup {
   align-items: center;
   flex-direction: column;
   z-index: 10;
-  background-color: rgba(45, 13, 48, 0.9);
+  background-color: rgba(0, 0, 0, 0.7);
   color: rgb(249, 246, 246);
 }
 body .wrapper .timer-popup .popup-timer-header {
@@ -621,17 +618,15 @@ body .wrapper .time-date-box {
   justify-content: center;
   align-items: center;
   bottom: 0;
-  font-size: 1.6rem;
-  background-color: #2d0d30;
-  color: #fff;
-  text-shadow: 0 0 5px rgb(0, 0, 0);
+  font-size: 1.5rem;
+  color: black;
 }
 body .wrapper .time-date-box .clock-name,
 body .wrapper .time-date-box .date-name {
   margin-right: 1rem;
 }
 body .wrapper .time-date-box .time {
-  margin-right: 3.5rem;
+  margin-right: 2rem;
 }
 
 @media (min-width: 375px) {
