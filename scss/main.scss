@@ -628,10 +628,10 @@ body {
 					}
 				}
 			}
-			.timer-save {
-				margin-top: 40px;
+			.timer-save, .timer-close {
+			
 				width: 30%;
-				font-size: 20px;
+				font-size: 2rem;
 				font-family: 'Raleway', sans-serif;
 				padding: 5px 12px;
 				box-shadow: 0 0 4px black;
@@ -640,6 +640,11 @@ body {
 				cursor: pointer;
 				transition: background-color 0.3s;
 			}
+			.timer-close {
+				margin-top: 5rem;
+				
+			}
+			
 			.timer-save:hover {
 				background-color: rgba(252, 185, 0, 1);
 			}
@@ -837,9 +842,9 @@ body {
 						}
 					}
 				}
-				.timer-save {
+				.timer-save, .timer-close {
 					margin-top: 6rem;
-					font-size: 2.5rem;
+					font-size: 2.2rem;
 				}
 				.error {
 					margin-top: 3rem;

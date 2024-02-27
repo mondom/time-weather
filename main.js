@@ -125,6 +125,7 @@ stopwatchResetBtn.addEventListener('click', resetStopwatch)
 
 const popup = document.querySelector('.timer-popup')
 const timerSaveBtn = document.querySelector('.timer-save')
+const timerCloseBtn = document.querySelector('.timer-close')
 const popupEventName = document.querySelector('.popup-input-event-name')
 const popupInputDay = document.querySelector('.popup-input-day')
 const popupInputMonth = document.querySelector('.popup-input-month')
@@ -183,17 +184,14 @@ const closePopup = () => {
 	eventName.textContent = popupEventName.value
 	popup.classList.remove('show-timer-popup')
 }
+const closeClearPopup = () => {
+	popup.classList.remove('show-timer-popup')
+}
 
 const showPopup = () => {
 	popup.classList.add('show-timer-popup')
 }
 
-const resetInputsValue = () => {
-	popupEventName.value = ''
-	popupInputDay.value = ''
-	popupInputMonth.value = ''
-	popupInputYear.value = ''
-}
 
 const blockDayToTwo = () => {
 	popupInputDay.value = popupInputDay.value.slice(0, 2)
@@ -207,6 +205,7 @@ const blockYearToTwo = () => {
 
 timerEditBtn.addEventListener('click', showPopup)
 timerSaveBtn.addEventListener('click', dataUpdate)
+timerCloseBtn.addEventListener('click', closeClearPopup)
 
 setInterval(getTime, 1000)
 

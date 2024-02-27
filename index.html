@@ -66,7 +66,7 @@
         <div class="timer-popup">
 
             <h2 class="popup-timer-header">Enter a name for the event:</h2>
-            <input type="text" id="timer-name" class="popup-input-event-name" maxlength="40" value="Your event name">
+            <input type="text" id="timer-name" class="popup-input-event-name" maxlength="40" value="Your event name" onclick="this.value = ''">
             <h2 class="popup-timer-header">Enter date:</h2>
 
             <div class="popup-date-box">
@@ -77,16 +77,19 @@
                 </div>
 
                 <div class="input-box"> <input type="number" id="popup-timer-day" value="1" min="1" max="31"
-                        oninput="blockDayToTwo()" class="popup-input-day">
+                        oninput="blockDayToTwo()" class="popup-input-day" onclick="this.value = ''">
                     <input type="number" id="popup-timer-month" value="1" min="1" max="12" class="popup-input-month"
-                        oninput="blockMonthToTwo()">
+                        oninput="blockMonthToTwo()" onclick="this.value = ''">
                     <input type="number" id="popup-timer-year" value="2030" min="2023" max="9999"
-                        class="popup-input-year" oninput="blockYearToTwo()">
+                        class="popup-input-year" oninput="blockYearToTwo()" onclick="this.value = ''">
                 </div>
 
             </div>
 
             <button class="timer-save timer-btn">Save</button>
+            <button class="timer-close timer-btn">Close</button>
+          
+         
             <p class="error"></p>
 
         </div>
@@ -166,7 +169,7 @@
 
                     <div class="timer-btn-box">
 
-                        <button class="timer-edit big-button " onclick="resetInputsValue()">edit</button>
+                        <button class="timer-edit big-button ">edit</button>
                     </div>
                 </div>
             </div>
