@@ -22,7 +22,6 @@ body {
   color: black;
   background-color: #f4f4f4;
   height: 100vh;
-  overflow: hidden;
   color: #fafafa;
 }
 body .wrapper {
@@ -634,6 +633,10 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .button-box {
     margin-top: 12rem;
   }
+  body .wrapper .card-wrapper .card,
+  body .wrapper .card-wrapper .weather-popup {
+    margin-top: 7em;
+  }
 }
 @media (min-width: 414px) {
   body .wrapper .app-title-box .app-title {
@@ -763,14 +766,14 @@ body .wrapper .time-date-box .time {
 }
 @media (min-width: 530px) {
   body .wrapper {
-    max-width: 700px;
+    max-width: 500px;
+    height: 700px;
     background-color: #2d0d30;
     border-radius: 20px;
     border: 10px solid #2d0d30;
   }
   body .wrapper .card-wrapper .card {
     width: 70%;
-    margin-top: 10rem;
   }
   body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
     bottom: 6rem;
@@ -784,7 +787,6 @@ body .wrapper .time-date-box .time {
   }
   body .wrapper .card-wrapper .weather-popup {
     width: 70%;
-    margin-top: 10rem;
   }
   body .wrapper .card-wrapper .button-box {
     margin-top: 28%;
@@ -801,6 +803,30 @@ body .wrapper .time-date-box .time {
   }
   body .wrapper .time-date-box {
     font-size: 2.5rem;
+  }
+}
+@media (min-width: 568px) and (orientation: landscape) {
+  body {
+    height: auto;
+  }
+  body .wrapper {
+    width: 90%;
+    height: 700px;
+  }
+  body .wrapper .card-wrapper .button-box {
+    margin-top: 12rem;
+  }
+  body .wrapper .card-wrapper .card,
+  body .wrapper .card-wrapper .weather-popup {
+    margin-top: 8rem;
+  }
+  body .wrapper .card-wrapper .button-box-done {
+    align-items: flex-end;
+  }
+}
+@media (min-width: 1054px) {
+  body {
+    height: 100vh;
   }
 }
 @keyframes bounce-arrow {
