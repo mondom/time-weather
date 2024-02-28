@@ -276,22 +276,71 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
   border: 3px solid transparent;
   background-color: white;
   color: black;
-  box-shadow: 0 0 8px #2d0d30;
   transition: background-color 0.3s;
   cursor: pointer;
 }
-body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn:hover,
-body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history:hover {
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn:hover {
   background-color: rgb(252, 185, 0);
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
-  margin-top: 1rem;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: none;
+  color: white;
+  cursor: pointer;
+  transition: all 1s;
+  width: 50%;
+  padding: 0.8rem 0;
   margin-bottom: 2rem;
-  border: 3px solid transparent;
-  background-color: white;
   font-size: 2rem;
-  color: black;
-  box-shadow: 0 0 8px #2d0d30;
+  margin-top: 1rem;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history span {
+  transition: all 0.3s;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history:hover span {
+  letter-spacing: 4px;
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
 }
 body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   position: absolute;
@@ -517,22 +566,6 @@ body .wrapper .card-wrapper .button-box-done {
   height: 10%;
   flex-direction: row;
   justify-content: center;
-}
-body .wrapper .card-wrapper .big-button {
-  width: 60%;
-  font-size: 1.8rem;
-  padding: 0.4rem 0;
-  letter-spacing: 2px;
-  font-family: "Raleway", sans-serif;
-  border-radius: 5px;
-  border: 2px solid transparent;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: white;
-  transition: background-color 0.3s, color 0.3s;
-}
-body .wrapper .card-wrapper .big-button:hover {
-  background-color: rgb(252, 185, 0);
 }
 body .wrapper .timer-popup {
   position: absolute;
