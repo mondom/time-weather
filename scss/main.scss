@@ -64,18 +64,32 @@ body {
 			transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 
 			.roll-up {
-				padding: 0.5rem;
-				width: 40%;
-				margin-top: 5rem;
-				border-radius: 8px;
-				font-size: 1.4rem;
-				font-weight: bold;
-				letter-spacing: 1px;
-				transition: background-color 0.3s;
-				cursor: pointer;
+				@include btnStyle;
+				@include mainBtn;
+				margin-top: 4rem;
+				
 			}
-			.roll-up:hover {
-				background-color: #fdc82f;
+			.roll-up span {
+				transition: all 0.3s;
+				font-weight: lighter;
+			}
+			
+			.roll-up::before {
+				@include btnStyleBefore;
+			}
+			
+			.roll-up:hover span {
+				letter-spacing: 4px;
+			}
+			.roll-up:hover::before {
+				@include btnHoverBefore;
+			}
+			
+			.roll-up::after {
+				@include btnStyleAfter;
+			}
+			.roll-up:hover::after {
+				@include btnHoverAfter;
 			}
 
 			p {
@@ -369,10 +383,6 @@ body {
 						text-align: center;
 						width: 100%;
 						bottom: 1rem;
-
-						.timer-edit:hover {
-							background-color: rgba(252, 185, 0, 1);
-						}
 					}
 				}
 
@@ -423,7 +433,29 @@ body {
 
 				.timer-btn-box {
 					.timer-edit {
-						margin-bottom: 3rem;
+						@include btnStyle;
+						@include mainBtn;
+					}
+					.timer-edit span {
+						transition: all 0.3s;
+					}
+
+					.timer-edit::before {
+						@include btnStyleBefore;
+					}
+
+					.timer-edit:hover span {
+						letter-spacing: 4px;
+					}
+					.timer-edit:hover::before {
+						@include btnHoverBefore;
+					}
+
+					.timer-edit::after {
+						@include btnStyleAfter;
+					}
+					.timer-edit:hover::after {
+						@include btnHoverAfter;
 					}
 				}
 			}
@@ -515,10 +547,29 @@ body {
 					border-radius: 8px;
 				}
 				.weather-send-btn {
-					font-family: 'Raleway', sans-serif;
+					@include btnStyle;
+					@include mainBtn;
 				}
-				.weather-send-btn:hover {
-					background-color: rgba(252, 185, 0, 1);
+				.weather-send-btn span {
+					transition: all 0.3s;
+				}
+
+				.weather-send-btn::before {
+					@include btnStyleBefore;
+				}
+
+				.weather-send-btn:hover span {
+					letter-spacing: 4px;
+				}
+				.weather-send-btn:hover::before {
+					@include btnHoverBefore;
+				}
+
+				.weather-send-btn::after {
+					@include btnStyleAfter;
+				}
+				.weather-send-btn:hover::after {
+					@include btnHoverAfter;
 				}
 			}
 			.animation-card {
@@ -665,7 +716,7 @@ body {
 			align-items: center;
 			flex-direction: column;
 			z-index: 10;
-			background-color: rgba(0, 0, 0, 0.8);
+			background-color: rgba(0, 0, 0, 0.9);
 
 			color: rgb(249, 246, 246);
 			.popup-timer-header {
@@ -714,22 +765,41 @@ body {
 					}
 				}
 			}
+			.timer-save {
+				margin-top: 3rem;
+			}
 			.timer-save,
 			.timer-close {
-				margin-top: 5rem;
-				width: 30%;
-				font-size: 2rem;
-				font-family: 'Raleway', sans-serif;
-				padding: 5px 12px;
-				box-shadow: 0 0 4px black;
-				border-radius: 5px;
-				border: none;
-				cursor: pointer;
-				transition: background-color 0.3s;
+				@include btnStyle;
+				@include mainBtn;
 			}
 
-			.timer-save:hover {
-				background-color: rgba(252, 185, 0, 1);
+			.timer-save span,
+			.timer-close span {
+				transition: all 0.3s;
+			}
+
+			.timer-save::before,
+			.timer-close::before {
+				@include btnStyleBefore;
+			}
+
+			.timer-save:hover span,
+			.timer-close:hover span {
+				letter-spacing: 4px;
+			}
+			.timer-save:hover::before,
+			.timer-close:hover::before {
+				@include btnHoverBefore;
+			}
+
+			.timer-save::after,
+			.timer-close::after {
+				@include btnStyleAfter;
+			}
+			.timer-save:hover::after,
+			.timer-close:hover::after {
+				@include btnHoverAfter;
 			}
 
 			.error {
@@ -955,7 +1025,6 @@ body {
 				}
 				.timer-save,
 				.timer-close {
-					margin-top: 6rem;
 					font-size: 2.2rem;
 				}
 				.error {
@@ -1005,13 +1074,17 @@ body {
 				.weather-popup {
 					width: 70%;
 					// margin-top: 10rem;
+					.weather-send-btn {
+						font-size: 2rem;
+					}
 				}
 
 				.button-box {
 					margin-top: 28%;
 				}
 				.timer .timer-btn-box .timer-edit {
-					margin-bottom: 10rem;
+					font-size: 2rem;
+					margin-bottom: 5rem;
 				}
 				.weather {
 					.weather-content {

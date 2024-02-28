@@ -57,18 +57,63 @@ body .wrapper .instruction {
   transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 body .wrapper .instruction .roll-up {
-  padding: 0.5rem;
-  width: 40%;
-  margin-top: 5rem;
-  border-radius: 8px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: background-color 0.3s;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  border: none;
+  background: none;
+  color: white;
   cursor: pointer;
+  transition: all 1s;
+  width: 60%;
+  padding: 0.8rem 0;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  margin-top: 4rem;
 }
-body .wrapper .instruction .roll-up:hover {
-  background-color: #fdc82f;
+body .wrapper .instruction .roll-up span {
+  transition: all 0.3s;
+  font-weight: lighter;
+}
+body .wrapper .instruction .roll-up::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+body .wrapper .instruction .roll-up:hover span {
+  letter-spacing: 4px;
+}
+body .wrapper .instruction .roll-up:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+body .wrapper .instruction .roll-up::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body .wrapper .instruction .roll-up:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
 }
 body .wrapper .instruction p {
   line-height: 3rem;
@@ -221,7 +266,7 @@ body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-histo
   width: 60%;
   padding: 0.8rem 0;
   margin-bottom: 2rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history span {
   transition: all 0.3s;
@@ -381,7 +426,7 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-histor
   width: 60%;
   padding: 0.8rem 0;
   margin-bottom: 2rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-top: 1rem;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history span {
@@ -433,9 +478,6 @@ body .wrapper .card-wrapper .card .card-box .timer-btn-box {
   width: 100%;
   bottom: 1rem;
 }
-body .wrapper .card-wrapper .card .card-box .timer-btn-box .timer-edit:hover {
-  background-color: rgb(252, 185, 0);
-}
 body .wrapper .card-wrapper .card .timer-content {
   width: 100%;
 }
@@ -480,7 +522,61 @@ body .wrapper .card-wrapper .timer {
   transition: top 1.5s;
 }
 body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
-  margin-bottom: 3rem;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  transition: all 1s;
+  width: 60%;
+  padding: 0.8rem 0;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit span {
+  transition: all 0.3s;
+}
+body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit:hover span {
+  letter-spacing: 4px;
+}
+body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
 }
 body .wrapper .card-wrapper .stopwatch {
   perspective: 1000px;
@@ -568,10 +664,61 @@ body .wrapper .card-wrapper .weather-popup .input-city-name:focus {
   border-radius: 8px;
 }
 body .wrapper .card-wrapper .weather-popup .weather-send-btn {
+  position: relative;
   font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  transition: all 1s;
+  width: 60%;
+  padding: 0.8rem 0;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
 }
-body .wrapper .card-wrapper .weather-popup .weather-send-btn:hover {
-  background-color: rgb(252, 185, 0);
+body .wrapper .card-wrapper .weather-popup .weather-send-btn span {
+  transition: all 0.3s;
+}
+body .wrapper .card-wrapper .weather-popup .weather-send-btn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+body .wrapper .card-wrapper .weather-popup .weather-send-btn:hover span {
+  letter-spacing: 4px;
+}
+body .wrapper .card-wrapper .weather-popup .weather-send-btn:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+body .wrapper .card-wrapper .weather-popup .weather-send-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body .wrapper .card-wrapper .weather-popup .weather-send-btn:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
 }
 body .wrapper .card-wrapper .animation-card {
   top: 0;
@@ -661,7 +808,7 @@ body .wrapper .timer-popup {
   align-items: center;
   flex-direction: column;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   color: rgb(249, 246, 246);
 }
 body .wrapper .timer-popup .popup-timer-header {
@@ -706,21 +853,72 @@ body .wrapper .timer-popup .popup-date-box .input-box input {
   font-size: 1.8rem;
   margin: 0.5rem;
 }
+body .wrapper .timer-popup .timer-save {
+  margin-top: 3rem;
+}
 body .wrapper .timer-popup .timer-save,
 body .wrapper .timer-popup .timer-close {
-  margin-top: 5rem;
-  width: 30%;
-  font-size: 2rem;
+  position: relative;
   font-family: "Raleway", sans-serif;
-  padding: 5px 12px;
-  box-shadow: 0 0 4px black;
-  border-radius: 5px;
+  letter-spacing: 2px;
   border: none;
+  background: none;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 1s;
+  width: 60%;
+  padding: 0.8rem 0;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
 }
-body .wrapper .timer-popup .timer-save:hover {
-  background-color: rgb(252, 185, 0);
+body .wrapper .timer-popup .timer-save span,
+body .wrapper .timer-popup .timer-close span {
+  transition: all 0.3s;
+}
+body .wrapper .timer-popup .timer-save::before,
+body .wrapper .timer-popup .timer-close::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+body .wrapper .timer-popup .timer-save:hover span,
+body .wrapper .timer-popup .timer-close:hover span {
+  letter-spacing: 4px;
+}
+body .wrapper .timer-popup .timer-save:hover::before,
+body .wrapper .timer-popup .timer-close:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+body .wrapper .timer-popup .timer-save::after,
+body .wrapper .timer-popup .timer-close::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body .wrapper .timer-popup .timer-save:hover::after,
+body .wrapper .timer-popup .timer-close:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
 }
 body .wrapper .timer-popup .error {
   margin-top: 2rem;
@@ -894,7 +1092,6 @@ body .wrapper .time-date-box .time {
   }
   body .wrapper .timer-popup .timer-save,
   body .wrapper .timer-popup .timer-close {
-    margin-top: 6rem;
     font-size: 2.2rem;
   }
   body .wrapper .timer-popup .error {
@@ -928,11 +1125,15 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .weather-popup {
     width: 70%;
   }
+  body .wrapper .card-wrapper .weather-popup .weather-send-btn {
+    font-size: 2rem;
+  }
   body .wrapper .card-wrapper .button-box {
     margin-top: 28%;
   }
   body .wrapper .card-wrapper .timer .timer-btn-box .timer-edit {
-    margin-bottom: 10rem;
+    font-size: 2rem;
+    margin-bottom: 5rem;
   }
   body .wrapper .card-wrapper .weather .weather-content .weather-box {
     margin-top: 4rem;
