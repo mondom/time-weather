@@ -67,24 +67,23 @@ body {
 				@include btnStyle;
 				@include mainBtn;
 				margin-top: 4rem;
-				
 			}
 			.roll-up span {
 				transition: all 0.3s;
 				font-weight: lighter;
 			}
-			
+
 			.roll-up::before {
 				@include btnStyleBefore;
 			}
-			
+
 			.roll-up:hover span {
 				letter-spacing: 4px;
 			}
 			.roll-up:hover::before {
 				@include btnHoverBefore;
 			}
-			
+
 			.roll-up::after {
 				@include btnStyleAfter;
 			}
