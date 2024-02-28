@@ -99,6 +99,7 @@ const quickHideHistory = () => {
 	stopwatchCard.style.transform = 'rotateY(0)'
 	stopwatchPage.style.opacity = '1'
 	stopwatchHistoryPage.style.opacity = '0'
+	stopwatchHistoryPage.style.zIndex = '-1'
 }
 
 const resetStopwatch = () => {
@@ -483,6 +484,8 @@ const connectTheDotsStopwatch = () => {
 	} else {
 		setTheButtons()
 		showStopwatch()
+		// stopwatchHistoryPage.style.zIndex = '-1'
+		stopwatchPage.style.zIndex = '1'
 	}
 }
 

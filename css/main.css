@@ -186,13 +186,14 @@ body .wrapper .card-wrapper .card .stopwatch-page {
 body .wrapper .card-wrapper .card .stopwatch-history-page {
   position: absolute;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  font-size: 1.8rem;
+  padding: 1.5rem;
   border-radius: 16px;
   background-image: linear-gradient(45deg, rgba(96, 96, 96, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/time.jpg);
   background-position: center;
@@ -200,22 +201,72 @@ body .wrapper .card-wrapper .card .stopwatch-history-page {
   transition: 1s;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
-  margin-top: 3.5rem;
+  font-size: 2rem;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p {
-  line-height: 2.8rem;
+  line-height: 2.5rem;
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p:last-child {
+  margin-bottom: 5rem;
 }
 body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
-  position: absolute;
-  bottom: 3rem;
-  border: 3px solid transparent;
-  background-color: white;
-  font-size: 2rem;
-  color: black;
-  box-shadow: 0 0 8px #2d0d30;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: none;
+  color: white;
+  cursor: pointer;
+  transition: all 1s;
+  width: 60%;
+  padding: 0.8rem 0;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
 }
-body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history:hover {
-  background-color: rgb(252, 185, 0);
+body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history span {
+  transition: all 0.3s;
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history:hover span {
+  letter-spacing: 4px;
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
 }
 body .wrapper .card-wrapper .card .title-box {
   position: relative;
@@ -279,9 +330,6 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn {
   transition: background-color 0.3s;
   cursor: pointer;
 }
-body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-btn:hover {
-  background-color: rgb(252, 185, 0);
-}
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
   position: relative;
   font-family: "Raleway", sans-serif;
@@ -293,10 +341,10 @@ body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-histor
   color: white;
   cursor: pointer;
   transition: all 1s;
-  width: 50%;
+  width: 60%;
   padding: 0.8rem 0;
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-top: 1rem;
 }
 body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history span {
@@ -673,6 +721,15 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .weather-popup {
     margin-top: 7em;
   }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
+    font-size: 2rem;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p {
+    line-height: 3rem;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p:last-child {
+    margin-bottom: 6rem;
+  }
 }
 @media (min-width: 414px) {
   body .wrapper .app-title-box .app-title {
@@ -711,6 +768,12 @@ body .wrapper .time-date-box .time {
   }
   body .wrapper .card-wrapper .card .stopwatch-history-page {
     font-size: 2.2rem;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page p {
+    line-height: 3.2rem;
+  }
+  body .wrapper .card-wrapper .card .stopwatch-history-page p:last-child {
+    margin-bottom: 8rem;
   }
   body .wrapper .card-wrapper .card .title-box .title {
     font-size: 3.5rem;
@@ -809,15 +872,17 @@ body .wrapper .time-date-box .time {
   body .wrapper .card-wrapper .card {
     width: 70%;
   }
+  body .wrapper .card-wrapper .card .card-box .stopwatch-btn-box .stopwatch-history {
+    font-size: 2rem;
+  }
   body .wrapper .card-wrapper .card .stopwatch-history-page .stopwatch-close-history {
-    bottom: 6rem;
+    font-size: 2rem;
   }
   body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times {
-    font-size: 2.5rem;
-    margin-top: 10rem;
+    font-size: 2.2rem;
   }
-  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p {
-    margin-bottom: 2rem;
+  body .wrapper .card-wrapper .card .stopwatch-history-page .history-of-times p:last-child {
+    margin-bottom: 6rem;
   }
   body .wrapper .card-wrapper .weather-popup {
     width: 70%;

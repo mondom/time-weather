@@ -205,36 +205,56 @@ body {
 				.stopwatch-history-page {
 					position: absolute;
 					display: flex;
+					justify-content: flex-end;
 					align-items: center;
 					flex-direction: column;
 					top: 0;
 					left: 0;
 					bottom: 0;
 					right: 0;
-					font-size: 1.8rem;
+					padding: 1.5rem;
 					border-radius: 16px;
 					background-image: $gradient, url(../assets/img/time.jpg);
 					background-position: center;
 					background-size: cover;
 					transition: 1s;
+					
 
 					.history-of-times {
-						margin-top: 3.5rem;
+						
+						font-size: 2rem;
+						
 						p {
-							line-height: 2.8rem;
+							line-height: 2.5rem;
+						}
+						p:last-child{
+							margin-bottom: 5rem;
 						}
 					}
+					
 					.stopwatch-close-history {
-						position: absolute;
-						bottom: 3rem;
-						border: 3px solid transparent;
-						background-color: white;
-						font-size: 2rem;
-						color: black;
-						box-shadow: 0 0 8px #2d0d30;
+						@include btnStyle;
+						@include mainBtn;
 					}
-					.stopwatch-close-history:hover {
-						background-color: rgba(252, 185, 0, 1);
+					.stopwatch-close-history span {
+						transition: all 0.3s;
+					}
+					.stopwatch-close-history::before {
+						@include btnStyleBefore;
+						
+					}
+					.stopwatch-close-history:hover span {
+						letter-spacing: 4px;
+					}
+					.stopwatch-close-history:hover::before {
+						@include btnHoverBefore;
+					}
+
+					.stopwatch-close-history::after {
+						@include btnStyleAfter;
+					}
+					.stopwatch-close-history:hover::after {
+						@include btnHoverAfter;
 					}
 				}
 
@@ -306,9 +326,7 @@ body {
 							transition: background-color 0.3s;
 							cursor: pointer;
 						}
-						.stopwatch-btn:hover {
-							background-color: rgba(252, 185, 0, 1);
-						}
+
 						.stopwatch-history {
 							@include btnStyle;
 							@include mainBtn;
@@ -751,6 +769,21 @@ body {
 				.weather-popup {
 					margin-top: 7em;
 				}
+				.card{
+					.stopwatch-history-page{
+						.history-of-times {
+						
+							font-size: 2rem;
+							
+							p {
+								line-height: 3rem;
+							}
+							p:last-child{
+								margin-bottom: 6rem;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -797,6 +830,12 @@ body {
 					margin-top: 7rem;
 					.stopwatch-history-page {
 						font-size: 2.2rem;
+						p {
+							line-height: 3.2rem;
+						}
+						p:last-child{
+							margin-bottom: 8rem;
+						}
 					}
 					.title-box {
 						.title {
@@ -927,16 +966,22 @@ body {
 				.card {
 					width: 70%;
 					// margin-top: 10rem;
-
+					.card-box {
+						.stopwatch-btn-box {
+							.stopwatch-history{
+								font-size: 2rem;
+							}
+						}
+					} 
 					.stopwatch-history-page {
 						.stopwatch-close-history {
-							bottom: 6rem;
+							font-size: 2rem;
 						}
 						.history-of-times {
-							font-size: 2.5rem;
-							margin-top: 10rem;
-							p {
-								margin-bottom: 2rem;
+							font-size: 2.2rem;
+							
+							p:last-child {
+								margin-bottom: 6rem;
 							}
 						}
 					}
