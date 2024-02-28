@@ -420,7 +420,7 @@ const setTheButtons = () => {
 	root.style.setProperty('--1before-top', '-3%')
 	root.style.setProperty('--1before-left', '-1px')
 
-	buttonBox.style.bottom = '4rem'
+	buttonBox.style.bottom = '3rem'
 	buttonBox.style.width = '100%'
 	buttonBox.style.padding = '0.7rem'
 	buttonBox.classList.add('done')
