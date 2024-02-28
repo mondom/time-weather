@@ -41,7 +41,7 @@ const startCount = () => {
 			seconds = 0
 			stopwatchClock.textContent = `${minutes}:00`
 		}
-	}, 200)
+	}, 1000)
 
 	lastTime.textContent = ''
 }
